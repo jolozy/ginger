@@ -6325,6 +6325,7 @@ body.navigation-top-header .header .wrapper .toggle-navigation {
     height: auto;
   }
 
+
   .categories > li {
     width: 50%;
   }
@@ -6733,6 +6734,7 @@ body.navigation-top-header .header .wrapper .toggle-navigation {
     top: inherit;
     right: 10px;
   }
+
 }
 /* 10. Animations */
 .fade_in {
