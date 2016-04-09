@@ -1,0 +1,362 @@
+body {
+  &.map-fullscreen {
+    #map { height: 100%; }
+  }
+}
+
+.gm-style {
+  .container {
+    img { max-width: inherit !important; }
+  }
+}
+
+.map-canvas { position: relative; overflow: hidden;
+  &.list-width-10 {
+    .items-list { width: 10%; }
+    .map { width: 90%; }
+  }
+  &.list-width-20 {
+    .items-list { width: 20%; }
+    .map { width: 80%; }
+  }
+  &.list-width-30 {
+    .items-list { width: 30%; }
+    .map { width: 70%; }
+  }
+  &.list-width-40 {
+    .items-list { width: 40%; }
+    .map { width: 60%; }
+  }
+  &.list-width-50 {
+    .items-list { width: 50%; }
+    .map { width: 50%; }
+  }
+  &.list-width-60 {
+    .items-list { width: 60%; }
+    .map { width: 40%; }
+  }
+  &.list-width-70 {
+    .items-list { width: 70%; }
+    .map { width: 30%; }
+  }
+  &.list-width-80 {
+    .items-list { width: 80%; }
+    .map { width: 20%; }
+  }
+  .map { float: right; width: 65%; position: relative;
+    .search-bar { background-color: rgba(65,65,65,.2); left: 0; position: absolute; top: 0; width: 100%; z-index: 3; }
+    .toggle-navigation { @include shadow; background-color: $color-grey-light; bottom: 0; height: 27px; margin: auto; position: absolute; top: 0; z-index: 1; }
+  }
+  .items-list { width: 35%; }
+  //}
+  .results {
+    &.list {
+      li {
+        &:last-child { margin-bottom: 0; }
+        .item { display: table; width: 100%; overflow: hidden;
+          .inner { height: 150px; }
+          > .image { display: table-cell; height: 100%; width: 200px;
+            > img { height: 100%; width: 200px; }
+          }
+          .wrapper { display: table-cell; padding: 20px; vertical-align: middle; text-align: left;
+            .info {
+              &:after { display: none; }
+              .type { display: inline-block; }
+              .rating { display: inline-block; float: left; margin-right: 10px;  }
+            }
+          }
+        }
+      }
+    }
+    &.grid {
+      li { display: inline-block; width: 48%; margin-left: 5px; margin-right: 5px; //margin-right: 20px; width: 48.35%;
+        &:nth-child(even) { margin-right: 0; }
+        .item {
+          //.inner { height: 220px; }
+          .image { display: block; }
+          .wrapper { display: block; }
+        }
+      }
+    }
+    .item { margin-bottom: 20px;
+      > .image { position: relative }
+      h3 { margin-bottom: 5px; }
+    }
+  }
+}
+
+.map { @include transition(.4s); height: 100%; }
+#map { width: 100%; height: 700px; }
+#map-simple { min-height: 160px; }
+.map-submit { height: 300px; }
+
+.gmnoprint {
+  img { max-width: initial !important; }
+}
+
+// Map Cluster
+
+.cluster, .marker-cluster {
+  > div { color: #fff !important; text-align: center !important; z-index: 3; line-height: 40px; font-size: 11px; font-weight: bold;
+    &:hover {
+      &:before { @include transform(scale(1.2)); }
+    }
+    &:before { @include transition(all 0.4s cubic-bezier(.42,0,.06,.99) 0s); @include transform(scale(1)); @include border-radius(50%); background-color: $color-grey-dark; border: 4px solid $color-default; content: ""; height: 34px; position: absolute; top: 0; bottom: 0; right: 0; left: 0; margin: auto; width: 34px; z-index: -1; }
+  }
+}
+.marker-loaded {
+  .map-marker { visibility: visible; }
+}
+
+// Map Marker
+
+.map-marker { visibility: hidden; @include border-top-left-radius(4px); @include border-top-right-radius(4px); @include transition(.4s ease-in-out all); background-color: #fff; height: 32px; width: 36px;  position: relative; text-align: center; z-index: 1; bottom: 12px;
+  &:before { @include transition(.4s ease-in-out all); border-style: solid; border-width: 12px 18px 0 18px; border-color: #fff transparent transparent transparent; bottom: -12px; content: ""; left: 0; height: 0; position: absolute; width: 0; z-index: 0; }
+  &:after { @include transition(.4s ease-in-out all); border-style: solid; border-width: 12px 18px 0 18px; border-color: rgba(0,0,0,.1) transparent transparent transparent; bottom: -14px; content: ""; left: 0; height: 0; position: absolute; width: 0; z-index: -1; }
+  &:hover { background-color: $color-default; cursor: pointer;
+    &:before { border-color: $color-default transparent transparent transparent; }
+  }
+  &.featured { background-color: $color-grey-dark;
+    &:hover { background-color: $color-default;
+      &:before { border-color: $color-default transparent transparent transparent; }
+    }
+    &:before { border-color: $color-grey-dark transparent transparent transparent; }
+  }
+  .icon { @include border-radius(50%); @include transition(.3s ease-in-out all); background-color: #fff; border: 3px solid $color-default; height: 28px; left: 4px; width: 28px; overflow: hidden; position: relative; top: 5px;
+    img { @include opacity(.6); display: block; position: absolute; top: -2px; right: 0; bottom: 0; left: 0; margin: auto; width: 22px; }
+  }
+  &.color1 {
+    &:hover { background-color: $color1; cursor: pointer;
+      &:before { border-color: $color1 transparent transparent transparent; }
+    }
+    .icon { border: 2px solid $color1; }
+  }
+  &.color2 {
+    &:hover { background-color: $color2; cursor: pointer;
+      &:before { border-color: $color2 transparent transparent transparent; }
+    }
+    .icon { border: 2px solid $color2; }
+  }
+  &.color3 {
+    &:hover { background-color: $color3; cursor: pointer;
+      &:before { border-color: $color3 transparent transparent transparent; }
+    }
+    .icon { border: 2px solid $color3; }
+  }
+  &.color4 {
+    &:hover { background-color: $color4; cursor: pointer;
+      &:before { border-color: $color4 transparent transparent transparent; }
+    }
+    .icon { border: 2px solid $color4; }
+  }
+  &.color5 {
+    &:hover { background-color: $color5; cursor: pointer;
+      &:before { border-color: $color5 transparent transparent transparent; }
+    }
+    .icon { border: 2px solid $color5; }
+  }
+  &.color6 {
+    &:hover { background-color: $color6; cursor: pointer;
+      &:before { border-color: $color6 transparent transparent transparent; }
+    }
+    .icon { border: 2px solid $color6; }
+  }
+  &.color7 {
+    &:hover { background-color: $color7; cursor: pointer;
+      &:before { border-color: $color7 transparent transparent transparent; }
+    }
+    .icon { border: 2px solid $color7; }
+  }
+  &.color8 {
+    &:hover { background-color: $color8; cursor: pointer;
+      &:before { border-color: $color8 transparent transparent transparent; }
+    }
+    .icon { border: 2px solid $color8; }
+  }
+}
+
+.leaflet-marker-icon { background: none; border: none; }
+.leaflet-popup {
+  .leaflet-popup-content-wrapper { @include box-shadow(none); @include border-radius(0px); background: none; padding: 0;
+    .leaflet-popup-content { margin: 0; line-height: inherit; }
+  }
+}
+
+// Acitve marker
+
+.marker-active {
+  .map-marker { background-color: $color-default;
+    &:before { border-color: $color-default transparent transparent transparent; }
+    &.color1 { background-color: $color1;
+      &:before { border-color: $color1 transparent transparent transparent; }
+    }
+    &.color2 { background-color: $color2;
+      &:before { border-color: $color2 transparent transparent transparent; }
+    }
+    &.color3 { background-color: $color3;
+      &:before { border-color: $color3 transparent transparent transparent; }
+    }
+    &.color4 { background-color: $color4;
+      &:before { border-color: $color4 transparent transparent transparent; }
+    }
+  }
+}
+
+// Infobox
+
+.infobox { font-family: 'Arial', sans-serif; display: block; width: 295px; position: relative;
+  &.color1 {
+    .inner { border-bottom: 35px solid $color1; }
+  }
+  &.color2 {
+    .inner { border-bottom: 35px solid $color2; }
+  }
+  &.color3 {
+    .inner { border-bottom: 35px solid $color3; }
+  }
+  &.color4 {
+    .inner { border-bottom: 35px solid $color4; }
+  }
+  > img { z-index: 1 !important; }
+  .inner { border-bottom: 35px solid $color-default;
+    .image { width: 100%; position: relative;
+      img { width: 100%; }
+      .description {
+        &:hover {
+          .meta {
+            h2 { color: $color-default; }
+          }
+        }
+        .meta { @include shadow; background-color: #fff; bottom: -60px; min-width: 259px; right: 0; padding: 22px; position: absolute; z-index: 1;
+          figure { color: $color-grey-dark; font-size: 12px; }
+          h2 { @include transition(.4s); color: $color-grey-dark; font-size: 14px; font-weight: bold; margin-top: 2px; margin-bottom: 2px; padding: 0; text-transform: none; }
+          i { color: $color-default; bottom: 0; height: 10px; margin: auto; position: absolute; top: 0; right: 15px; }
+          .type { color: #a0a0a0; font-size: 11px; }
+        }
+      }
+      .item-specific { @include opacity(.95); background-color: rgba(0,0,0,.8); bottom: 20px; color: #fff; left: 36px; margin-top: 3px; padding: 5px; position: absolute; height: inherit; width: initial;
+        span { font-size: 11px; margin-right: 10px;
+          img { margin-right: 5px; vertical-align: baseline; width: auto; }
+        }
+      }
+      .overlay { @include opacity(0); @include transition(.4s); background-color: rgba(0,0,0,.7); height: 100%; left: 0; position: absolute; top: 0; text-align: center; width: 100%;
+        &:hover { @include opacity(1);
+          .wrapper {
+            hr { @include opacity(1); width: 140px; }
+            .detail { @include opacity(1); @include transition-delay(.1s); }
+            .quick-view { @include opacity(1); }
+          }
+        }
+        .wrapper { bottom: 0; left: 0; height: 80px; margin: auto; position: absolute; right: 0; top: 0; width: 100%;
+          a { @include transition(.2s); @include opacity(0); color: #fff; font-size: 14px; font-weight: bold; z-index: 1;
+            &:hover { color: $color-default; }
+          }
+          hr { @include opacity(0); @include transition(.2s); border-color: $color-default; border-width: 2px; margin-bottom: 10px; margin-top: 10px; width: 0px; }
+        }
+      }
+      .price { @include rounded-border; @include shadow; background-color: $color-default; color: #fff; font-size: 12px; font-family: 'Montserrat', sans-serif; font-weight: bold; left: 22px; padding: 3px 8px; position: absolute; top: -4px; }
+    }
+  }
+}
+
+// Fade In Marker
+.fade-in-marker { @include opacity(1); -webkit-animation: fadeInMarker .3s; animation: fadeInMarker .3s;
+  > img { z-index: 1; }
+}
+@keyframes fadeInMarker {
+  from { @include opacity(0); margin-bottom: -10px; }
+  to { @include opacity(1); margin-bottom: 0px; }
+}
+@-webkit-keyframes fadeInMarker {
+  from { @include opacity(0); margin-bottom: -10px; }
+  to { @include opacity(1); margin-bottom: 0px; }
+}
+
+// Fade Out Marker
+.fade-out-marker { @include opacity(0); -webkit-animation: fadeOutMarker .3s; animation: fadeOutMarker .3s;
+   > img { z-index: 1; }
+ }
+@keyframes fadeOutMarker {
+  from { @include opacity(1);  margin-bottom: 0px; }
+  to { @include opacity(0); margin-bottom: -10px; }
+}
+@-webkit-keyframes fadeOutMarker {
+  from { @include opacity(1);  margin-bottom: 0px; }
+  to { @include opacity(0); margin-bottom: -10px; }
+}
+
+// Items list on the map
+
+.items-list { @include transition(all .4s cubic-bezier(.42,0,.06,.99) 0s); background-color: $color-grey-light; float: left; width: 35%; padding: 20px 0px 20px 20px; height: 100%; overflow: hidden;
+  header { padding: 0; margin-bottom: 10px;
+    h3 { margin-bottom: 15px; margin-top: 3px; text-transform: uppercase; }
+  }
+  .inner { height: 100%; width: 100%; position: relative;
+    .filter { border-bottom: 1px solid rgba(0,0,0,.05); margin-bottom: 10px; padding-bottom: 20px;
+      header {
+        .show-more { font-size: 12px; margin-right: 25px; }
+      }
+      form { padding: 0;
+        .form-group { display: block; float: none; margin-bottom: 10px; }
+      }
+      .advanced-search {
+        h4 { margin-top: 0; }
+        ul { margin-bottom: 0; padding-bottom: 20px;
+          li { display: inline-block; width: 30%; }
+        }
+      }
+      .main-search { //margin-top: 30px;
+        .col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .col-sm-3, .col-md-3, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-6, .col-sm-6, .col-md-6, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .col-sm-12, .col-md-12, .col-lg-12 { padding-right: 5px; padding-left: 5px; }
+        .row { margin-right: -5px; margin-left: -5px; }
+      }
+    }
+    .scroller { padding-top: 2px; padding-right: 30px; }
+    .buttons {
+      .icon { margin-left: 10px; margin-right: 0;
+        i { cursor: pointer; color: $color-grey-medium; font-size: 14px; vertical-align: middle; }
+        &.active {
+          i { color: $color-default; }
+        }
+      }
+      span { font-size: 12px; font-weight: bold; margin-right: 10px; }
+    }
+    .results { height: 100%; list-style: none; margin-bottom: 0; padding-left: 0; //overflow: scroll;
+      li {
+        // Single item
+        .item { @include shadow; @include rounded-border; @include transition(.4s); background-color: #fff; cursor: pointer; display: table; margin-bottom: 10px; width: 100%;
+          &.item-hide { @include opacity(.5); }
+          &.item-show { @include opacity(1); }
+          &:hover {
+            h3 { color: $color-default; }
+          }
+          .image { //display: table-cell; height: 120px; width: 160px; position: relative; overflow: hidden;
+            &.loaded {
+              .inner { @include opacity(1); }
+            }
+            &.loading {
+              .inner { @include opacity(0); }
+            }
+            .inner { @include transition(.4s); overflow: hidden
+            }
+          }
+          .wrapper {
+            .info { border-top: none; margin-top: 0; }
+            .item-specific { margin-top: 3px;
+              span { font-size: 11px; margin-right: 10px;
+                img { @include opacity(.6); margin-right: 5px; vertical-align: baseline; }
+              }
+            }
+            .type { @include opacity(.6); font-size: 11px; }
+          }
+        }
+      }
+    }
+  }
+}
+
+
+// Results collapsed
+.results-collapsed {
+  .map { width: 100% !important; }
+}
+

@@ -1,0 +1,39 @@
+$color-default: #36b6ff;
+
+$color-default-darker: darken($color-default, 30%);
+$color-grey-dark: #474747;
+$color-grey-medium: #8d8d8d;
+$color-grey-light: #f4f4f2;
+$color-green: #77ad10;
+
+$color1: #998675;
+$color2: #f7941d;
+$color3: #1fadc2;
+$color4: #5fc251;
+$color5: #ec504c;
+$color6: #f5ec55;
+$color7: #a1a1a1;
+$color8: #c939e4;
+
+@import '../compass/css3/border-radius';
+@import '../compass/css3/box-shadow';
+@import '../compass/css3/box-sizing';
+@import '../compass/css3/text-shadow';
+@import '../compass/css3/transition';
+@import '../compass/css3/transform';
+@import '../compass/css3/background-clip';
+@import '../compass/css3/opacity';
+@import '../compass/css3/filter';
+
+@import '../helpers/mixins';
+@import '../helpers/elements';
+@import '../helpers/universal-classes';
+@import '../helpers/classes';
+@import '../helpers/map';
+@import '../helpers/forms';
+@import '../helpers/footer';
+@import '../helpers/header';
+@import '../helpers/pages';
+@import '../helpers/responsive';
+@import '../helpers/animation';
+@import '../helpers/print';

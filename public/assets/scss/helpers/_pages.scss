@@ -1,0 +1,84 @@
+.page-item-detail {
+  #map-detail { height: 150px; }
+  #main-content {
+    h1 { text-transform: none; }
+    h2 { font-size: 16px; }
+    header { border: none; margin-bottom: 0px; padding-bottom: 0px; position: relative; }
+    .page-title { border-bottom: 1px solid $color-grey-light; display: table; padding-bottom: 20px; width: 100%;
+      h1 { font-size: 30px; margin-bottom: 5px; }
+      .title { display: table-cell; }
+      .info { display: table-cell; text-align: right;
+        .type {
+          i { @include border-radius(50%); background-color: #fff; display: inline-block;
+            img { @include opacity(.6); width: 20px; }
+          }
+          span { @include opacity(.6); display: inline-block; font-size: 9px; font-weight: bold; text-transform: uppercase; padding: 5px; }
+        }
+      }
+    }
+    #detail-sidebar {
+      section { @include shadow; @include rounded-border; background-color: #fff; margin-bottom: 20px; padding: 20px;
+        address { margin-bottom: 0px; }
+        address, figure { margin-top: 15px; }
+        header {
+          h3 { margin: 0; }
+        }
+        .expandable-content { margin-bottom: 10px; }
+        .rating { margin: 0; }
+      }
+    }
+    #reviews, #write-review { margin-top: 10px;
+      header { border-bottom: 1px solid $color-grey-light; padding-bottom: 10px; margin-bottom: 20px;
+        h2 { font-size: 24px; }
+      }
+      .overall-rating { border-bottom: 1px solid $color-grey-light; margin-bottom: 20px; padding-bottom: 20px; }
+    }
+  }
+  #sidebar {
+    section { padding: 15px 0px;
+      &:first-child {
+        header { padding-bottom: 20px; padding-top: 38px; }
+      }
+      header { border-bottom: 1px solid $color-grey-light; margin-bottom: 25px;
+        h2 { margin: 0; padding: 0; }
+      }
+    }
+  }
+}
+
+.page-profile, .page-company-detail {
+  h3 { margin-bottom: 30px; margin-top: 0;
+    i { color: $color-default; font-size: 14px; margin-right: 10px; top: -2px; position: relative; }
+  }
+}
+
+.page-blog-detail {
+  h1 { font-size: 24px; }
+}
+
+.page-company-detail {
+  hr { margin-bottom: 30px; }
+  section {
+    header { margin-bottom: 0;
+      .page-title { padding: 23px 0; }
+    }
+    section { margin-bottom: 40px;
+      .expandable-content { margin-bottom: 20px; }
+    }
+  }
+  #map-contact { @include rounded-border; height: 160px; }
+  .page-title { font-size: 30px; text-transform: none; }
+  .logo { @include rounded-border; @include shadow; background-color: #fff; height: 160px; padding: 20px; display: table; text-align: center; width: 100%;
+    .image { display: table-cell; vertical-align: middle;
+      img { max-width: 100%; }
+    }
+  }
+  .info { margin-bottom: 10px;
+    strong, span { display: block; }
+  }
+  .social {
+    .social-button { display: inline-block;
+      i { color: $color-grey-dark;  margin-right: 5px; }
+    }
+  }
+}

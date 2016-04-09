@@ -1,0 +1,73 @@
+/*
+Syntax error: File to import not found or unreadable: compass/support.
+              Load path: C:/xampp/htdocs/themes/spotter/develop/assets/scss (DEPRECATED)
+        on line 3 of compass\css3\_border-radius.scss
+        from line 1 of style.scss
+
+1: @import 'compass/css3/border-radius';
+2: @import 'compass/css3/box-shadow';
+3: @import 'compass/css3/box-sizing';
+4: @import 'compass/css3/text-shadow';
+5: @import 'compass/css3/transition';
+6: @import 'compass/css3/transform';
+7: @import 'compass/css3/background-clip';
+8: @import 'compass/css3/opacity';
+
+Backtrace:
+compass\css3\_border-radius.scss:3
+style.scss:1
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.6/lib/sass/tree/import_node.rb:66:in `rescue in import'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.6/lib/sass/tree/import_node.rb:45:in `import'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.6/lib/sass/tree/import_node.rb:28:in `imported_file'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.6/lib/sass/tree/import_node.rb:37:in `css_import?'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.6/lib/sass/tree/visitors/perform.rb:283:in `visit_import'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.6/lib/sass/tree/visitors/base.rb:36:in `visit'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.6/lib/sass/tree/visitors/perform.rb:152:in `block in visit'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.6/lib/sass/stack.rb:79:in `block in with_base'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.6/lib/sass/stack.rb:121:in `with_frame'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.6/lib/sass/stack.rb:79:in `with_base'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.6/lib/sass/tree/visitors/perform.rb:152:in `visit'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.6/lib/sass/tree/visitors/perform.rb:297:in `block (2 levels) in visit_import'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.6/lib/sass/tree/visitors/perform.rb:297:in `map'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.6/lib/sass/tree/visitors/perform.rb:297:in `block in visit_import'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.6/lib/sass/stack.rb:88:in `block in with_import'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.6/lib/sass/stack.rb:121:in `with_frame'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.6/lib/sass/stack.rb:88:in `with_import'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.6/lib/sass/tree/visitors/perform.rb:294:in `visit_import'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.6/lib/sass/tree/visitors/base.rb:36:in `visit'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.6/lib/sass/tree/visitors/perform.rb:152:in `block in visit'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.6/lib/sass/stack.rb:79:in `block in with_base'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.6/lib/sass/stack.rb:121:in `with_frame'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.6/lib/sass/stack.rb:79:in `with_base'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.6/lib/sass/tree/visitors/perform.rb:152:in `visit'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.6/lib/sass/tree/visitors/base.rb:52:in `block in visit_children'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.6/lib/sass/tree/visitors/base.rb:52:in `map'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.6/lib/sass/tree/visitors/base.rb:52:in `visit_children'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.6/lib/sass/tree/visitors/perform.rb:161:in `block in visit_children'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.6/lib/sass/tree/visitors/perform.rb:173:in `with_environment'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.6/lib/sass/tree/visitors/perform.rb:160:in `visit_children'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.6/lib/sass/tree/visitors/base.rb:36:in `block in visit'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.6/lib/sass/tree/visitors/perform.rb:180:in `visit_root'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.6/lib/sass/tree/visitors/base.rb:36:in `visit'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.6/lib/sass/tree/visitors/perform.rb:151:in `visit'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.6/lib/sass/tree/visitors/perform.rb:8:in `visit'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.6/lib/sass/tree/root_node.rb:36:in `css_tree'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.6/lib/sass/tree/root_node.rb:20:in `render'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.6/lib/sass/engine.rb:274:in `render'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.6/lib/sass/plugin/compiler.rb:414:in `update_stylesheet'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.6/lib/sass/plugin/compiler.rb:189:in `block in update_stylesheets'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.6/lib/sass/plugin/compiler.rb:186:in `each'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.6/lib/sass/plugin/compiler.rb:186:in `update_stylesheets'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.6/lib/sass/plugin.rb:82:in `update_stylesheets'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.6/lib/sass/exec.rb:489:in `watch_or_update'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.6/lib/sass/exec.rb:346:in `process_result'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.6/lib/sass/exec.rb:43:in `parse'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.6/lib/sass/exec.rb:22:in `parse!'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.6/bin/scss:13:in `<top (required)>'
+C:/Ruby200-x64/bin/scss:23:in `load'
+C:/Ruby200-x64/bin/scss:23:in `<main>'
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Syntax error: File to import not found or unreadable: compass/support.\A               Load path: C:/xampp/htdocs/themes/spotter/develop/assets/scss (DEPRECATED)\A         on line 3 of compass\css3\_border-radius.scss\A         from line 1 of style.scss\A \A 1: @import 'compass/css3/border-radius';\A 2: @import 'compass/css3/box-shadow';\A 3: @import 'compass/css3/box-sizing';\A 4: @import 'compass/css3/text-shadow';\A 5: @import 'compass/css3/transition';\A 6: @import 'compass/css3/transform';\A 7: @import 'compass/css3/background-clip';\A 8: @import 'compass/css3/opacity';"; }

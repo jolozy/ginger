@@ -1,0 +1,371 @@
+//----------------------------------------------------------------------------------------------------------------------
+// B
+//----------------------------------------------------------------------------------------------------------------------
+
+// Buttons and Select --------------------------------------------------------------------------------------------------
+
+.btn, select { @include box-shadow(none); @include border-radius(0px); @include transition(.3s); @include box-shadow(none); @include rounded-border; @include shadow; background-color: $color-grey-light; border: none; color: $color-grey-dark; font-size: 14px; font-weight: bold; outline: none !important; padding: 10px 11px 9px 11px; width: auto;
+  &:hover { background-color: darken($color-grey-light, 3%);  }
+  &:active, &:focus { @include box-shadow(none); background-color: darken($color-grey-light, 3%); }
+
+  &.btn-default { @include box-shadow(none); @include transition(.2s); background-color: $color-default; color: #fff;
+    &:hover { background-color: darken($color-default, 3%); }
+    &:active { @include box-shadow(none); }
+    i { color: #fff; }
+  }
+  &.btn-grey-dark { background-color: $color-grey-dark; color: #fff;
+    &:hover { background-color: lighten($color-grey-dark, 6%); }
+  }
+
+  &.btn-small { font-size: 12px; font-weight: bold; padding: 5px 12px; }
+  &.btn-large { font-size: 14px; padding: 15px 20px; }
+
+  &.icon {
+    i { color: #fff; margin-left: 10px; }
+  }
+
+  &.framed { background-color: transparent; border: 2px solid rgba(0,0,0,.06); color: $color-grey-dark;
+    &:hover { border-color: rgba(0,0,0,.1); background-color: transparent; }
+    &:active, &:focus, &.active { @include box-shadow(none); border-color: rgba(0,0,0,.05); background-color: transparent; }
+    i { color: $color-default; }
+    &.btn-color-default { border-color: $color-default; color: $color-default; }
+    &.icon {
+      &:hover { background-color: transparent; border-color: darken($color-grey-light, 5%); }
+    }
+  }
+}
+
+// Bootstrap Select ----------------------------------------------------------------------------------------------------
+
+.bootstrap-select { width: 100% !important; margin-bottom: 0 !important;
+  &.framed {
+    .selectpicker { border: 2px solid rgba(0,0,0,.08); background-color: transparent; //border: 2px solid rgba(0,0,0,.06);
+      &:hover { background-color: transparent; }
+    }
+    .bootstrap-select-searchbox {
+      input { border: none; }
+    }
+  }
+  .bootstrap-select-searchbox {
+    &:after { @include font-awesome;  content: "\f002"; display: block; color: $color-grey-medium; position: absolute; right: 16px; top: 18px; }
+    input { @include box-shadow(none); border: 2px solid rgba(0,0,0,.06); margin-top: 5px; padding: 5px;
+      &:focus, &:active, &:hover { @include box-shadow(none); }
+    }
+  }
+  .selectpicker { @include shadow; @include rounded-border; background-color: #fff; @include transition(.3s); color: $color-grey-medium; font-weight: normal; // @include border-color; @include border-radius(0px); @include transition(.3s); background-color: #fff; color: $color-grey-medium; font-weight: normal;
+    &:focus, &:active { outline: none !important; }
+    &:hover { background-color: #fff; }
+    .caret { border: none;
+      &:after { @include font-awesome; color: $color-grey-dark; content: "\f107"; font-size: 19px; position: absolute; top: -7px; right: -2px; }
+    }
+    .filter-option { @include transition(.3s); padding-left: 0px; position: relative;
+      &:before { @include opacity(0); @include font-awesome; @include transition(.3s); color: $color-default; content: "\f00c"; font-size: 14px; position: absolute; left: 0px; top: 2px; }
+    }
+  }
+  &.show-menu-arrow {
+    .dropdown-toggle {
+      &:after { bottom: -5px; }
+      &:before { border: none; }
+    }
+  }
+  &.stars {
+    &.btn-group {
+      .dropdown-menu {
+        li { overflow: hidden;
+          a { height: 35px; padding: 0 10px;
+            .text { display: block; top: -29px; position: relative;
+              small { padding-left: 5px; color: $color-default; font-size: 48px; position: relative; top: 8px; letter-spacing: -5px; }
+            }
+          }
+        }
+      }
+    }
+  }
+  .dropdown-menu { @include border-radius(0px); border: none; margin-top: 3px; padding: 0; padding-left: 0 !important;
+    &.selectpicker { background-color: #fff !important; }
+    li {
+      &.selected {
+        a { background-color: transparent; //color: #9c9c9c;
+          &:hover { background-color: transparent;  }
+        }
+      }
+      a { @include transition(.2s); color: $color-grey-dark; padding: 8px 15px;
+        &:hover { background-color: $color-grey-light; color: $color-grey-dark;  }
+      }
+    }
+
+    > li {
+      &:first-child {
+        a { border-top: none; }
+      }
+      a { border-top: 1px solid $color-grey-light; display: block;
+        &.sub-category { @include opacity(.8); border-top: none; font-size: 12px; padding: 5px 5px 5px 30px;
+          &:before { @include font-awesome; color: #e2e2e2; content: "\f111"; font-size: 5px; position: relative; top: -2px; left: -8px; }
+        }
+      }
+    }
+
+    > .active {
+      > a { background-color: $color-default; color: #fff; }
+    }
+
+  }
+  &.open {
+    .selectpicker { @include shadow; @include transition(.3s); background-color: #fff; }
+  }
+  &.btn-group.show-tick .dropdown-menu li.selected a i.check-mark { margin-top: 10px; }
+  &.btn-group.show-tick .dropdown-menu li.selected a.sub-category i.check-mark { margin-top: 5px; }
+}
+
+//----------------------------------------------------------------------------------------------------------------------
+// F
+//----------------------------------------------------------------------------------------------------------------------
+
+// Form ----------------------------------------------------------------------------------------------------------------
+
+form {
+  section { margin-bottom: 30px; }
+  &.framed { border: 2px solid rgba(0,0,0,.06); padding: 20px;
+    .form-group {
+      &:last-child { margin-bottom: 0; }
+    }
+  }
+  &.subscribe {
+    input { background-color: #fff; font-size: 18px; padding: 15px; }
+    .input-group-btn {
+      &:last-child {
+        button { margin-left: 0; }
+      }
+      button { font-size: 18px; font-weight: bold;
+        i { color: #fff; margin-left: 10px; }
+      }
+    }
+  }
+  &.main-search { display: table; height: 100%; padding: 10px 10px 0 10px; width: 100%;
+    button { padding-left: 12px; padding-right: 12px; }
+    .form-group { display: inline-block; float: left; margin-bottom: 0; margin-right: 10px; }
+    input[type="text"],input[type="date"],input[type="email"], input[type="search"], input[type="password"], input[type="number"], input[type="tel"], textarea.form-control, .selectpicker { background-color: #fff; }
+  }
+  &.background-color-grey-light { padding: 20px;
+    .bootstrap-select {
+      .selectpicker { background-color: #fff; }
+      &.open {
+        .selectpicker { @include box-shadow(none); @include transition(.3s); }
+      }
+    }
+  }
+  &.background-color-white { @include shadow; @include rounded-border; padding: 20px;
+    //.form-group {
+    //  .input-group {
+    //    &.location {
+    //      .input-group-addon { background-color: $color-grey-dark; color: #fff; }
+    //    }
+    //  }
+    //}
+  }
+  &.border-less-inputs {
+    input, textarea { @include box-shadow(none);
+      &:hover, &:focus, &:active { @include box-shadow(none); }
+    }
+  }
+  &.framed-inputs {
+    input, textarea { @include box-shadow(none); background-color: transparent; border: 2px solid rgba(0,0,0,.06);
+      &:hover { @include box-shadow(none); border-color: rgba(0,0,0,.1); }
+      &:active, &:focus { @include box-shadow(none); border-color: rgba(0,0,0,.12); }
+    }
+  }
+  &#form-review {
+    .user-rating { margin-bottom: 20px;
+      label { font-weight: normal; margin-bottom: 0px; }
+      .rating {
+        i {  font-size: 18px; }
+      }
+    }
+  }
+  &#form-submit {
+    section { margin-bottom: 50px;
+      h3 { font-size: 18px; font-weight: normal; margin-bottom: 20px; }
+      ul.checkboxes {
+        li { display: inline-block; width: 33%; }
+      }
+      #submit { padding: 15px 20px; font-size: 18px; }
+      .nav-pills {
+        &.nav-stacked {
+          li {
+            &:last-child {
+              a { border: none; }
+            }
+            a { border: none; border-bottom: 1px solid $color-grey-light; padding-left: 0; }
+            &.active {
+              a { position: relative;
+                &:after { content: ""; width: 0; height: 0; border-style: solid; border-width: 10px 10px 10px 0; border-color: transparent $color-grey-light transparent transparent; position: absolute; top: 0; bottom: 0; margin: auto; right: -32px; z-index: 1 }
+                &:before { content: ""; width: 0; height: 0; border-style: solid; border-width: 10px 10px 10px 0; border-color: transparent #fff transparent transparent; position: absolute; top: 0; bottom: 0; margin: auto; right: -34px; z-index: 2 }
+              }
+            }
+          }
+        }
+      }
+      .tab-content { background-color: #fff; padding: 20px;
+        article { margin-bottom: 20px; }
+        &.menu {
+          .menu-icon { position: relative;
+            i { color: $color-default; font-size: 18px; position: relative; top: 10px; }
+            span { @include border-radius(50%); background-color: $color-grey-dark; color: #fff; display: block; font-size: 10px; font-weight: bold; height: 17px; left: 10px; line-height: 17px; text-align: center; width: 17px; top: 0; position: absolute; }
+          }
+        }
+      }
+    }
+  }
+  .form-group { margin-bottom: 10px;
+    &.two-inputs {
+      .input-group { float: left; width: 47.5%; margin-right: 10px;
+        &:last-child { margin-right: 0; }
+        .bootstrap-select { width: 1% !important; }
+      }
+    }
+    .input-group { display: table; width: 100%;
+      &.location {
+        input { border-right: none; }
+      }
+      .input-group-addon { cursor: pointer; position: absolute; right: 0px; padding: 0px; width: 35px; display: table; bottom: 0px; z-index: 3; background-color: transparent;
+        &:hover { cursor: pointer;
+          i { color: $color-default; }
+        }
+        i { line-height: 39px; width: 40px; }
+      }
+      &.input-daterange {
+        input { text-align: left; }
+        > span { display: table-cell; float: left; position: relative; margin-right: 10px; width: 48%;
+          &:last-child { margin-right: 0; }
+          .input-group-addon { pointer-events: none; }
+        }
+      }
+    }
+    &.large {
+      label { font-size: 18px; font-weight: normal; }
+      input { font-size: 16px; padding: 14px 12px; }
+    }
+  }
+}
+
+.search-bar {
+  &.horizontal {
+    .main-search {
+      &.narrow { padding: 0 170px;
+        &.inputs-1 {
+          .input-row > .form-group { width: 94.1%; }
+        }
+        &.inputs-2 {
+          .input-row > .form-group { width: 46.3%; }
+        }
+        &.inputs-3 {
+          .input-row > .form-group { width: 30.5%; }
+        }
+        &.inputs-4 {
+          .input-row > .form-group { width: 22.5%; }
+        }
+        &.inputs-5 {
+          .input-row > .form-group { width: 17.8%; }
+        }
+        .input-row > .form-group {
+          &:last-child { margin-right: 0; width: initial; }
+        }
+      }
+      &.inputs-1 {
+        .input-row > .form-group { width: 95%; }
+      }
+      &.inputs-2 {
+        .input-row > .form-group { width: 47%; }
+      }
+      &.inputs-3 {
+        .input-row > .form-group { width: 31.2%; }
+      }
+      &.inputs-4 {
+        .input-row > .form-group { width: 23.2%; }
+      }
+      &.inputs-5 {
+        .input-row > .form-group { width: 18.4%; }
+      }
+      .input-row > .form-group {
+        &:last-child { margin-right: 0; width: initial; }
+        //&.two-inputs {
+        //  .input-group { float: left; width: 47.5%; margin-right: 10px;
+        //    &:last-child { margin-right: 0; }
+        //    .bootstrap-select { width: 1% !important; }
+        //  }
+        //}
+      }
+      .input-row { display: table; margin-bottom: 10px; width: 100%; }
+    }
+  }
+}
+
+//----------------------------------------------------------------------------------------------------------------------
+// CH
+//----------------------------------------------------------------------------------------------------------------------
+
+// Checkboxes ----------------------------------------------------------------------------------------------------------
+
+.checkbox, .radio { padding-left: 0px; }
+
+.checkbox {
+  &:hover {
+    .icheckbox { @include box-shadow(inset 0px 0px 0px 2px rgba(0,0,0,.12)); }
+  }
+  .icheckbox { @include transition(.3s); @include box-shadow(inset 0px 0px 0px 2px rgba(0,0,0,.08)); position: relative; display: inline-block; vertical-align: middle; background-color: #fff; display: inline-block; height: 20px; margin-right: 10px; position: relative; width: 20px; top: -1px;
+    &:after { @include transition(.3s); @include opacity(0); @include font-awesome; color: $color-grey-dark; content: "\f00c"; position: absolute; font-size: 12px; line-height: 20px; left: 4px; }
+    &.checked {
+      &:after { @include opacity(1); }
+    }
+  }
+}
+
+.iradio { @include border-radius(50%); position: relative; display: inline-block; vertical-align: middle; background-color: $color-grey-light; height: 20px; margin-right: 10px; position: relative; width: 20px; top: -1px;
+  &:after { @include transition(.3s); @include opacity(0); @include border-radius(50%); width: 8px; height: 8px; position: absolute; top: 0; right: 0; bottom: 0; left: 0; margin: auto; content: ""; background-color: $color-grey-dark; }
+  &.checked {
+    &:after { @include opacity(1); }
+  }
+}
+
+
+//----------------------------------------------------------------------------------------------------------------------
+// I
+//----------------------------------------------------------------------------------------------------------------------
+
+input[type="text"],input[type="date"],input[type="email"], input[type="search"], input[type="password"], input[type="number"], input[type="tel"], textarea.form-control { @include box-shadow(none); @include rounded-border; @include transition(.3s); @include shadow-inner;  -webkit-appearance: none; background-color: #fff; border: none; font-size: 14px; outline: none !important; padding: 10px 9px 9px; width: 100%; height: inherit; line-height: inherit; }
+
+.iradio { @include border-radius(50%); position: relative; display: inline-block; vertical-align: middle; background-color: $color-grey-light; height: 20px; margin-right: 10px; position: relative; width: 20px; top: -1px;
+  &:after { @include transition(.3s); @include opacity(0); @include border-radius(50%); width: 8px; height: 8px; position: absolute; top: 0; right: 0; bottom: 0; left: 0; margin: auto; content: ""; background-color: $color-grey-dark; }
+  &.checked {
+    &:after { @include opacity(1); }
+  }
+}
+
+.input-group-addon { @include border-radius(0px); border: none; }
+
+.input-group {
+  &.counter {  background-color: #fff;
+    input, .btn { @include box-shadow(none); @include shadow; @include rounded-border; background-color: #fff; text-align: center; }
+    &:hover {
+      input, .btn {  }
+    }
+    i { color: $color-grey-dark; font-size: 8px; vertical-align: middle; }
+    .input-group-btn {
+      &:first-child {
+        .btn { border-right: none; }
+      }
+      &:last-child {
+        .btn { border-left: none; }
+      }
+      .btn { z-index: 3;
+        &:hover {
+          i { color: $color-default; }
+        }
+      }
+    }
+  }
+  .search { @include box-shadow(none); position: relative; width: 40px; z-index: 2; }
+  .input-group-btn {
+    .btn { margin: 0px; position: relative; top: 0; }
+  }
+}

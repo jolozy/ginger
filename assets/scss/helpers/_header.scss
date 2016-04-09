@@ -1,0 +1,165 @@
+// Navigation ----------------------------------------------------------------------------------------------------------
+
+.header { @include transition(.4s ease-in-out all); @include shadow; background-color: #fff; display: table; width: 100%; z-index: 999; position: relative;
+  .wrapper { display: table; padding: 10px 10px; padding-top: 12px; overflow: visible; width: 100%;
+    .brand { display: table-cell; float: left; vertical-align: middle;
+      a { display: block; }
+    }
+    // Items in header
+    .navigation-items { display: table-cell; float: right; vertical-align: middle;
+      .wrapper { float: right; top: -2px;
+        ul { list-style: none; margin-bottom: 0; padding-left: 0;
+          li { display: inline-block; margin-left: 10px;
+            a { color: $color-grey-dark; font-size: 14px;
+              &:hover { color: $color-default; }
+            }
+          }
+        }
+        // Submit menu "plus" icon
+        .submit-item { display: block; margin-left: 5px; position: relative;
+          &:hover {
+            .content { visibility: visible; @include opacity(1); right: 40px; }
+          }
+          .content { @include opacity(0); @include transition(all 0.4s cubic-bezier(.42,0,.06,.99) 0s); background-color: $color-grey-dark; color: #fff; display: inline-block; font-weight: bold; white-space: nowrap; vertical-align: middle; padding: 5px 10px; position: absolute; right: 30px; top: -2px; visibility: hidden;
+            &:after { content: ""; width: 0; height: 0; border-style: solid; border-width: 4px 0 4px 5px; border-color: transparent transparent transparent $color-grey-dark; position: absolute; top: 0; bottom: 0; margin: auto; right: -5px; }
+          }
+          .icon { @include border-radius(50%); background-color: $color-default; display: inline-block; height: 26px; margin-left: 5px; text-align: center;  width: 26px;
+            i { color: #fff; font-size: 10px; line-height: 27px; }
+          }
+        }
+        // Sign in & Register buttons
+        .user-area { margin-right: 10px;
+          a, span { @include transition(.4s); cursor: pointer; font-size: 12px;
+            &:hover { color: $color-default; }
+          }
+          i { @include border-radius(50%); border: 2px solid rgba(0,0,0,.1); color: $color-default; padding: 5px 6px; vertical-align: middle;
+            &:hover { border-color: rgba(0,0,0,.2); }
+          }
+        }
+        .user-area, .main-navigation, .submit-item { display: inline-block; }
+      }
+    }
+    .expandable-content { height: 0; margin-bottom: 0; }
+  }
+}
+
+// Off canvass navigation
+
+.off-canvas-navigation { @include transition(.4s ease-in-out all); background-color: darken($color-grey-dark, 2%); height: 100%; padding: 0px; position: absolute; right: -200px; top: 0; width: 200px; z-index: 1;
+  &:after { background-color: darken($color-grey-dark, 2%); bottom: -10000px; content: ""; height: 10000px; width: 100%; position: absolute; }
+  header { @include opacity(0); @include transition(1s); border-bottom: 1px solid rgba(255,255,255,.1); color: #fff; padding-left: 20px; font-weight: bold; }
+  ul { @include opacity(0); @include transition(1s); padding-left: 0; list-style: none;
+    li {
+      a { border-bottom: 1px solid rgba(255,255,255,.1); color: #fff; display: block; padding: 10px 20px; position: relative;
+        &.has-child {
+          &:after { @include transition(.4s); @include font-awesome; content: "\f067"; color: $color-default; font-size: 10px; position: absolute; bottom: 0; top: 0; right: 20px; margin: auto; height: 10px; }
+        }
+        &:hover { background-color: darken($color-grey-dark, 5%); color: $color-default;  }
+        &.active { color: $color-default;
+          &:hover { color: #fff; }
+          &.has-child {
+            &:after { color: $color-default; content: "\f068"; }
+          }
+        }
+      }
+      ul { background-color: rgba(0,0,0,.3);
+        li {
+          a { @include  opacity(.6);
+            &:hover { @include  opacity(1); color: #fff; }
+            &.active { @include  opacity(1); color: #fff;
+              &:hover { color: #fff; }
+            }
+          }
+          //ul { background-color: rgba(0,0,0,.3); }
+        }
+      }
+    }
+  }
+  .expandable-content { margin-bottom: 0; }
+}
+
+// Sub Header ----------------------------------------------------------------------------------------------------------
+
+.sub-header { position: relative; z-index: 1;
+  .breadcrumb-wrapper { background-color: $color-grey-light;
+    .breadcrumb { @include border-radius(0); background-color: transparent; font-size: 12px; float: right; margin-bottom: 0; padding: 12px 0px;
+      i { color: $color-default; }
+    }
+    .redefine-search { position: relative;
+      .inner { display: table; position: absolute; top: 0px;
+        &:hover { color: $color-grey-dark;
+          .icon { background-color: $color-grey-dark; }
+        }
+        &:active, &:focus { color: $color-grey-dark; }
+        &.active {
+          .icon { background-color: $color-grey-dark;
+            &:before { @include opacity(0); }
+            &:after { @include opacity(1); }
+          }
+        }
+        .icon { @include transition(.4s); background-color: $color-default; display: table-cell; height: 43px; width: 40px;
+          &:before, &:after { @include transition(.4s); @include font-awesome; display: block; color: #fff; padding-left: 5px; position: absolute; top: 14px; }
+          &:before { @include opacity(1); content: "\f002"; }
+          &:after { @include opacity(0); content: "\f00d"; }
+        }
+        span { display: table-cell; font-weight: bold; padding-left: 10px; padding-top: 0px; vertical-align: middle; }
+      }
+    }
+  }
+  .search-bar { background-color: $color-grey-dark;
+    &.collapsed { height: 0px !important; }
+    form { padding: 10px 0 0 0;
+      .form-group { float: left; margin-right: 10px; width: 264px;
+        &:last-child { margin-right: 0; width: initial; }
+        input { @include box-shadow(none); background-color: #fff; }
+        button { padding-left: 14px; padding-right: 14px; }
+        .selectpicker { background-color: #fff; }
+      }
+    }
+  }
+}
+
+// Navigation in top header
+
+body {
+  &.navigation-top-header {
+    .off-canvas-navigation { display: none; }
+    .header {
+      .wrapper {
+        .main-navigation { border-right:  2px solid rgba(0,0,0,.08); margin-right: 10px; padding-right: 20px;
+          > ul {
+            > li {
+              a { margin: 0px 5px;
+                &:hover { color: $color-default; }
+                &.has-child { position: relative;
+                  &:after { @include font-awesome; color: $color-default; content: "\f107"; font-size: 12px; position: absolute; right: -12px; height: 12px; top: 0; bottom: 0; margin: auto; }
+                }
+              }
+              >.collapse, >.collapsing { @include shadow; @include rounded-border; background-color: #fff; position: absolute; margin-top: 10px; min-width: 200px;
+                ul {
+                  li { display: block; margin-left: 0;
+                    &:last-child {
+                      a { padding-bottom: 15px; }
+                    }
+                    a { display: block; padding: 7px 10px;
+                      &.has-child { position: relative;
+                        &:after { @include font-awesome; right: 15px; }
+                      }
+                    }
+                    .collapse, .collapsing { background-color: rgba(0,0,0,.02); }
+                  }
+                }
+              }
+            }
+          }
+        }
+        .navigation-items {
+          .user-area {
+            a { font-size: 12px; }
+          }
+        }
+        .toggle-navigation { display: none; }
+      }
+    }
+  }
+}

@@ -1,0 +1,130 @@
+//----------------------------------------------------------------------------------------------------------------------
+// F
+//----------------------------------------------------------------------------------------------------------------------
+
+.fade_in { -webkit-animation: fade_in_animation .5s forwards; animation: fade_in_animation .5s forwards; }
+@keyframes fade_in_animation {
+  0% { @include opacity(0); }
+  100% { @include opacity(1); }
+}
+@-webkit-keyframes fade_in_animation {
+  0% { @include opacity(0); }
+  100% { @include opacity(1); }
+}
+
+.fade_out { -webkit-animation: fade_out_animation .3s forwards; animation: fade_out_animation .3s forwards; }
+@keyframes fade_out_animation {
+  0% { @include opacity(1); }
+  100% { @include opacity(0); }
+}
+@-webkit-keyframes fade_out_animation {
+  0% { @include opacity(1); }
+  100% { @include opacity(0); }
+}
+
+// Fade In Old
+.fade-in { @include transition(.3s); -webkit-opacity: 1 !important;  opacity: 1 !important; -webkit-animation: fadeIn .3s; animation: fadeIn 3s; }
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1 !important; }
+}
+@-webkit-keyframes fadeIn {
+  0% { -webkit-opacity: 0; }
+  100% { -webkit-opacity: 1 !important; }
+}
+
+// Fade Out Old
+.fade-out { @include transition(.3s); -webkit-opacity: 0 !important;  opacity: 0 !important; -webkit-animation: fadeOut .3s; animation: fadeOut .3s; }
+@keyframes fadeOut {
+  from { opacity: 1; }
+  to { opacity: 0 !important; }
+}
+@-webkit-keyframes fadeOut {
+  from { -webkit-opacity: 1; }
+  to {  -webkit-opacity: 0 !important; }
+}
+
+
+// Rotation
+.rotate { -webkit-animation: rotate 1s; animation: rotate 1s; }
+@keyframes rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+@-webkit-keyframes rotate {
+  from { -webkit-transform: rotate(0deg); }
+  to { -webkit-transform: rotate(360deg); }
+}
+
+.cluster-loaded { @include opacity(1); }
+.cluster-animation { -webkit-animation: clusterOpacity 1s forwards; animation: clusterOpacity 1s forwards; }
+@keyframes clusterOpacity {
+  0% { @include opacity(0); }
+  100% { @include opacity(1); }
+}
+@-webkit-keyframes clusterOpacity {
+  0% { @include opacity(0); }
+  100% { @include opacity(1); }
+}
+
+.bounce-animation {
+  .map-marker { -webkit-animation: bounce 1s forwards; animation: bounce 1s forwards; }
+}
+@keyframes bounce {
+  0% { @include transform(translate(0,0)); @include opacity(1); }
+  50% { @include transform(translate(0,-10px)); @include opacity(1); }
+  100% { @include transform(translate(0,0)); @include opacity(1); }
+}
+@-webkit-keyframes bounce {
+  0% { @include transform(translate(0,0)); @include opacity(1); }
+  50% { @include transform(translate(0,-15px)); @include opacity(1); }
+  100% { @include transform(translate(0,0)); @include opacity(1); }
+}
+
+.bounce-in { @include transition(.3s); -webkit-animation: fadeIn .3s; animation: fadeIn .3s; }
+@keyframes bounceIn {
+  0% { @include transform(scale(1)); }
+  100% { @include transform(scale(1.2)); }
+}
+@-webkit-keyframes rotateZ {
+  from { -webkit-opacity: 0; }
+  to { -webkit-opacity: 1 !important; }
+}
+
+// Animation for Bootstrap Select
+
+// FADE IN
+
+.animation-fade-in { @include animation-name(animation-fade-in); @include animation-duration(.2s); @include keyframes(animation-fade-in); }
+@include keyframes(animation-fade-in) {
+  0% {
+    @include opacity(0);
+  }
+  100% {
+    @include opacity(1);
+  }
+}
+
+/*
+.animation-fade-in { @include transition(.3s); -webkit-animation: animation_fade_in .3s; animation: animation_fade_in .3s; }
+@keyframes animation_fade_in {
+  0% { opacity: 0; }
+  100% { opacity: 1 !important; }
+}
+@-webkit-keyframes animation_fade_in {
+  0% { -webkit-opacity: 0; }
+  100% { -webkit-opacity: 1 !important; }
+}
+*/
+
+// FADE OUT
+
+.animation-fade-out { @include animation-name(animation-fade-out); @include animation-duration(.2s); @include keyframes(animation-fade-out); }
+@include keyframes(animation-fade-out) {
+  0% {
+    @include opacity(1);
+  }
+  100% {
+    @include opacity(0);
+  }
+}

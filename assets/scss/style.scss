@@ -1,0 +1,66 @@
+/*------------------------------------------------------------------
+Project:	Spotter - Universal Directory Listing HTML Template
+Version:	1.0
+Last change:	11.2.2015
+Assigned to:	ThemeStarz
+
+[Table of contents]
+
+1. Element styling
+2. Universal Classes
+3. Classes Styling
+4. Map
+5. Forms
+6. Header
+7. Footer
+8. Specific styling for pages
+9. Responsive
+10. Animations
+
+[Color codes]
+
+Default: #ff513f;
+Color grey dark: #474747;
+Color grey medium: #8d8d8d;
+Color grey light: #f4f4f2;
+
+[Typography]
+
+Body copy:		'Arial', sans-serif; 14px;
+Headers:		'Montserrat', sans-serif;
+
+-------------------------------------------------------------------*/
+
+@import 'compass/css3/border-radius';
+@import 'compass/css3/box-shadow';
+@import 'compass/css3/box-sizing';
+@import 'compass/css3/text-shadow';
+@import 'compass/css3/transition';
+@import 'compass/css3/transform';
+@import 'compass/css3/background-clip';
+@import 'compass/css3/opacity';
+@import 'compass/css3/filter';
+
+@import 'helpers/variables';
+@import 'helpers/mixins';
+/* 1. Element styling */
+@import 'helpers/elements';
+/* 2. Universal Classes */
+@import 'helpers/universal-classes';
+/* 3. Classes Styling */
+@import 'helpers/classes';
+/* 4. Map */
+@import 'helpers/map';
+/* 5. Forms */
+@import 'helpers/forms';
+/* 6. Header */
+@import 'helpers/header';
+/* 7. Footer */
+@import 'helpers/footer';
+/* 8. Specific styling for pages */
+@import 'helpers/pages';
+/* 9. Responsive */
+@import 'helpers/responsive';
+/* 10. Animations */
+@import 'helpers/animation';
+@import 'helpers/print';

@@ -1,0 +1,205 @@
+@import 'compass/css3/border-radius';
+@import 'compass/css3/box-shadow';
+@import 'compass/css3/box-sizing';
+@import 'compass/css3/text-shadow';
+@import 'compass/css3/transition';
+@import 'compass/css3/transform';
+@import 'compass/css3/background-clip';
+@import 'compass/css3/opacity';
+@import 'compass/css3/filter';
+
+@import 'helpers/variables';
+@import 'helpers/mixins';
+@import 'helpers/elements';
+
+dl dt {
+  float: right;
+}
+
+dl dd {
+  text-align: left;
+}
+
+h3 { display: inline-block; direction: ltr;
+  i { float: left; }
+}
+
+ul { padding-left: 0; padding-right: 13px;
+  &.bullets {
+    li {
+      &:before { @include font-awesome; color: $color-default; content: "\f111"; font-size: 5px; left: 12px; position: relative; float: right; top: 10px;}
+    }
+  }
+}
+
+.bootstrap-select.btn-group .btn .filter-option {
+  text-align: right;
+  float: right !important;
+  margin-right: 15px;
+}
+.bootstrap-select.btn-group.show-tick .dropdown-menu li a span.text {
+  margin-right: 10px;
+}
+.btn {
+  &.icon {
+    i { @include rotate(180deg); margin-left: 0; margin-right: 10px; }
+  }
+}
+
+.categories > li {
+  float: right;
+  ul {
+    padding-right: 0px;
+  }
+}
+.categories > li:before {
+  top: 10px;
+  float: right;
+  right: 0px;
+  left: inherit;
+  margin-left: 10px;
+}
+.categories {
+  padding-left: 0px;
+}
+.carousel.wide .slide .inner .image {
+  margin-right: 0px;
+  margin-left: 30px;
+}
+.checkbox {
+  label { padding-right: 0;
+    .icheckbox { margin-right: 0px; margin-left: 10px; }
+  }
+}
+.comments .comment .date {
+  right: inherit;
+  left: 0px;
+}
+
+.faq-form {
+  .fa-question { float: right; }
+  .wrapper {
+    strong { display: block; }
+  }
+}
+.form-group .input-group .input-group-addon { left: 0; right: inherit !important; }
+form.main-search .form-group {
+  float: right;
+  margin-right: 0px;
+  margin-left: 10px;
+}
+form.main-search .input-row > .form-group:last-child {
+  margin-left: 0px;
+
+}
+
+.items-list { padding: 20px 20px 20px 0px; }
+.items-list .inner .filter header .show-more { right: 0; }
+.item.list .wrapper { text-align: right; }
+
+.list-slider .owl-controls { right: inherit; left: 0; }
+.list-slider .slide .list-item .left { float: right; }
+.list-slider .slide .list-item .right { float: left; }
+
+.map-marker {
+  .icon { left: -4px; }
+}
+.mCSB_inside > .mCSB_container {
+  padding-right: 0px;
+  padding-left: 20px;
+}
+.mCS-dir-rtl > .mCSB_inside > .mCSB_container {
+  margin-right: 0px;
+  margin-left: 0px;
+}
+.modal-window {
+  .features {
+    ul { padding-right: 0;
+      li { text-align: right; }
+    }
+  }
+  .modal-content { text-align: right; }
+}
+
+.nav-stacked > li {
+  width: 100%;
+}
+.nav-pills > li {
+  float: right;
+}
+.navigation-items {
+  .user-area { float: left; }
+  .toggle-navigation { float: right; }
+}
+
+.item-horizontal {
+  &.small {
+    .wrapper {
+      .image { margin-right: 0; margin-left: 10px; float: right; }
+      .rating { float: right; }
+    }
+  }
+}
+
+.off-canvas-navigation {
+  header { padding-left: 0px; padding-right: 20px; }
+  ul { padding-right: 0; }
+}
+.off-canvas-navigation ul li a.has-child:after { right: inherit; left: 20px; }
+
+.pagination {
+  .next, .previous {
+    i { @include rotate(180deg); }
+  }
+}
+.pagination > li:first-child > a, .pagination > li:first-child > span {
+  @include border-radius(50%);
+}
+.pagination > li:last-child > a, .pagination > li:last-child > span {
+  @include border-radius(50%);
+}
+.page-item-detail #main-content .page-title .info { text-align: left; }
+.pull-left { float: right !important; }
+.pull-right { float: left !important; }
+
+.item.list .rating {
+  float: right;
+  padding-right: 0px;
+  padding-left: 15px;
+}
+.results {
+  &.grid { padding-right: 0px;
+    li { margin-right: 0 !important; margin-left: 10px; }
+  }
+}
+
+.show-more { right: 20px;
+  &:before, &:after { right: -20px; }
+}
+.sub-header .breadcrumb-wrapper .breadcrumb { float: left; }
+.sub-header .breadcrumb-wrapper .redefine-search .inner span {
+  padding-right: 13px;
+}
+.sub-header .search-bar form .form-group {
+  float: right;
+  margin-right: 0px;
+  margin-left: 10px;
+}
+.search-bar.horizontal .main-search .input-row > .form-group:last-child {
+  margin-left: 0px;
+}
+
+.testimonials .owl-controls {
+  left: 100px;
+  right: inherit;
+}
+.testimonials .owl-prev {
+  left: 35px;
+  right: inherit;
+  &:after { content: "\f105"; right: 0px; }
+}
+.testimonials .owl-next {
+  left: 0px;
+  right: inherit;
+  &:after { content: "\f104"; right: 0px; }
+}
