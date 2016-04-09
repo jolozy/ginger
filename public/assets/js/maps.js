@@ -465,7 +465,8 @@ function pushItemsToArray(json, a, category, visibleItemsArray){
                             '<i><img src="' + json.data[a].type_icon + '" alt=""></i>' +
                             '<span>' + json.data[a].type + '</span>' +
                         '</div>' +
-                        '<div class="rating" data-rating="' + json.data[a].rating + '"></div>' +
+                        '<div class="type">Lat: '+ json.data[a].latitude + '</div>' +
+                        '<div class="type">Long: '+ json.data[a].longitude + '</div>' +
                     '</div>' +
                 '</div>' +
             '</div>' +

@@ -1,16 +1,19 @@
 var express = require('express');
-var router = express.Router();
+    router = express.Router();
+    bodyParser = require('body-parser'), //parses information from POST
+    methodOverride = require('method-override'); //used to manipulate POST
 
 // Models
-var Listing = require('../models/listing');
-var Clinic = require('../models/clinic')
 
-// Listing Routes
-Listing.methods(['get', 'post', 'put', 'delete']);
-Listing.register(router, '/listing');
+var listingsController = require('../controllers/listingsController');
 
-// Clinic Routes
-Clinic.methods(['get', 'post', 'put', 'delete']);
-Clinic.register(router, '/clinic');
+// QUOTES API
+router.route('/api/listings')
+  .get(listingsController.getAll)
+  .post(listingsController.createListing);
+router.route('/api/listings/:id')
+  .get(listingsController.getListing)
+  .put(listingsController.updateListing)
+  .delete(listingsController.removeListing);
 
 module.exports = router;
