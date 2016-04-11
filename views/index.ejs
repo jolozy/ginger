@@ -4,8 +4,6 @@
 <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-
     <link href="assets/fonts/font-awesome.css" rel="stylesheet" type="text/css">
     <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.css" type="text/css">
@@ -16,6 +14,14 @@
     <link rel="stylesheet" href="assets/css/user.style.css" type="text/css">
 
     <title><%= title %></title>
+
+    <style>
+    @media  (min-width: 767px) {
+      #burger {
+          visibility: hidden;
+      }
+  }
+    </style>
 
 </head>
 
@@ -46,7 +52,7 @@
                             </div>
                         </a>
                         <div class="toggle-navigation">
-                            <div class="icon">
+                            <div class="icon" id="burger">
                                 <div class="line"></div>
                                 <div class="line"></div>
                                 <div class="line"></div>
@@ -97,19 +103,27 @@
                                 <!-- /.form-group -->
                                 <div class="form-group">
                                     <select name="category" multiple title="Select Category" data-live-search="true">
-                                        <option value="1">Stores</option>
-                                        <option value="2" class="sub-category">Apparel</option>
-                                        <option value="3" class="sub-category">Computers</option>
-                                        <option value="4" class="sub-category">Nature</option>
-                                        <option value="5">Tourism</option>
-                                        <option value="6">Restaurant & Bars</option>
-                                        <option value="7" class="sub-category">Bars</option>
-                                        <option value="8" class="sub-category">Vegetarian</option>
-                                        <option value="9" class="sub-category">Steak & Grill</option>
-                                        <option value="10">Sports</option>
-                                        <option value="11" class="sub-category">Cycling</option>
-                                        <option value="12" class="sub-category">Water Sports</option>
-                                        <option value="13" class="sub-category">Winter Sports</option>
+                                        <option value="1">Food</option>
+                                        <option value="2" class="sub-category">Halal</option>
+                                        <option value="3" class="sub-category">Non-halal</option>
+                                        <option value="5">Groceries</option>
+                                        <option value="2" class="sub-category">Supermarkets</option>
+                                        <option value="3" class="sub-category">Provision Shops</option>
+                                        <option value="6">Leisure</option>
+                                        <option value="7" class="sub-category">Night Spots</option>
+                                        <option value="8" class="sub-category">Shopping Malls</option>
+                                        <option value="9" class="sub-category">Spa</option>
+                                        <option value="9" class="sub-category">Lan Shop</option>
+                                        <option value="9" class="sub-category">Gym</option>
+                                        <option value="10">Medical</option>
+                                        <option value="11" class="sub-category">Hospital</option>
+                                        <option value="12" class="sub-category">General Practioners</option>
+                                        <option value="13" class="sub-category">Vieterinary Clinic</option>
+                                        <option value="10">Services</option>
+                                        <option value="11" class="sub-category">Petrol Kiosks</option>
+                                        <option value="12" class="sub-category">Printing</option>
+                                        <option value="13" class="sub-category">Laundromats</option>
+
                                     </select>
                                 </div>
                                 <!-- /.form-group -->
@@ -187,7 +201,7 @@
 <script>
     var _latitude = 1.36080344;
     var _longitude = 103.81565094;
-    var jsonPath = 'assets/json/items.json.txt';
+    var jsonPath = '/api/listings';
 
     // Load JSON data and create Google Maps
 
