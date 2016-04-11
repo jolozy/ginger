@@ -1,5 +1,5 @@
 <h3>Update User</h3>
-<form method="post" action=<%= "/usersController/" + user._id + "?_method=PATCH" %> >
+<form method="post" action=<%= "/api/users/:id" + user._id + "?_method=PATCH" %> >
   <div class="form-group col-md-4">
     <input type="text" class="form-control" name="name" placeholder="Name">
   </div>
