@@ -6,10 +6,65 @@ function getCategory (req, res) {
 
   })
 }
-// hello world
-// INDEX
+
+// Get all listings
 function getAll(request, response) {
   Listing.find({"verified": true}).exec(function (error, listings) {
+    if(error) response.json({message: 'Could not find any listing'});
+
+    response.json({data: listings});
+  });
+}
+
+// Get Food Category
+function getFood(request, response) {
+  Listing.find({verified: true}).
+  where("category").equals('food').
+  exec(function (error, listings) {
+    if(error) response.json({message: 'Could not find any listing'});
+
+    response.json({data: listings});
+  });
+}
+
+// Get Services Category
+function getServices(request, response) {
+  Listing.find({verified: true}).
+  where("category").equals('services').
+  exec(function (error, listings) {
+    if(error) response.json({message: 'Could not find any listing'});
+
+    response.json({data: listings});
+  });
+}
+
+// Get Leisure Category
+function getLeisure(request, response) {
+  Listing.find({verified: true}).
+  where("category").equals('leisure').
+  exec(function (error, listings) {
+    if(error) response.json({message: 'Could not find any listing'});
+
+    response.json({data: listings});
+  });
+}
+
+// Get Medical Category
+function getMedical(request, response) {
+  Listing.find({verified: true}).
+  where("category").equals('medical').
+  exec(function (error, listings) {
+    if(error) response.json({message: 'Could not find any listing'});
+
+    response.json({data: listings});
+  });
+}
+
+// Get Groceries Category
+function getGroceries(request, response) {
+  Listing.find({verified: true}).
+  where("category").equals('groceries').
+  exec(function (error, listings) {
     if(error) response.json({message: 'Could not find any listing'});
 
     response.json({data: listings});
@@ -75,6 +130,7 @@ function removeListing(request, response) {
 }
 
 module.exports = {
+  getFood: getFood,
   getAll: getAll,
   createListing: createListing,
   getListing: getListing,

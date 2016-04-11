@@ -15,7 +15,10 @@ router.route('/api/listings/:id')
   .get(listingsController.getListing)
   .put(listingsController.updateListing)
   .delete(listingsController.removeListing);
-
+router.route('/api/food')
+  .get(listingsController.getFood)
+router.route('/api/services')
+  .get(listingsController.getFood)
 // User
 router.route('/api/users')
   .get(usersController.getAllUser)
