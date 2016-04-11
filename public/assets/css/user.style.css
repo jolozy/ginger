@@ -40,3 +40,7 @@ text-align: center;
 .col-lg-2 img {
 border-radius: 20px;
 }
+
+.user-input-listing {
+  margin: 5px;
+}
