@@ -4,8 +4,8 @@ var express = require('express');
     methodOverride = require('method-override'); //used to manipulate POST
 
 // Models
-
 var listingsController = require('../controllers/listingsController');
+var usersControler = require('../controllers/usersController');
 
 // QUOTES API
 router.route('/api/listings')
@@ -15,5 +15,15 @@ router.route('/api/listings/:id')
   .get(listingsController.getListing)
   .put(listingsController.updateListing)
   .delete(listingsController.removeListing);
+
+// User
+router.route('/api/users')
+  .get(usersController.getAllUser)
+  .post(usersController.createUser);
+router.route('/api/users/:id')
+  .get(usersController.getUser)
+  .put(usersController.updateUser)
+  .delete(usersController.removeUser);
+
 
 module.exports = router;
