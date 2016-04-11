@@ -4,8 +4,6 @@
 <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-
     <link href="assets/fonts/font-awesome.css" rel="stylesheet" type="text/css">
     <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.css" type="text/css">
@@ -14,9 +12,11 @@
     <link rel="stylesheet" href="assets/css/jquery.mCustomScrollbar.css" type="text/css">
     <link rel="stylesheet" href="assets/css/style.css" type="text/css">
     <link rel="stylesheet" href="assets/css/user.style.css" type="text/css">
-
     <title><%= title %></title>
-
+      <style>
+          @media (min-width: 767px) {#burger {visibility: hidden}};
+          }
+      </style>
 </head>
 
 <body onunload="" class="map-fullscreen page-homepage navigation-off-canvas" id="page-top">
@@ -29,7 +29,7 @@
         <div class="header">
             <div class="wrapper">
                 <div class="brand">
-                    <a href="index-directory.html"><img src="assets/img/logo.png" alt="logo"></a>
+                    <a href="/"><img src="assets/img/logo.png" alt="logo"></a>
                 </div>
                 <nav class="navigation-items">
                     <div class="wrapper">
@@ -37,7 +37,7 @@
                         <ul class="user-area">
                             <li><a href="sign-in.html">Sign In</a></li>
                             <li><a href="register.html"><strong>Register</strong></a></li>
-                            <li><a href="sign-in.html">About Us</a></li>
+                            <li><a href="/about">About Us</a></li>
                         </ul>
                         <a href="submit.html" class="submit-item">
                             <div class="content"><span>Submit Your Item</span></div>
@@ -46,7 +46,7 @@
                             </div>
                         </a>
                         <div class="toggle-navigation">
-                            <div class="icon">
+                            <div class="icon" id="burger">
                                 <div class="line"></div>
                                 <div class="line"></div>
                                 <div class="line"></div>
@@ -58,101 +58,51 @@
         </div>
         <!-- end Navigation-->
         <!-- Page Canvas-->
-        <div id="page-canvas">
-            <!--Off Canvas Navigation-->
-            <nav class="off-canvas-navigation">
-                <header>Navigation</header>
-                <div class="main-navigation navigation-off-canvas"></div>
-            </nav>
-            <!--end Off Canvas Navigation-->
-            <!--Page Content-->
-            <div id="page-content">
-            <!-- Map Canvas-->
-            <div class="map-canvas list-width-30">
-                <!-- Map -->
-                <div class="map">
-                    <div class="toggle-navigation">
-                        <div class="icon">
-                            <div class="line"></div>
-                            <div class="line"></div>
-                            <div class="line"></div>
-                        </div>
-                    </div>
-                    <!--/.toggle-navigation-->
-                    <div id="map" class="has-parallax"></div>
-                    <!--/#map-->
-                    <div class="search-bar horizontal">
-                        <form class="main-search border-less-inputs" role="form" method="post">
-                            <div class="input-row">
-                                <div class="form-group">
-                                    <input type="text" class="form-control" id="keyword" placeholder="Enter Keyword">
-                                </div>
-                                <!-- /.form-group -->
-                                <div class="form-group">
-                                    <div class="input-group location">
-                                        <input type="text" class="form-control" id="location" placeholder="Enter Location">
-                                        <span class="input-group-addon"><i class="fa fa-map-marker geolocation" data-toggle="tooltip" data-placement="bottom" title="Find my position"></i></span>
-                                    </div>
-                                </div>
-                                <!-- /.form-group -->
-                                <div class="form-group">
-                                    <select name="category" multiple title="Select Category" data-live-search="true">
-                                        <option value="1">Stores</option>
-                                        <option value="2" class="sub-category">Apparel</option>
-                                        <option value="3" class="sub-category">Computers</option>
-                                        <option value="4" class="sub-category">Nature</option>
-                                        <option value="5">Tourism</option>
-                                        <option value="6">Restaurant & Bars</option>
-                                        <option value="7" class="sub-category">Bars</option>
-                                        <option value="8" class="sub-category">Vegetarian</option>
-                                        <option value="9" class="sub-category">Steak & Grill</option>
-                                        <option value="10">Sports</option>
-                                        <option value="11" class="sub-category">Cycling</option>
-                                        <option value="12" class="sub-category">Water Sports</option>
-                                        <option value="13" class="sub-category">Winter Sports</option>
-                                    </select>
-                                </div>
-                                <!-- /.form-group -->
-                                <div class="form-group">
-                                    <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
-                                </div>
-                                <!-- /.form-group -->
-                            </div>
-                            <!-- /.input-row -->
-                        </form>
-                        <!-- /.main-search -->
-                    </div>
-                    <!-- /.search-bar -->
-                </div>
-                <!-- end Map -->
-                <!--Items List-->
-                <div class="items-list">
-                    <div class="inner">
-                        <header>
-                            <h3>Results</h3>
-                        </header>
-                        <ul class="results list">
+        <div class="jumbotron">
+          <h1>HELP us discover more Hideouts!</h1>
+          <div class="container">
 
-                        </ul>
-                    </div>
-                    <!--results-->
-                </div>
-                <!--end Items List-->
-            </div>
-            <!-- end Map Canvas-->
-
-            </div>
-            <!-- end Page Content-->
+            <div class="container">
+          <p class="lead">
+            Thank you for using Ginger.
+            <br>Help us locate and discover more 24 hours around Singapore.
+              </p>
+          </div>
         </div>
-        <!-- end Page Canvas-->
+      </div>
+        <div class="container">
+
+        <!-- Example row of columns -->
+        <div class="row">
+          <h2 align="center">Please complete the form below:</h2>
+          <div class="col-lg-2">
+            <h2></h2>
+            <p></p>
+          </div>
+<div class="col-md-8", align="center">
+    <div class="row">
+        <form action="/posts" method="post">
+          <input type="string" name="title" placeholder="Listing Name" id="title"> <br><br>
+          <input type="string" name="location" placeholder="Listing location" id="location"> <br><br>
+          <input type="string" name="url" placeholder="Listing url" id="url"> <br>
+
+      <br>
+      <button>Please submit</button>
+    </form>
+    <br>
+  </div>
+</div>
+      <div class="col-lg-2">
+            <h2></h2>
+            <p></p>
+          </div>
+      </div>
         <!--Page Footer-->
         <footer id="page-footer">
             <div class="inner">
-
                 <div class="footer-bottom">
                     <div class="container" align="center">
-                        (C) WDI-2 Spotters, All rights reserved
-
+                        © Ginger Singapore, Inc.
                     </div>
                 </div>
                 <!--/.footer-bottom-->
@@ -185,9 +135,9 @@
 <![endif]-->
 
 <script>
-    var _latitude = 51.541216;
-    var _longitude = -0.095678;
-    var jsonPath = 'assets/json/items.json.txt';
+    var _latitude = 1.36080344;
+    var _longitude = 103.81565094;
+    var jsonPath = '/api/listings';
 
     // Load JSON data and create Google Maps
 
