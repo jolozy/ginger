@@ -5,11 +5,10 @@ var path = require('path');
 var methodOverride = require('method-override')
 var morgan = require('morgan')
 var restful = require('node-restful')
-var mongoose = restful.mongoose;
+var mongoose = require('mongoose');
 
 // Models
-var Listing = require('./models/listing');
-var Clinic = require('./models/clinic');
+// var Listing = require('./models/listing');
 
 // Express
 var app = express();
@@ -25,15 +24,24 @@ app.use(bodyParser.urlencoded({'extended':'false'}));
 app.use(methodOverride());
 app.use(express.static(path.join(__dirname, 'public')));
 
+var routes = require('./config/routes');
+app.use(routes);
 
+// Listing Routes
+// Listing.methods(['get', 'post', 'put', 'delete']);
+// Listing.register(router, '/listing');
 // Routes for API
 app.use('/api', require('./config/routes'));
 
 // Conventional Routes
 app.get('/', function(req, res) {
-    // res.send("homepage")
-    res.render('index', { title: 'WDI-2 App' });
+res.render('index', { title: 'WDI-2 App' });
 });
+
+// About Us Page Route
+app.get('/about', function(req,res) {
+  res.render('about', { title: 'About Ginger'});
+})
 
 
 // Connection

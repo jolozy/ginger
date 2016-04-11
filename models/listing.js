@@ -1,8 +1,7 @@
-var restful = require('node-restful');
-var mongoose = restful.mongoose;
+var mongoose = require('mongoose');
 
 // Schema
-var listingSchema = new mongoose.Schema({
+var listingSchema = mongoose.Schema({
   category: String,
   title:    String,
   location: String,
@@ -11,9 +10,7 @@ var listingSchema = new mongoose.Schema({
   url: String,
   type: String,
   type_icon: String
-},
-  { collection: 'listing' }
-);
+});
 
 // Return Model
-module.exports = restful.model('Listing', listingSchema);
+module.exports = mongoose.model('Listing', listingSchema);

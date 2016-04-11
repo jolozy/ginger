@@ -1,0 +1,42 @@
+.jumbotron {
+text-align: center;
+background-color: transparent;
+color: #373a3c;
+}
+
+.jumbotron h1 {
+  font-size:2.7rem;
+  margin-bottom: .5rem;
+  font-family: inherit;
+  font-weight: 500;
+  line-height: 1.5;
+  color: inherit;
+}
+
+.row h1 {
+  font-size:2.3rem;
+  margin-bottom: .5rem;
+  font-family: inherit;
+  font-weight: 500;
+  line-height: 1.5;
+  color: inherit;
+}
+
+.jumbotron .lead {
+color: #373a3c;
+font-size: 1.5rem;
+font-weight: 350;
+line-height: 1.5;
+}
+
+.col-lg-2 {
+padding: 10px;
+}
+
+.col-lg-2 h2 {
+text-align: center;
+}
+
+.col-lg-2 img {
+border-radius: 20px;
+}
