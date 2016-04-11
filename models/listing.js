@@ -9,7 +9,8 @@ var listingSchema = mongoose.Schema({
   longitude: Number,
   url: String,
   type: String,
-  type_icon: String
+  type_icon: String,
+  verified: Boolean
 });
 
 // Return Model

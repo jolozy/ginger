@@ -38,6 +38,11 @@ app.get('/', function(req, res) {
 res.render('index', { title: 'WDI-2 App' });
 });
 
+// Listing Form Page Route
+app.get('/listing', function(req,res) {
+  res.render('listing-form', { title: 'About Ginger'});
+})
+
 // About Us Page Route
 app.get('/about', function(req,res) {
   res.render('about', { title: 'About Ginger'});
