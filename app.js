@@ -35,9 +35,13 @@ app.use('/api', require('./config/routes'));
 
 // Conventional Routes
 app.get('/', function(req, res) {
-// res.send("homepage")
 res.render('index', { title: 'WDI-2 App' });
 });
+
+// About Us Page Route
+app.get('/about', function(req,res) {
+  res.render('about', { title: 'About Ginger'});
+})
 
 
 // Connection
