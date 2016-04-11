@@ -8,6 +8,9 @@ function getCategory (req, res) {
 }
 
 // INDEX // FOR MAP
+
+// hello world
+// INDEX
 function getAll(request, response) {
   Listing.find({"verified": null}).exec(function (error, listings) {
     if(error) response.json({message: 'Could not find any listing'});

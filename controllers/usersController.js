@@ -15,16 +15,21 @@ function getAllUser(request, response) {
   })
 }
 // CREATE
-function createUser(request, response) {
-  console.log('in POST');
-  console.log('body:',request.body);
-  var listing = new User(request.body);
-  user.save(function(error) {
-    if(error) response.json({messsage: 'Could Not Create User Because' + error});
-    console.log(listing);
-    response.json(listing);
-  });
+function createUser(request, response){
+var user = new User();
+user.name = request.body.name
+user.email = request.body.email
+user.password = request.body.password
+user.type = "admin";
+user.save( error => {
+  if (error) {
+    return res.json({message: 'could not create user'});
+  }
+  response.send("success");
+});
 }
+
+
 // SHOW
 function getUser(request, response) {
   var id = request.params.id;

@@ -38,9 +38,18 @@ app.use('/api', require('./config/routes'));
 
 // Conventional Routes
 app.get('/', function(req, res) {
-res.render('index', { title: 'WDI-2 App' });
+res.render('index', { title: 'Ginger' });
 });
 
+// Create User Page Route
+app.get('/user', function(req,res) {
+  res.render('user', { title: 'New User Creation'});
+})
+
+// Listing Form Page Route
+app.get('/listing', function(req,res) {
+  res.render('listing-form', { title: 'Update Listing'});
+})
 
 // About Us Page Route
 app.get('/about', function(req,res) {
