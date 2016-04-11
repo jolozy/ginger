@@ -1,301 +1,610 @@
-[
-    {
-        "category": "food",
-        "title": "Mr Prata",
-        "location": "26 Evans Road, Singapore 259367",
-        "latitude": 1.3187566,
-        "longitude": 103.8202386,
-        "url": "http://www.hungrygowhere.com/singapore/mr_prata_evans_road/",
-        "type": "Halal",
-        "type_icon": "assets/icons/store/apparel/umbrella-2.png",
-        "gallery": [
-            "http://i.imgur.com/urdWCyO.jpg"
-        ]
-    },
-    {
-        "category": "food",
-        "title": "Al-Azhar",
-        "location": "11 Cheong Chin Nam Road, Singapore 599736",
-        "latitude": 1.3425021,
-        "longitude": 103.7753333,
-        "url": "http://www.hungrygowhere.com/singapore/al_azhar_eating_restaurant/",
-        "type": "Halal",
-        "type_icon": "assets/icons/store/apparel/umbrella-2.png",
-        "gallery": [
-            "http://i.imgur.com/TVRX196.jpg"
-        ]
-    },
-    {
-        "category": "food",
-        "title": "Syed Restaurant",
-        "location": "326 Bedok Road, Singapore 469496",
-        "latitude": 1.331044,
-        "longitude": 103.9481236,
-        "url": "http://www.hungrygowhere.com/singapore/syed_restaurant/",
-        "type": "Halal",
-        "type_icon": "assets/icons/store/apparel/umbrella-2.png",
-        "gallery": [
-            "http://i.imgur.com/lnOYJno.jpg"
-        ]
-    },
-    {
-        "category": "food",
-        "title": "Akbar 24 Hours Restaurant",
-        "location": "2 Lim Teck Kim Road, Singapore 088933",
-        "latitude": 1.2736481,
-        "longitude": 103.8427879,
-        "url": "https://www.facebook.com/Akbar-24-Hours-Restaurant-Pte-Ltd-213716465473372/",
-        "type": "Halal",
-        "type_icon": "assets/icons/store/apparel/umbrella-2.png",
-        "gallery": [
-            "http://i.imgur.com/HxdFSeo.jpg"
-        ]
-    },
-    {
-        "category": "food",
-        "title": "Al-Jilani Restaurant",
-        "location": "127 Bencoolen Street, Singapore 189637",
-        "latitude": 1.3008031,
-        "longitude": 103.8517648,
-        "url": "http://www.hungrygowhere.com/singapore/al_jilani_restaurant/",
-        "type": "Halal",
-        "type_icon": "assets/icons/store/apparel/umbrella-2.png",
-        "gallery": [
-            "http://i.imgur.com/sbeVgMs.jpg"
-        ]
-    },
-    {
-        "category": "food",
-        "title": "Ming Fa Fishball",
-        "location": "246B Upper Thomson Road, Singapore 574370",
-        "latitude": 1.3540051,
-        "longitude": 103.8338392,
-        "url": "https://www.mingfafishball.com/",
-        "type": "Non-Halal",
-        "type_icon": "assets/icons/store/apparel/umbrella-2.png",
-        "gallery": [
-            "http://i.imgur.com/wWnO3YJ.jpg"
-        ]
-    },
-    {
-        "category": "food",
-        "title": "126 (搵到食) Eating House",
-        "location": "126 Sims Avenue, Singapore 387449",
-        "latitude": 1.3142063,
-        "longitude": 103.8784106,
-        "url": "https://www.facebook.com/126-%E6%90%B5%E5%88%B0%E9%A3%9F-185385724816474/",
-        "type": "Non-Halal",
-        "type_icon": "assets/icons/store/apparel/umbrella-2.png",
-        "gallery": [
-            "http://i.imgur.com/tyUK2RR.jpg"
-        ]
-    },
-    {
-        "category": "food",
-        "title": "Tim Ho Wan",
-        "location": "12 Kallang Avenue, Aperia Mall, #01-01/02/03, Singapore 339511",
-        "latitude": 1.3108083,
-        "longitude": 103.8643586,
-        "url": "http://www.timhowan.com/",
-        "type": "Non-Halal",
-        "type_icon": "assets/icons/store/apparel/umbrella-2.png",
-        "gallery": [
-            "http://i.imgur.com/d18FuAi.jpg"
-        ]
-    },
-    {
-        "category": "food",
-        "title": "Fei Fei Wanton Mee",
-        "location": "72 Joo Chiat Place, Singapore 427785",
-        "latitude": 1.3135596,
-        "longitude": 103.9021992,
-        "url": "http://www.hungrygowhere.com/singapore/fei_fei_wanton_mee_62_joo_chiat_place/",
-        "type": "Non-Halal",
-        "type_icon": "assets/icons/store/apparel/umbrella-2.png",
-        "gallery": [
-            "http://i.imgur.com/dKS99yg.jpg"
-        ]
-    },
-    {
-        "category": "food",
-        "title": "Bak Kut Teh 333",
-        "location": "333 Balestier Road, Singapore 329765",
-        "latitude": 1.3239676,
-        "longitude": 103.8514496,
-        "url": "http://www.burpple.com/333-bak-kut-teh",
-        "type": "Non-Halal",
-        "type_icon": "assets/icons/store/apparel/umbrella-2.png",
-        "gallery": [
-            "http://i.imgur.com/X85GVmb.jpg"
-        ]
-    },
-   {
-      "category":"services",
-      "title":"Musa 24 hours Printing",
-      "location":"16 Bali Lane, Singapore 189852",
-      "latitude":1.3007598,
-      "longitude":103.8588499,
-      "url":"http://www.musa-group.com/24hrsinternet/printing.html",
-      "type":"Printing",
-      "type_icon":"assets/icons/media/text.png",
-      "gallery": [
-         "http://i.imgur.com/HwiyMCK.png"
-      ]
-   },
-   {
-      "category":"services",
-      "title":"Rocket Printers SG",
-      "location":"146 Jalan Bukit Merah, Singapore 160146",
-      "latitude":1.2778769,
-      "longitude":103.8308443,
-      "url":"http://www.rocketprinters-sg.com/",
-      "type":"Printing",
-      "type_icon":"assets/icons/media/text.png",
-      "gallery": [
-         "http://i.imgur.com/XPYgZ7a.jpg"
-      ]
-   },
-   {
-      "category":"services",
-      "title":"Geylang WonderWash",
-      "location":"178 Sims Avenue, Singapore 387494",
-      "latitude":1.3144814,
-      "longitude":103.8799419,
-      "url":"http://wonderwash.com.sg/geylang-branches/",
-      "type":"Laundromats",
-      "type_icon":"assets/icons/store/apparel/clothers_female.png",
-      "gallery": [
-         "http://i.imgur.com/7MHv5wo.png"
-      ]
-   },
-   {
-      "category":"services",
-      "title":"Tampines WonderWash",
-      "location":"139 Tampines Street 11, #01-64, Singapore 521139",
-      "latitude":1.346653,
-      "longitude":103.944868,
-      "url":"http://wonderwash.com.sg/tampines-branch-new/",
-      "type":"Laundromats",
-      "type_icon":"assets/icons/store/apparel/clothers_female.png",
-      "gallery": [
-         "http://i.imgur.com/OK19wnP.jpg"
-      ]
-   },
-   {
-      "category":"services",
-      "title":"Woodlands WonderWash",
-      "location":"849 Woodlands Street 82, #01-207, Singapore 731849",
-      "latitude":1.4413065,
-      "longitude":103.7919416,
-      "url":"http://wonderwash.com.sg/woodlands-branch-2/",
-      "type":"Laundromats",
-      "type_icon":"assets/icons/store/apparel/clothers_female.png",
-      "gallery": [
-         "http://i.imgur.com/UrOfCA0.png"
-      ]
-   },
-   {
-      "category":"services",
-      "title":"Holland Drive WonderWash",
-      "location":"41 Holland Drive, #01-23, Singapore 270041",
-      "latitude":1.3076577,
-      "longitude":103.7934963,
-      "url":"http://wonderwash.com.sg/holland-drive-branch-2/",
-      "type":"Laundromats",
-      "type_icon":"assets/icons/store/apparel/clothers_female.png",
-      "gallery": [
-         "http://i.imgur.com/tthBeH2.jpg"
-      ]
-   },
-   {
-      "category":"services",
-      "title":"Jurong West Caltex",
-      "location":"21 Jurong West Street 93, Singapore 648964",
-      "latitude":1.338689,
-      "longitude":103.692795,
-      "url":"http://www.caltex.com/sg/",
-      "type":"Petrol Kiosks",
-      "type_icon":"assets/icons/transportation/road-transportation/car.png",
-      "gallery": [
-         "http://i.imgur.com/fFwU7P8.jpg"
-      ]
-   },
-   {
-      "category":"services",
-      "title":"Sembawang Caltex",
-      "location":"62 Sembawang Road, Singapore 779089",
-      "latitude":1.4034671,
-      "longitude":103.8185888,
-      "url":"http://www.caltex.com/sg/",
-      "type":"Petrol Kiosks",
-      "type_icon":"assets/icons/transportation/road-transportation/car.png",
-      "gallery": [
-         "http://i.imgur.com/c2HiRBl.png"
-      ]
-   },
-   {
-      "category":"services",
-      "title":"Braddell Caltex",
-      "location":"319 Braddell Road, 579707",
-      "latitude":1.343556,
-      "longitude":103.845871,
-      "url":"http://www.caltex.com/sg/",
-      "type":"Petrol Kiosks",
-      "type_icon":"assets/icons/transportation/road-transportation/car.png",
-      "gallery": [
-         "http://i.imgur.com/mMsvnv4.png"
-      ]
-   },
-   {
-      "category":"services",
-      "title":"Macpherson Caltex",
-      "location":"68 MacPherson Road, 348473",
-      "latitude":1.328347,
-      "longitude":103.870923,
-      "url":"http://www.caltex.com/sg/",
-      "type":"Petrol Kiosks",
-      "type_icon":"assets/icons/transportation/road-transportation/car.png",
-      "gallery": [
-         "http://i.imgur.com/d3BJsaS.jpg"
-      ]
-   },
-   {
-            "category": "Leisure",
-            "title": "Mustafa Centre",
-            "location": "145 Syed Alwi Rd, Singapore 207704",
-            "latitude": 1.310173,
-            "longitude": 103.855115,
-            "url": "http://www.mustafa.com.sg/",
-            "type": "Shopping Mall",
-            "type_icon": "assets/icons/store/apparel/umbrella-2.png",
-            "gallery": [
-                    "http://imgur.com/rN9leUj.jpg"
-                ]
-      },
-      {
-            "category": "Leisure",
-            "title": "G.Spa",
-            "location": "102 Guillemard Rd, Singapore 399719",
-            "latitude": 1.310402,
-            "longitude": 103.882267,
-            "url": "http://www.gspa.com.sg/",
-            "type": "Spa",
-            "type_icon": "assets/icons/store/apparel/umbrella-2.png",
-            "gallery": [
-                      "http://i.imgur.com/Blzi4wH.jpg"
-                ]
-      },
-      {
-            "category": "Leisure",
-            "title": "Le Spa",
-            "location": "16A Chun Tin Road, Singapore 599603",
-            "latitude": 1.34186,
-            "longitude": 103.77499,
-            "url": "http://www.lespa.com.sg/",
-            "type": "Spa",
-            "type_icon": "assets/icons/store/apparel/umbrella-2.png",
-            "gallery": [
-                      "http://i.imgur.com/Na17k1S.png"
-                ]
-        }
-]
+[{
+	"category": "food",
+	"title": "Mr Prata",
+	"location": "26 Evans Road, Singapore 259367",
+	"latitude": 1.3187566,
+	"longitude": 103.8202386,
+	"url": "http://www.hungrygowhere.com/singapore/mr_prata_evans_road/",
+	"type": "Halal",
+	"verified": true,
+	"type_icon": "assets/icons/store/apparel/umbrella-2.png",
+	"gallery": [
+		"http://i.imgur.com/urdWCyO.jpg"
+	]
+}, {
+	"category": "food",
+	"title": "Al-Azhar",
+	"location": "11 Cheong Chin Nam Road, Singapore 599736",
+	"latitude": 1.3425021,
+	"longitude": 103.7753333,
+	"url": "http://www.hungrygowhere.com/singapore/al_azhar_eating_restaurant/",
+	"type": "Halal",
+	"verified": true,
+	"type_icon": "assets/icons/store/apparel/umbrella-2.png",
+	"gallery": [
+		"http://i.imgur.com/TVRX196.jpg"
+	]
+}, {
+	"category": "food",
+	"title": "Syed Restaurant",
+	"location": "326 Bedok Road, Singapore 469496",
+	"latitude": 1.331044,
+	"longitude": 103.9481236,
+	"url": "http://www.hungrygowhere.com/singapore/syed_restaurant/",
+	"type": "Halal",
+	"verified": true,
+	"type_icon": "assets/icons/store/apparel/umbrella-2.png",
+	"gallery": [
+		"http://i.imgur.com/lnOYJno.jpg"
+	]
+}, {
+	"category": "food",
+	"title": "Akbar 24 Hours Restaurant",
+	"location": "2 Lim Teck Kim Road, Singapore 088933",
+	"latitude": 1.2736481,
+	"longitude": 103.8427879,
+	"url": "https://www.facebook.com/Akbar-24-Hours-Restaurant-Pte-Ltd-213716465473372/",
+	"type": "Halal",
+	"verified": true,
+	"type_icon": "assets/icons/store/apparel/umbrella-2.png",
+	"gallery": [
+		"http://i.imgur.com/HxdFSeo.jpg"
+	]
+}, {
+	"category": "food",
+	"title": "Al-Jilani Restaurant",
+	"location": "127 Bencoolen Street, Singapore 189637",
+	"latitude": 1.3008031,
+	"longitude": 103.8517648,
+	"url": "http://www.hungrygowhere.com/singapore/al_jilani_restaurant/",
+	"type": "Halal",
+	"verified": true,
+	"type_icon": "assets/icons/store/apparel/umbrella-2.png",
+	"gallery": [
+		"http://i.imgur.com/sbeVgMs.jpg"
+	]
+}, {
+	"category": "food",
+	"title": "Ming Fa Fishball",
+	"location": "246B Upper Thomson Road, Singapore 574370",
+	"latitude": 1.3540051,
+	"longitude": 103.8338392,
+	"url": "https://www.mingfafishball.com/",
+	"type": "Non-Halal",
+	"verified": true,
+	"type_icon": "assets/icons/store/apparel/umbrella-2.png",
+	"gallery": [
+		"http://i.imgur.com/wWnO3YJ.jpg"
+	]
+}, {
+	"category": "food",
+	"title": "126 (搵到食) Eating House",
+	"location": "126 Sims Avenue, Singapore 387449",
+	"latitude": 1.3142063,
+	"longitude": 103.8784106,
+	"url": "https://www.facebook.com/126-%E6%90%B5%E5%88%B0%E9%A3%9F-185385724816474/",
+	"type": "Non-Halal",
+	"verified": true,
+	"type_icon": "assets/icons/store/apparel/umbrella-2.png",
+	"gallery": [
+		"http://i.imgur.com/tyUK2RR.jpg"
+	]
+}, {
+	"category": "food",
+	"title": "Tim Ho Wan",
+	"location": "12 Kallang Avenue, Aperia Mall, #01-01/02/03, Singapore 339511",
+	"latitude": 1.3108083,
+	"longitude": 103.8643586,
+	"url": "http://www.timhowan.com/",
+	"type": "Non-Halal",
+	"verified": true,
+	"type_icon": "assets/icons/store/apparel/umbrella-2.png",
+	"gallery": [
+		"http://i.imgur.com/d18FuAi.jpg"
+	]
+}, {
+	"category": "food",
+	"title": "Fei Fei Wanton Mee",
+	"location": "72 Joo Chiat Place, Singapore 427785",
+	"latitude": 1.3135596,
+	"longitude": 103.9021992,
+	"url": "http://www.hungrygowhere.com/singapore/fei_fei_wanton_mee_62_joo_chiat_place/",
+	"type": "Non-Halal",
+	"verified": true,
+	"type_icon": "assets/icons/store/apparel/umbrella-2.png",
+	"gallery": [
+		"http://i.imgur.com/dKS99yg.jpg"
+	]
+}, {
+	"category": "food",
+	"title": "Bak Kut Teh 333",
+	"location": "333 Balestier Road, Singapore 329765",
+	"latitude": 1.3239676,
+	"longitude": 103.8514496,
+	"url": "http://www.burpple.com/333-bak-kut-teh",
+	"type": "Non-Halal",
+	"verified": true,
+	"type_icon": "assets/icons/store/apparel/umbrella-2.png",
+	"gallery": [
+		"http://i.imgur.com/X85GVmb.jpg"
+	]
+}, {
+	"category": "services",
+	"title": "Musa 24 hours Printing",
+	"location": "16 Bali Lane, Singapore 189852",
+	"latitude": 1.3007598,
+	"longitude": 103.8588499,
+	"url": "http://www.musa-group.com/24hrsinternet/printing.html",
+	"type": "Printing",
+	"verified": true,
+	"type_icon": "assets/icons/media/text.png",
+	"gallery": [
+		"http://i.imgur.com/HwiyMCK.png"
+	]
+}, {
+	"category": "services",
+	"title": "Rocket Printers SG",
+	"location": "146 Jalan Bukit Merah, Singapore 160146",
+	"latitude": 1.2778769,
+	"longitude": 103.8308443,
+	"url": "http://www.rocketprinters-sg.com/",
+	"type": "Printing",
+	"verified": true,
+	"type_icon": "assets/icons/media/text.png",
+	"gallery": [
+		"http://i.imgur.com/XPYgZ7a.jpg"
+	]
+}, {
+	"category": "services",
+	"title": "Geylang WonderWash",
+	"location": "178 Sims Avenue, Singapore 387494",
+	"latitude": 1.3144814,
+	"longitude": 103.8799419,
+	"url": "http://wonderwash.com.sg/geylang-branches/",
+	"type": "Laundromats",
+	"verified": true,
+	"type_icon": "assets/icons/store/apparel/clothers_female.png",
+	"gallery": [
+		"http://i.imgur.com/7MHv5wo.png"
+	]
+}, {
+	"category": "services",
+	"title": "Tampines WonderWash",
+	"location": "139 Tampines Street 11, #01-64, Singapore 521139",
+	"latitude": 1.346653,
+	"longitude": 103.944868,
+	"url": "http://wonderwash.com.sg/tampines-branch-new/",
+	"type": "Laundromats",
+	"verified": true,
+	"type_icon": "assets/icons/store/apparel/clothers_female.png",
+	"gallery": [
+		"http://i.imgur.com/OK19wnP.jpg"
+	]
+}, {
+	"category": "services",
+	"title": "Woodlands WonderWash",
+	"location": "849 Woodlands Street 82, #01-207, Singapore 731849",
+	"latitude": 1.4413065,
+	"longitude": 103.7919416,
+	"url": "http://wonderwash.com.sg/woodlands-branch-2/",
+	"type": "Laundromats",
+	"verified": true,
+	"type_icon": "assets/icons/store/apparel/clothers_female.png",
+	"gallery": [
+		"http://i.imgur.com/UrOfCA0.png"
+	]
+}, {
+	"category": "services",
+	"title": "Holland Drive WonderWash",
+	"location": "41 Holland Drive, #01-23, Singapore 270041",
+	"latitude": 1.3076577,
+	"longitude": 103.7934963,
+	"url": "http://wonderwash.com.sg/holland-drive-branch-2/",
+	"type": "Laundromats",
+	"verified": true,
+	"type_icon": "assets/icons/store/apparel/clothers_female.png",
+	"gallery": [
+		"http://i.imgur.com/tthBeH2.jpg"
+	]
+}, {
+	"category": "services",
+	"title": "Jurong West Caltex",
+	"location": "21 Jurong West Street 93, Singapore 648964",
+	"latitude": 1.338689,
+	"longitude": 103.692795,
+	"url": "http://www.caltex.com/sg/",
+	"type": "Petrol Kiosks",
+	"verified": true,
+	"type_icon": "assets/icons/transportation/road-transportation/car.png",
+	"gallery": [
+		"http://i.imgur.com/fFwU7P8.jpg"
+	]
+}, {
+	"category": "services",
+	"title": "Sembawang Caltex",
+	"location": "62 Sembawang Road, Singapore 779089",
+	"latitude": 1.4034671,
+	"longitude": 103.8185888,
+	"url": "http://www.caltex.com/sg/",
+	"type": "Petrol Kiosks",
+	"verified": true,
+	"type_icon": "assets/icons/transportation/road-transportation/car.png",
+	"gallery": [
+		"http://i.imgur.com/c2HiRBl.png"
+	]
+}, {
+	"category": "services",
+	"title": "Braddell Caltex",
+	"location": "319 Braddell Road, 579707",
+	"latitude": 1.343556,
+	"longitude": 103.845871,
+	"url": "http://www.caltex.com/sg/",
+	"type": "Petrol Kiosks",
+	"verified": true,
+	"type_icon": "assets/icons/transportation/road-transportation/car.png",
+	"gallery": [
+		"http://i.imgur.com/mMsvnv4.png"
+	]
+}, {
+	"category": "services",
+	"title": "Macpherson Caltex",
+	"location": "68 MacPherson Road, 348473",
+	"latitude": 1.328347,
+	"longitude": 103.870923,
+	"url": "http://www.caltex.com/sg/",
+	"type": "Petrol Kiosks",
+	"verified": true,
+	"type_icon": "assets/icons/transportation/road-transportation/car.png",
+	"gallery": [
+		"http://i.imgur.com/d3BJsaS.jpg"
+	]
+}, {
+	"category": "Leisure",
+	"title": "Mustafa Centre",
+	"location": "145 Syed Alwi Rd, Singapore 207704",
+	"latitude": 1.310173,
+	"longitude": 103.855115,
+	"url": "http://www.mustafa.com.sg/",
+	"type": "Shopping Mall",
+	"verified": true,
+	"type_icon": "assets/icons/store/apparel/umbrella-2.png",
+	"gallery": [
+		"http://imgur.com/rN9leUj.jpg"
+	]
+}, {
+	"category": "Leisure",
+	"title": "G.Spa",
+	"location": "102 Guillemard Rd, Singapore 399719",
+	"latitude": 1.310402,
+	"longitude": 103.882267,
+	"url": "http://www.gspa.com.sg/",
+	"type": "Spa",
+	"verified": true,
+	"type_icon": "assets/icons/store/apparel/umbrella-2.png",
+	"gallery": [
+		"http://i.imgur.com/Blzi4wH.jpg"
+	]
+}, {
+	"category": "Leisure",
+	"title": "Le Spa",
+	"location": "16A Chun Tin Road, Singapore 599603",
+	"latitude": 1.34186,
+	"longitude": 103.77499,
+	"url": "http://www.lespa.com.sg/",
+	"type": "Spa",
+	"verified": true,
+	"type_icon": "assets/icons/store/apparel/umbrella-2.png",
+	"gallery": [
+		"http://i.imgur.com/Na17k1S.png"
+	]
+}, {
+	"category": "medical",
+	"title": "Changi General Hospital",
+	"location": "2 Simei Street 3, Singapore 529889",
+	"latitude": 1.340556,
+	"longitude": 103.949167,
+	"url": "http://www.cgh.com.sg",
+	"type": "Public Hospital",
+  "verified": true,
+	"type_icon": "assets/icons/health-education/health/hospital-building.png",
+	"gallery": [
+		"http://imgur.com/hK65nL7.jpg"
+	]
+}, {
+	"category": "medical",
+	"title": "Ng Teng Fong General Hospital",
+	"location": "1 Jurong East Street 21, Singapore 609606",
+	"latitude": 1.335043,
+	"longitude": 103.74399,
+	"url": "http://www.ntfgh.com.sg",
+	"type": "Public Hospital",
+  "verified": true,
+	"type_icon": "assets/icons/health-education/health/hospital-building.png",
+	"gallery": [
+		"http://imgur.com/mqwRnMd.jpg"
+	]
+}, {
+	"category": "medical",
+	"title": "National University Hospital",
+	"location": "5 Lower Kent Ridge Road, Singapore 119074",
+	"latitude": 1.295083,
+	"longitude": 103.782833,
+	"url": "http://www.nuh.com.sg",
+	"type": "Public Hospital",
+  "verified": true,
+	"type_icon": "assets/icons/health-education/health/hospital-building.png",
+	"gallery": [
+		"http://imgur.com/ctWF58G.jpg"
+	]
+}, {
+	"category": "medical",
+	"title": "Khoo Teck Puat Hospital",
+	"location": "90 Yishun Central, Singapore 768828",
+	"latitude": 1.424635,
+	"longitude": 103.838208,
+	"url": "http://www.ktph.com.sg",
+	"type": "Public Hospital",
+  "verified": true,
+	"type_icon": "assets/icons/health-education/health/hospital-building.png",
+	"gallery": [
+		"http://imgur.com/lAvt7rX.jpg"
+	]
+}, {
+	"category": "medical",
+	"title": "Singapore General Hospital",
+	"location": "Outram Road, Singapore 169608",
+	"latitude": 1.278667,
+	"longitude": 103.834361,
+	"url": "http://www.sgh.com.sg",
+	"type": "Public Hospital",
+	"type_icon": "assets/icons/health-education/health/hospital-building.png",
+	"gallery": [
+		"http://i.imgur.com/dkt99R2.jpg"
+	]
+}, {
+	"category": "medical",
+	"title": "Tan Tock Seng Hospital",
+	"location": "11 Jalan Tan Tock Seng, Singapore 308433",
+	"latitude": 1.321611,
+	"longitude": 103.845944,
+	"url": "http://www.ttsh.com.sg",
+	"type": "Public Hospital",
+  "verified": true,
+	"type_icon": "assets/icons/health-education/health/hospital-building.png",
+	"gallery": [
+		"http://i.imgur.com/68MBSKe.jpg"
+	]
+}, {
+	"category": "medical",
+	"title": "KK Women's and Children's Hospital",
+	"location": "100 Bukit Timah Road, Singapore 229899",
+	"latitude": 1.310556,
+	"longitude": 103.846944,
+	"url": "http://www.kkh.com.sg",
+	"type": "Public Hospital",
+  "verified": true,
+	"type_icon": "assets/icons/health-education/health/hospital-building.png",
+	"gallery": [
+		"http://i.imgur.com/S37r2NQ.jpg"
+	]
+}, {
+	"category": "medical",
+	"title": "Central 24-HR Clinic (Hougang)",
+	"location": "681 Hougang Avenue 8 #01-831, Singapore 530681",
+	"latitude": 1.372575,
+	"longitude": 103.8856784,
+	"url": "http://www.centralclinic.com.sg/",
+	"type": "General Practitioner",
+  "verified": true,
+	"type_icon": "assets/icons/health-education/health/firstaid.png",
+	"gallery": [
+		"http://i.imgur.com/HaXkwPG.jpg"
+	]
+}, {
+	"category": "medical",
+	"title": "Medihealth Bishan 24 Hours Clinic",
+	"location": "121 Bishan Street 12 #01-95, Singapore 570121",
+	"latitude": 1.3472473,
+	"longitude": 103.8511257,
+	"url": "",
+	"type": "General Practitioner",
+  "verified": true,
+	"type_icon": "assets/icons/health-education/health/firstaid.png",
+	"gallery": [
+		"http://i.imgur.com/OZVJqOn.jpg"
+	]
+}, {
+	"category": "medical",
+	"title": "Companion Animal Surgery",
+	"location": "12 Boon Teck Road, Singapore 329586",
+	"latitude": 1.3263788,
+	"longitude": 103.8496636,
+	"url": "http://www.comvet.com/contact.php",
+	"type": "Veterinary Clinic",
+  "verified": true,
+	"type_icon": "assets/icons/health-education/health/veterinary.png",
+	"gallery": [
+		"http://i.imgur.com/NlVg1sv.jpg"
+	]
+}, {
+	"category": "Supermarket",
+	"title": "Orchard Grand Court NTUC Fairprice",
+	"location": "131 Killiney Road, #01-01, Orchard Grand Court, Singapore 239571",
+	"latitude": 1.297592,
+	"longitude": 103.838707,
+	"url": "http://www.fairprice.com.sg/",
+	"type": "Supermarket",
+  "verified": true,
+	"type_icon": "assets/icons/store/apparel/umbrella-2.png",
+	"gallery": [
+		"http://i.imgur.com/oCQwNwJ.jpg"
+	]
+}, {
+	"category": "Supermarket",
+	"title": "Tanjong Pagar NTUC Fairprice",
+	"location": "5 Tanjong Pagar Plaza , #01-01, Singapore 081005",
+	"latitude": 1.276394,
+	"longitude": 103.842453,
+	"url": "http://www.fairprice.com.sg/",
+	"type": "Supermarket",
+  "verified": true,
+	"type_icon": "assets/icons/store/apparel/umbrella-2.png",
+	"gallery": [
+		"http://i.imgur.com/M6L8pyg.jpg"
+	]
+}, {
+	"category": "Supermarket",
+	"title": "NTUC Fairprice Geylang",
+	"location": "612, Geylang Lorong 38 , Singapore 389551",
+	"latitude": 1.314280,
+	"longitude": 103.888392,
+	"url": "http://www.fairprice.com.sg/",
+	"type": "Supermarket",
+  "verified": true,
+	"type_icon": "assets/icons/store/apparel/umbrella-2.png",
+	"gallery": [
+		"http://i.imgur.com/xfNLfBO.png"
+	]
+}, {
+	"category": "Supermarket",
+	"title": "Seletar Mall Fairprice Finest",
+	"location": "33 Sengkang West Avenue, 797653",
+	"latitude": 1.391184,
+	"longitude": 103.876308,
+	"url": "http://www.fairprice.com.sg/",
+	"type": "Supermarket",
+  "verified": true,
+	"type_icon": "assets/icons/store/apparel/umbrella-2.png",
+	"gallery": [
+		"http://i.imgur.com/PH3QbgE.png?1"
+	]
+}, {
+	"category": "Supermarket",
+	"title": "Pasir Ris Giant Supermarket",
+	"location": "440 Pasir Ris Drive 4 Singapore 510440",
+	"latitude": 1.369271,
+	"longitude": 103.958307,
+	"url": "http://www.giantsingapore.com.sg/",
+	"type": "Supermarket",
+  "verified": true,
+	"type_icon": "assets/icons/store/apparel/umbrella-2.png",
+	"gallery": [
+		"http://i.imgur.com/rR6ffa0.jpg"
+	]
+}, {
+	"category": "Supermarket",
+	"title": "Bedok Market Place Giant Supermarket",
+	"location": "348 Bedok Road. Bedok Market Place #01-01 Singapore 469560",
+	"latitude": 1.331731,
+	"longitude": 103.948049,
+	"url": "http://www.giantsingapore.com.sg/",
+	"type": "Supermarket",
+	"type_icon": "assets/icons/store/apparel/umbrella-2.png",
+	"gallery": [
+		"http://i.imgur.com/rR6ffa0.jpg"
+	]
+}, {
+	"category": "Supermarket",
+	"title": "Ang Mo Kio Giant Supermarket",
+	"location": "316B Ang Mo Kio St 31 #01-11 Singapore 563316",
+	"latitude": 1.331731,
+	"longitude": 103.948049,
+	"url": "http://www.giantsingapore.com.sg/",
+	"type": "Supermarket",
+  "verified": true,
+	"type_icon": "assets/icons/store/apparel/umbrella-2.png",
+	"gallery": [
+		"http://i.imgur.com/rR6ffa0.jpg"
+	]
+}, {
+	"category": "Supermarket",
+	"title": "Marine Terrace Giant Express",
+	"location": "56 Marine Terrace, #01-259/261, Singapore 440056",
+	"latitude": 1.305628,
+	"longitude": 103.915389,
+	"url": "http://www.giantsingapore.com.sg/",
+	"type": "Supermarket",
+  "verified": true,
+	"type_icon": "assets/icons/store/apparel/umbrella-2.png",
+	"gallery": [
+		"http://i.imgur.com/7RCE2wT.png"
+	]
+}, {
+	"category": "Supermarket",
+	"title": "Punggol Central Sheng Siong Supermarket",
+	"location": "301 Punggol Central, #01-01, Singapore 820301",
+	"latitude": 1.403302,
+	"longitude": 103.905807,
+	"url": "http://www.shengsiong.com.sg/",
+	"type": "Supermarket",
+  "verified": true,
+	"type_icon": "assets/icons/store/apparel/umbrella-2.png",
+	"gallery": [
+		"http://i.imgur.com/lbBSSGz.png"
+	]
+}, {
+	"category": "Supermarket",
+	"title": "Serangoon North Sheng Siong Supermarket",
+	"location": "19 Serangoon North Ave 5, Singapore 554913",
+	"latitude": 1.375347,
+	"longitude": 103.871996,
+	"url": "http://www.shengsiong.com.sg/",
+	"type": "Supermarket",
+  "verified": true,
+	"type_icon": "assets/icons/store/apparel/umbrella-2.png",
+	"gallery": [
+		"http://i.imgur.com/2Xv2YqF.png"
+	]
+}, {
+	"category": "Convenience Store",
+	"title": "Bishan Street 22 Cheers",
+	"location": "282, #01-101, Bishan Street 22, Singapore 570282",
+	"latitude": 1.305628,
+	"longitude": 103.915389,
+	"url": "http://www.cheers.com.sg/",
+	"type": "Supermarket",
+  "verified": true,
+	"type_icon": "assets/icons/store/apparel/umbrella-2.png",
+	"gallery": [
+		"http://i.imgur.com/OIYlU2J.png"
+	]
+}, {
+	"category": "Convenience Store",
+	"title": "Woodlands Centre Cheers",
+	"location": "5A Woodlands Centre Rd, Singapore 731005",
+	"latitude": 1.439883,
+	"longitude": 103.769855,
+	"url": "http://www.cheers.com.sg/",
+	"type": "Supermarket",
+  "verified": true,
+	"type_icon": "assets/icons/store/apparel/umbrella-2.png",
+	"gallery": [
+		"http://i.imgur.com/rfZLHGO.png"
+	]
+}, {
+	"category": "Convenience Store",
+	"title": "Balestier Road 7 Eleven",
+	"location": "340 Balestier Road  Road, 329772",
+	"latitude": 1.324135,
+	"longitude": 103.851839,
+	"url": "http://www.7-eleven.com.sg/",
+	"type": "Supermarket",
+  "verified": true,
+	"type_icon": "assets/icons/store/apparel/umbrella-2.png",
+	"gallery": [
+		"http://i.imgur.com/sfe2VvH.png"
+	]
+}, {
+	"category": "Convenience Store",
+	"title": "Jurong East 7 Eleven",
+	"location": "130 Jurong East Street 13, 600130",
+	"latitude": 1.335260,
+	"longitude": 103.738914,
+	"url": "http://www.7-eleven.com.sg/",
+	"type": "Supermarket",
+  "verified": true,
+	"type_icon": "assets/icons/store/apparel/umbrella-2.png",
+	"gallery": [
+		"http://i.imgur.com/xTGVNk8.png"
+	]
+}]
