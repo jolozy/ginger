@@ -96,27 +96,26 @@
                                 <!-- /.form-group -->
                                 <div class="form-group">
                                     <select name="category" multiple title="Select Category" data-live-search="true">
-                                        <option value="1">Food</option>
-                                        <option value="2" class="sub-category">Halal</option>
-                                        <option value="3" class="sub-category">Non-halal</option>
-                                        <option value="5">Groceries</option>
-                                        <option value="2" class="sub-category">Supermarkets</option>
-                                        <option value="3" class="sub-category">Provision Shops</option>
-                                        <option value="6">Leisure</option>
-                                        <option value="7" class="sub-category">Night Spots</option>
-                                        <option value="8" class="sub-category">Shopping Malls</option>
-                                        <option value="9" class="sub-category">Spa</option>
-                                        <option value="9" class="sub-category">Lan Shop</option>
-                                        <option value="9" class="sub-category">Gym</option>
-                                        <option value="10">Medical</option>
-                                        <option value="11" class="sub-category">Hospital</option>
-                                        <option value="12" class="sub-category">General Practioners</option>
-                                        <option value="13" class="sub-category">Vieterinary Clinic</option>
-                                        <option value="10">Services</option>
-                                        <option value="11" class="sub-category">Petrol Kiosks</option>
-                                        <option value="12" class="sub-category">Printing</option>
-                                        <option value="13" class="sub-category">Laundromats</option>
-
+                                        <option value="a">Food</option>
+                                        <option value="a1" class="sub-category">Halal</option>
+                                        <option value="a2" class="sub-category">Non-halal</option>
+                                        <option value="b">Groceries</option>
+                                        <option value="b1" class="sub-category">Supermarkets</option>
+                                        <option value="b2" class="sub-category">Provision Shops</option>
+                                        <option value="c">Leisure</option>
+                                        <option value="c1" class="sub-category">Night Spots</option>
+                                        <option value="c2" class="sub-category">Shopping Malls</option>
+                                        <option value="c3" class="sub-category">Spa</option>
+                                        <option value="c4" class="sub-category">Lan Shop</option>
+                                        <option value="c5" class="sub-category">Gym</option>
+                                        <option value="d">Medical</option>
+                                        <option value="d1" class="sub-category">Hospital</option>
+                                        <option value="d2" class="sub-category">General Practioners</option>
+                                        <option value="d3" class="sub-category">Vieterinary Clinic</option>
+                                        <option value="e">Services</option>
+                                        <option value="e1" class="sub-category">Petrol Kiosks</option>
+                                        <option value="e2" class="sub-category">Printing</option>
+                                        <option value="e3" class="sub-category">Laundromats</option>
                                     </select>
                                 </div>
                                 <!-- /.form-group -->
@@ -195,25 +194,45 @@
     var jsonPath = '/api/listings';
 
     // Load JSON data and create Google Maps
+    loadGoogleMap(jsonPath);
 
+    function loadGoogleMap(jsonPath) {
     $.getJSON(jsonPath)
         .done(function(json) {
             createHomepageGoogleMap(_latitude,_longitude,json);
         })
         .fail(function( jqxhr, textStatus, error ) {
             console.log(error);
-        })
-    ;
+        });
+    }
 
     // Set if language is RTL and load Owl Carousel
 
     $(window).load(function(){
-        var rtl = false; // Use RTL
-        initializeOwl(rtl);
-    });
+       var rtl = true; // Use RTL
+       initializeOwl(rtl);
+       $(".selectpicker li").click(function(){
+         setTimeout(pop, 0);
+       });
 
+    });
     autoComplete();
 
+    function pop() {
+      var elements = $( ".selectpicker li.selected" );
+      var id = []
+      elements.each(function() {
+        id.push($(this).attr("rel"));
+        console.log($(this))
+      });
+      alert(id);
+      remap();
+    }
+
+    function remap() {
+    var jsonPath = '/api/food'
+    loadGoogleMap(jsonPath);
+    }
 </script>
 
 <!--[if lte IE 9]>

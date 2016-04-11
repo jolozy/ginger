@@ -29,7 +29,11 @@ router.route('/admin/listings/:id')
 router.route('/api/listings/:id')
   .put(listingsController.updateListing)
   .delete(listingsController.removeListing);
-
+<<<<<<< HEAD
+router.route('/api/food')
+  .get(listingsController.getFood)
+router.route('/api/services')
+  .get(listingsController.getFood)
 
 // User
 router.route('/api/users')

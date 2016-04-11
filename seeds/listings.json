@@ -259,7 +259,7 @@
 		"http://i.imgur.com/d3BJsaS.jpg"
 	]
 }, {
-	"category": "Leisure",
+	"category": "leisure",
 	"title": "Mustafa Centre",
 	"location": "145 Syed Alwi Rd, Singapore 207704",
 	"latitude": 1.310173,
@@ -272,7 +272,7 @@
 		"http://imgur.com/rN9leUj.jpg"
 	]
 }, {
-	"category": "Leisure",
+	"category": "leisure",
 	"title": "G.Spa",
 	"location": "102 Guillemard Rd, Singapore 399719",
 	"latitude": 1.310402,
@@ -285,7 +285,7 @@
 		"http://i.imgur.com/Blzi4wH.jpg"
 	]
 }, {
-	"category": "Leisure",
+	"category": "leisure",
 	"title": "Le Spa",
 	"location": "16A Chun Tin Road, Singapore 599603",
 	"latitude": 1.34186,
@@ -427,7 +427,7 @@
 		"http://i.imgur.com/NlVg1sv.jpg"
 	]
 }, {
-	"category": "Supermarket",
+	"category": "groceries",
 	"title": "Orchard Grand Court NTUC Fairprice",
 	"location": "131 Killiney Road, #01-01, Orchard Grand Court, Singapore 239571",
 	"latitude": 1.297592,
@@ -440,7 +440,7 @@
 		"http://i.imgur.com/oCQwNwJ.jpg"
 	]
 }, {
-	"category": "Supermarket",
+	"category": "groceries",
 	"title": "Tanjong Pagar NTUC Fairprice",
 	"location": "5 Tanjong Pagar Plaza , #01-01, Singapore 081005",
 	"latitude": 1.276394,
@@ -453,7 +453,7 @@
 		"http://i.imgur.com/M6L8pyg.jpg"
 	]
 }, {
-	"category": "Supermarket",
+	"category": "groceries",
 	"title": "NTUC Fairprice Geylang",
 	"location": "612, Geylang Lorong 38 , Singapore 389551",
 	"latitude": 1.314280,
@@ -466,7 +466,7 @@
 		"http://i.imgur.com/xfNLfBO.png"
 	]
 }, {
-	"category": "Supermarket",
+	"category": "groceries",
 	"title": "Seletar Mall Fairprice Finest",
 	"location": "33 Sengkang West Avenue, 797653",
 	"latitude": 1.391184,
@@ -479,7 +479,7 @@
 		"http://i.imgur.com/PH3QbgE.png?1"
 	]
 }, {
-	"category": "Supermarket",
+	"category": "groceries",
 	"title": "Pasir Ris Giant Supermarket",
 	"location": "440 Pasir Ris Drive 4 Singapore 510440",
 	"latitude": 1.369271,
@@ -492,7 +492,7 @@
 		"http://i.imgur.com/rR6ffa0.jpg"
 	]
 }, {
-	"category": "Supermarket",
+	"category": "groceries",
 	"title": "Bedok Market Place Giant Supermarket",
 	"location": "348 Bedok Road. Bedok Market Place #01-01 Singapore 469560",
 	"latitude": 1.331731,
@@ -504,7 +504,7 @@
 		"http://i.imgur.com/rR6ffa0.jpg"
 	]
 }, {
-	"category": "Supermarket",
+	"category": "groceries",
 	"title": "Ang Mo Kio Giant Supermarket",
 	"location": "316B Ang Mo Kio St 31 #01-11 Singapore 563316",
 	"latitude": 1.331731,
@@ -517,7 +517,7 @@
 		"http://i.imgur.com/rR6ffa0.jpg"
 	]
 }, {
-	"category": "Supermarket",
+	"category": "groceries",
 	"title": "Marine Terrace Giant Express",
 	"location": "56 Marine Terrace, #01-259/261, Singapore 440056",
 	"latitude": 1.305628,
@@ -530,7 +530,7 @@
 		"http://i.imgur.com/7RCE2wT.png"
 	]
 }, {
-	"category": "Supermarket",
+	"category": "groceries",
 	"title": "Punggol Central Sheng Siong Supermarket",
 	"location": "301 Punggol Central, #01-01, Singapore 820301",
 	"latitude": 1.403302,
@@ -543,7 +543,7 @@
 		"http://i.imgur.com/lbBSSGz.png"
 	]
 }, {
-	"category": "Supermarket",
+	"category": "groceries",
 	"title": "Serangoon North Sheng Siong Supermarket",
 	"location": "19 Serangoon North Ave 5, Singapore 554913",
 	"latitude": 1.375347,
@@ -556,52 +556,52 @@
 		"http://i.imgur.com/2Xv2YqF.png"
 	]
 }, {
-	"category": "Convenience Store",
+	"category": "groceries",
 	"title": "Bishan Street 22 Cheers",
 	"location": "282, #01-101, Bishan Street 22, Singapore 570282",
 	"latitude": 1.305628,
 	"longitude": 103.915389,
 	"url": "http://www.cheers.com.sg/",
-	"type": "Supermarket",
+	"type": "convenience store",
   "verified": true,
 	"type_icon": "assets/icons/store/apparel/umbrella-2.png",
 	"gallery": [
 		"http://i.imgur.com/OIYlU2J.png"
 	]
 }, {
-	"category": "Convenience Store",
+	"category": "groceries",
 	"title": "Woodlands Centre Cheers",
 	"location": "5A Woodlands Centre Rd, Singapore 731005",
 	"latitude": 1.439883,
 	"longitude": 103.769855,
 	"url": "http://www.cheers.com.sg/",
-	"type": "Supermarket",
+	"type": "convenience store",
   "verified": true,
 	"type_icon": "assets/icons/store/apparel/umbrella-2.png",
 	"gallery": [
 		"http://i.imgur.com/rfZLHGO.png"
 	]
 }, {
-	"category": "Convenience Store",
+	"category": "groceries",
 	"title": "Balestier Road 7 Eleven",
 	"location": "340 Balestier Road  Road, 329772",
 	"latitude": 1.324135,
 	"longitude": 103.851839,
 	"url": "http://www.7-eleven.com.sg/",
-	"type": "Supermarket",
+	"type": "convenience store",
   "verified": true,
 	"type_icon": "assets/icons/store/apparel/umbrella-2.png",
 	"gallery": [
 		"http://i.imgur.com/sfe2VvH.png"
 	]
 }, {
-	"category": "Convenience Store",
+	"category": "groceries",
 	"title": "Jurong East 7 Eleven",
 	"location": "130 Jurong East Street 13, 600130",
 	"latitude": 1.335260,
 	"longitude": 103.738914,
 	"url": "http://www.7-eleven.com.sg/",
-	"type": "Supermarket",
+	"type": "convenience store",
   "verified": true,
 	"type_icon": "assets/icons/store/apparel/umbrella-2.png",
 	"gallery": [
