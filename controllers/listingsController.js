@@ -7,7 +7,6 @@ function getCategory (req, res) {
   })
 }
 
-//Hello World
 // INDEX
 function getAll(request, response) {
   Listing.find(function(error, listings) {
