@@ -9,7 +9,7 @@ function getCategory (req, res) {
 
 // INDEX
 function getAll(request, response) {
-  Listing.find(function(error, listings) {
+  Listing.find({"verified": true}).exec(function (error, listings) {
     if(error) response.json({message: 'Could not find any listing'});
 
     response.json({data: listings});
@@ -18,14 +18,12 @@ function getAll(request, response) {
 
 // CREATE
 function createListing(request, response) {
-  console.log('in POST');
-  console.log('body:',request.body);
   var listing = new Listing(request.body);
 
   listing.save(function(error) {
     if(error) response.json({messsage: 'Could not ceate listing b/c:' + error});
     console.log(listing);
-    response.json(listing);
+    response.json({listings});
   });
 }
 
@@ -47,8 +45,15 @@ function updateListing(request, response) {
   Listing.findById({_id: id}, function(error, listing) {
     if(error) response.json({message: 'Could not find listing b/c:' + error});
 
-    if(request.body.name) listing.name = request.body.name;
-    if(request.body.color) listing.color = request.body.color;
+    if(request.body.category) listing.category = request.body.category;
+    if(request.body.title) listing.title = request.body.title;
+    if(request.body.location) listing.location = request.body.location;
+    if(request.body.latitude) listing.latitude = request.body.latitude;
+    if(request.body.longitude) listing.longitude = request.body.longitude;
+    if(request.body.url) listing.url = request.body.url;
+    if(request.body.type) listing.type = request.body.type;
+    if(request.body.verified) listing.verified = request.body.verified;
+    if(request.body.type_icon) listing.type_icon = request.body.type_icon;
 
     listing.save(function(error) {
       if(error) response.json({messsage: 'Could not update listing b/c:' + error});
