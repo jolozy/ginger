@@ -1,5 +1,11 @@
 var Listing = require('../models/Listing');
 
+function getCategory (req, res) {
+  var category = req.query.category
+  Listing.find({"category": "Leisure"}).exec(function (error, listings) {
+
+  })
+}
 
 // INDEX
 function getAll(request, response) {
