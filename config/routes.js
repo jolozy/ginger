@@ -5,7 +5,7 @@ var express = require('express');
 
 // Models
 var listingsController = require('../controllers/listingsController');
-var usersControler = require('../controllers/usersController');
+var usersController = require('../controllers/usersController');
 
 // QUOTES API
 router.route('/api/listings')
