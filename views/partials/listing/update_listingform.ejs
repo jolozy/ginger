@@ -1,0 +1,47 @@
+<div class="col-md-8" , align="center">
+    <div class="row">
+        <form method="post" action=<%="/api/listings/" + listing._id + "?_method=PATCH" %> >
+
+            <br>
+            <input type="string" name="title" placeholder="Listing Name" id="title">
+            <br>
+            <br>
+            <input type="string" name="location" placeholder="Address" id="location">
+            <br>
+            <br>
+            <input type="string" name="url" placeholder="Listing url" id="url">
+            <br>
+            <br>
+            <input type="string" name="category" placeholder="category" id="category">
+            <br>
+            <br>
+            <input type="number" name="latitude" placeholder="latitude" id="latitude">
+            <br>
+            <br>
+            <input type="number" name="longitude" placeholder="longitude" id="longitude">
+            <br>
+            <br>
+            <input type="string" name="type" placeholder="type" id="type">
+            <br>
+            <br>
+            <input type="string" name="type_icon" placeholder="type_icon" id="type_icon">
+            <br>
+            <br>
+            <input type="boolean" name="verified" placeholder="verified" id="verified">
+            <br>
+            <br>
+
+            <div class="form-group col-md-4">
+                <input type="hidden" name="id" value="<%= listing.id %>">
+                <button type="submit" class="btn btn-primary col-md-12">Submit</button>
+            </div>
+
+        </form>
+        <br>
+    </div>
+</div>
+
+<div class="col-lg-2">
+    <h2></h2>
+    <p></p>
+</div>
