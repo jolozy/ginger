@@ -1,6 +1,6 @@
 var Listing = require('../models/Listing');
 
-//Hello
+//Hello World
 // INDEX
 function getAll(request, response) {
   Listing.find(function(error, listings) {
