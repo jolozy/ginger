@@ -6,6 +6,7 @@ var methodOverride = require('method-override')
 var morgan = require('morgan')
 var restful = require('node-restful')
 var mongoose = require('mongoose');
+var helpers = require('express-helpers')
 
 // Models
 // var Listing = require('./models/listing');
@@ -23,6 +24,8 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({'extended':'false'}));
 app.use(methodOverride());
 app.use(express.static(path.join(__dirname, 'public')));
+// app.use(helpers('ginger'))
+helpers(app);
 
 var routes = require('./config/routes');
 app.use(routes);

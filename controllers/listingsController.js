@@ -9,7 +9,7 @@ function getCategory (req, res) {
 
 // Get all listings
 function getAll(request, response) {
-  Listing.find({"verified": true}).exec(function (error, listings) {
+  Listing.find({"verified": null}).exec(function (error, listings) {
     if(error) response.json({message: 'Could not find any listing'});
 
     response.json({data: listings});
@@ -72,27 +72,46 @@ function getGroceries(request, response) {
 }
 
 // CREATE
+// CREATE // FOR MAP
 function createListing(request, response) {
-  var listing = new Listing(request.body);
+  var listing = new Listing();
+  listing.title = req.body.title;
+  listing.location = req.body.location;
+  listing.url = req.body.url;
+  listing.verified = true;
 
   listing.save(function(error) {
-    if(error) response.json({messsage: 'Could not ceate listing b/c:' + error});
+    if(error) response.json({messsage: 'Could not ceate listing because:' + error});
     console.log(listing);
     response.json({listings});
   });
 }
 
-// SHOW
+// FOR PUBLIC USERS
+function submitForm(request, response) {
+  response.render('listing');
+}
+
+// FOR ADMIN
+// SHOW ALL LISTING
+function getAllListings(request, response) {
+  Listing.find(function (error, listings) {
+    if(error) response.json({message: 'Could not find any listing'});
+
+    response.render('showall-admin', {listings: listings});
+  });
+}
+// SHOW ONE CURRENT LISTING
 function getListing(request, response) {
   var id = request.params.id;
 
   Listing.findById({_id: id}, function(error, listing) {
     if(error) response.json({message: 'Could not find listing b/c:' + error});
 
-    response.json({data: listing});
+    // response.json({data: listing});
+    response.render('show-admin', {listing: listing});
   });
 }
-
 // UPDATE
 function updateListing(request, response) {
   var id = request.params.id;
@@ -117,7 +136,6 @@ function updateListing(request, response) {
     });
   });
 }
-
 // DELETE
 function removeListing(request, response) {
   var id = request.params.id;
@@ -133,6 +151,8 @@ module.exports = {
   getFood: getFood,
   getAll: getAll,
   createListing: createListing,
+  submitForm: submitForm,
+  getAllListings: getAllListings,
   getListing: getListing,
   updateListing: updateListing,
   removeListing: removeListing
