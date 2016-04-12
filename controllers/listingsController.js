@@ -9,7 +9,7 @@ function getCategory (req, res) {
 
 // Get all listings
 function getAll(request, response) {
-  Listing.find({"verified": null}).exec(function (error, listings) {
+  Listing.find({"verified": true}).exec(function (error, listings) {
     if(error) response.json({message: 'Could not find any listing'});
 
     response.json({data: listings});
