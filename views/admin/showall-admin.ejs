@@ -4,14 +4,14 @@
 <div class="container">
     <% listings.forEach( listing => { %>
         <ul>
+            <li><strong>Category: </strong>
+                <%= listing.category %>
+            </li>
             <li><strong>Title: </strong>
                 <%- link_to(listing.title, '/admin/listings/'+listing.id) %>
             </li>
             <li><strong>Address: </strong>
                 <%= listing.location %>
-            </li>
-            <li><strong>URL: </strong>
-                <%= listing.url %>
             </li>
             <li><strong>Latitude: </strong>
                 <%= listing.latitude %>
@@ -19,8 +19,8 @@
             <li><strong>Longitude: </strong>
                 <%= listing.longitude %>
             </li>
-            <li><strong>Category: </strong>
-                <%= listing.category %>
+            <li><strong>Website: </strong>
+                <%= listing.url %>
             </li>
             <li><strong>Type: </strong>
                 <%= listing.type %>
@@ -30,6 +30,9 @@
             </li>
             <li><strong>Verified: </strong>
                 <%= listing.verified %>
+            </li>
+            <li><strong>Image URL: </strong>
+                <%= listing.gallery %>
             </li>
         </ul>
         <% }) %>

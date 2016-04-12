@@ -110,15 +110,16 @@ function adminSubmitForm(request, response) {
 // CREATE NEW LISTING
 function adminCreateListing(request, response) {
   var listing = new Listing();
+  listing.category = request.body.category;
   listing.title = request.body.title;
   listing.location = request.body.location;
-  listing.url = request.body.url;
-  listing.category = request.body.category;
   listing.latitude = request.body.latitude;
   listing.longitude = request.body.longitude;
+  listing.url = request.body.url;
   listing.type = request.body.type;
-  listing.type_icon = request.body.type_icon;
   listing.verified = request.body.verified;
+  listing.type_icon = request.body.type_icon;
+  listing.gallery = request.body.gallery;
 
   listing.save(function(error) {
     if(error) response.json({messsage: 'Could not ceate listing because:' + error});
@@ -153,6 +154,7 @@ function updateListing(request, response) {
     if(request.body.type) listing.type = request.body.type;
     if(request.body.verified) listing.verified = request.body.verified;
     if(request.body.type_icon) listing.type_icon = request.body.type_icon;
+    if(request.body.gallery) listing.gallery = request.body.gallery;
 
     listing.save(function(error) {
       if(error) response.json({messsage: 'Could not update listing because:' + error});
