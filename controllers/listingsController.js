@@ -30,11 +30,9 @@ function getFood(request, response) {
 
 // Get Custom Category
 function getCustom(request, response) {
-console.log("HELLLLLO");
-console.log(request.param('mainCategory').split(','));
-console.log(request.param('categoryType').split(','));
+console.log(request.param('type').split(','));
   Listing.find({verified: true}).
-  where("category").in(request.param('mainCategory').split(',')).
+  where("type").in(request.param('type').split(',')).
   exec(function (error, listings) {
     if(error) response.json({message: 'Could not find any listing'});
 
