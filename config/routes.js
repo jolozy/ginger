@@ -11,7 +11,6 @@ var usersController = require('../controllers/usersController');
 // FOR MAP
 router.route('/api/listings')
   .get(listingsController.getAll)
-  .post(listingsController.createListing);
 
 // FOR PUBLIC USERS: SUBMISSION
   router.route('/submit')
@@ -21,13 +20,15 @@ router.route('/api/listings')
 // FOR ADMIN TO SEE ALL LISTINGS
 router.route('/admin/listings/')
   .get(listingsController.getAllListings);
+// FOR ADMIN: SUBMISSION
+router.route('/admin/listings/new')
+  .get(listingsController.adminSubmitForm)
+  .post(listingsController.adminCreateListing);
 // FOR ADMIN TO SEE ONE LISTING
 router.route('/admin/listings/:id')
-  .get(listingsController.getListing);
-
+  .get(listingsController.getListing)
 // FOR ADMIN TO EDIT & REMOVE
-router.route('/api/listings/:id')
-  .put(listingsController.updateListing)
+  .patch(listingsController.updateListing)
   .delete(listingsController.removeListing);
 
 router.route('/api/custom')

@@ -267,7 +267,7 @@
 	"url": "http://www.mustafa.com.sg/",
 	"type": "shopping_mall",
 	"verified": true,
-	"type_icon": "assets/icons/store/apparel/umbrella-2.png",
+	"type_icon": "assets/icons/store/general-merchandise/departmentstore.png",
 	"gallery": [
 		"http://imgur.com/rN9leUj.jpg"
 	]
@@ -280,7 +280,7 @@
 	"url": "http://www.gspa.com.sg/",
 	"type": "spa",
 	"verified": true,
-	"type_icon": "assets/icons/store/apparel/umbrella-2.png",
+	"type_icon": "assets/icons/health-education/health/massage.png",
 	"gallery": [
 		"http://i.imgur.com/Blzi4wH.jpg"
 	]
@@ -293,7 +293,7 @@
 	"url": "http://www.lespa.com.sg/",
 	"type": "spa",
 	"verified": true,
-	"type_icon": "assets/icons/store/apparel/umbrella-2.png",
+	"type_icon": "assets/icons/health-education/health/massage.png",
 	"gallery": [
 		"http://i.imgur.com/Na17k1S.png"
 	]
@@ -607,4 +607,242 @@
 	"gallery": [
 		"http://i.imgur.com/xTGVNk8.png"
 	]
-}]
+}, {
+	"category": "Leisure",
+	"title": "Rose Spa",
+	"location": "354 Clementi Ave 2, Singapore 120354",
+	"latitude": 1.313528,
+	"longitude": 103.770778,
+	"url": "http://www.rosespa.com.sg",
+	"type": "Spa",
+	"verified": true,
+	"type_icon": "assets/icons/health-education/health/massage.png",
+	"gallery": [
+		"http://i.imgur.com/jZyYAoZ.jpg"
+	]
+}, {
+
+	"category": "Leisure",
+	"title": "S Spa",
+	"location": "164 Bukit Batok Street 11, Singapore 650164",
+	"latitude": 1.347764,
+	"longitude": 103.742555,
+	"url": "http://www.sspa.sg/",
+	"type": "Spa",
+	"verified": true,
+	"type_icon": "assets/icons/health-education/health/massage.png",
+	"gallery": [
+		"http://i.imgur.com/oYgL9qA.jpg"
+	]
+}, {
+
+	"category": "Leisure",
+	"title": "Enzo Gaming League",
+	"location": "#B1-01, 83 Syed Alwi Rd, Singapore 207662",
+	"latitude": 1.3090949,
+	"longitude": 103.856045,
+	"url": "http://www.enzo.sg/",
+	"type": "Lan Shop",
+	"verified": true,
+	"type_icon": "assets/icons/culture-entertainment/entertainment/videogames.png",
+	"gallery": [
+						"http://i.imgur.com/GfHXGFB.jpg"
+	]
+}, {
+
+	"category": "Leisure",
+	"title": "Khakabo",
+	"location": "#01-58 Burlington Square, 175 Bencoolen St, Singapore 189649",
+	"latitude": 1.302198,
+	"longitude": 103.8524939,
+	"url": "https://www.facebook.com/Khakabo/",
+	"type": "Lan Shop",
+	"verified": true,
+	"type_icon": "assets/icons/culture-entertainment/entertainment/videogames.png",
+	"gallery": [
+						"http://i.imgur.com/RsMkkRQ.jpg"
+	]
+}, {
+
+	"category": "Leisure",
+	"title": "Cross Fire Lan Gaming Club",
+	"location": "337 Bedok Rd, Singapore 469514",
+	"latitude": 1.331274,
+	"longitude": 103.947475,
+	"url": "http://steamcommunity.com/groups/CFLG",
+	"type": "Lan Shop",
+	"verified": true,
+	"type_icon": "assets/icons/culture-entertainment/entertainment/videogames.png",
+	"gallery": [
+						"http://i.imgur.com/G698cDz.jpg"
+	]
+}, {
+
+	"category": "Leisure",
+	"title": "Anytime Fitness",
+	"location": "130 Jurong Gateway Road #01-235, Singapore 600130",
+	"latitude": 1.334713,
+	"longitude": 103.739339,
+	"url": "http://www.anytimefitness.sg/",
+	"type": "Gym",
+	"verified": true,
+	"type_icon": "assets/icons/sports/relaxing-sports/fitness.png",
+	"gallery":[
+						"http://i.imgur.com/3JsWLAo.jpg"
+	]
+}, {
+
+	"category": "Leisure",
+	"title": "Anytime Fitness",
+	"location": "23 Serangoon Central, #04-73/74/75 NEX Shopping Mall, Singapore 556083",
+	"latitude": 1.350644,
+	"longitude": 103.871806,
+	"url": "http://www.anytimefitness.sg/",
+	"type": "Gym",
+	"verified": true,
+	"type_icon": "assets/icons/sports/relaxing-sports/fitness.png",
+	"gallery": [
+						"http://i.imgur.com/3JsWLAo.jpg"
+	]
+}, {
+
+	"category": "Leisure",
+	"title": "Anytime Fitness",
+	"location": "4190 Ang Mo Kio Ave 6, Singapore 569841",
+	"latitude": 1.372198,
+	"longitude": 103.845583,
+	"url": "http://www.anytimefitness.sg/",
+	"type": "Gym",
+	"verified": true,
+	"type_icon": "assets/icons/sports/relaxing-sports/fitness.png",
+	"gallery": [
+						"http://i.imgur.com/3JsWLAo.jpg"
+	]
+}, {
+
+	"category": "Leisure",
+	"title": "Anytime Fitness",
+	"location": "190 Lor 6 Toa Payoh, Singapore 310190",
+	"latitude": 1.332654,
+	"longitude": 103.84942,
+	"url": "http://www.anytimefitness.sg/",
+	"type": "Gym",
+	"verified": true,
+	"type_icon": "assets/icons/sports/relaxing-sports/fitness.png",
+	"gallery":[
+						"http://i.imgur.com/3JsWLAo.jpg"
+	]
+}, {
+
+	"category": "Leisure",
+	"title": "Anytime Fitness",
+	"location": "10 Anson Road , #03-44, International Plaza, Singapore 079903",
+	"latitude": 1.276109,
+	"longitude": 103.845924,
+	"url": "http://www.anytimefitness.sg/",
+	"type": "Gym",
+	"verified": true,
+	"type_icon": "assets/icons/sports/relaxing-sports/fitness.png",
+	"gallery": [
+						"http://i.imgur.com/3JsWLAo.jpg"
+	]
+}, {
+
+	"category": "Leisure",
+	"title": "Anytime Fitness",
+	"location": "204 Bedok North Street 1, Singapore 460204",
+	"latitude": 1.326535,
+	"longitude": 103.929898,
+	"url": "http://www.anytimefitness.sg/",
+	"type": "Gym",
+	"verified": true,
+	"type_icon": "assets/icons/sports/relaxing-sports/fitness.png",
+	"gallery":[
+						"http://i.imgur.com/3JsWLAo.jpg"
+	]
+}, {
+
+	"category": "Leisure",
+	"title": "Anytime Fitness",
+	"location": "200 Jurong East Avenue 1, YoHA @ Jurong #03-01, Singapore 609789",
+	"latitude": 1.350415,
+	"longitude": 103.729003,
+	"url": "http://www.anytimefitness.sg/",
+	"type": "Gym",
+	"verified": true,
+	"type_icon": "assets/icons/sports/relaxing-sports/fitness.png",
+	"gallery":[
+						"http://i.imgur.com/3JsWLAo.jpg"
+	]
+}, {
+
+	"category": "Leisure",
+	"title": "Anytime Fitness",
+	"location": "Elias Mall #02-332, 625 Elias Rd, Singapore 510625",
+	"latitude": 1.378441,
+	"longitude": 103.94193,
+	"url": "http://www.anytimefitness.sg/",
+	"type": "Gym",
+	"verified": true,
+	"type_icon": "assets/icons/sports/relaxing-sports/fitness.png",
+	"gallery":[
+						"http://i.imgur.com/3JsWLAo.jpg"
+	]
+}, {
+
+	"category": "Leisure",
+	"title": "Anytime Fitness",
+	"location": "288 Balestier Road, Central Singapore, Singapore 329731",
+	"latitude": 1.322817,
+	"longitude": 103.85283,
+	"url": "http://www.anytimefitness.sg/",
+	"type": "Gym",
+	"verified": true,
+	"type_icon": "assets/icons/sports/relaxing-sports/fitness.png",
+	"gallery":[
+						"http://i.imgur.com/3JsWLAo.jpg"
+	]
+}, {
+
+	"category": "Leisure",
+	"title": "Anytime Fitness",
+	"location": "491 River Valley Rd, Singapore 248371",
+	"latitude": 1.293043,
+	"longitude": 103.826933,
+	"url": "http://www.anytimefitness.sg/",
+	"type": "Gym",
+	"verified": true,
+	"type_icon": "assets/icons/sports/relaxing-sports/fitness.png",
+	"gallery":[
+						"http://i.imgur.com/3JsWLAo.jpg"
+	]
+}, {
+
+	"category": "Leisure",
+	"title": "Anytime Fitness",
+	"location": "MacPherson Community Club #03-05/06, 400 Paya Lebar Way, Macpherson CC, Singapore 379131",
+	"latitude": 1.3234379,
+	"longitude": 103.88467,
+	"url": "http://www.anytimefitness.sg/",
+	"type": "Gym",
+	"verified": true,
+	"type_icon": "assets/icons/sports/relaxing-sports/fitness.png",
+	"gallery":[
+						"http://i.imgur.com/3JsWLAo.jpg"
+	]
+}, {
+
+	"category": "Leisure",
+	"title": "Anytime Fitness",
+	"location": "Blk 86 Marine Parade Central #01-670,South East, Singapore 440086",
+	"latitude": 1.301492,
+	"longitude": 103.906681,
+	"url": "http://www.anytimefitness.sg/",
+	"type": "Gym",
+	"verified": true,
+	"type_icon": "assets/icons/sports/relaxing-sports/fitness.png",
+	"gallery":[
+						"http://i.imgur.com/3JsWLAo.jpg"
+	]
+}
+]

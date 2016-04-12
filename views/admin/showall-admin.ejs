@@ -1,0 +1,34 @@
+<h1>SHOW ALL LISTINGS</h1>
+<div class="container">
+    <% listings.forEach( listing => { %>
+        <ul>
+            <li><strong>Title: </strong>
+                <%- link_to(listing.title, 'listings/'+listing.id) %>
+            </li>
+            <li><strong>Address: </strong>
+                <%= listing.location %>
+            </li>
+            <li><strong>URL: </strong>
+                <%= listing.url %>
+            </li>
+            <li><strong>Latitude: </strong>
+                <%= listing.latitude %>
+            </li>
+            <li><strong>Longitude: </strong>
+                <%= listing.longitude %>
+            </li>
+            <li><strong>Category: </strong>
+                <%= listing.category %>
+            </li>
+            <li><strong>Type: </strong>
+                <%= listing.type %>
+            </li>
+            <li><strong>Type Icon: </strong>
+                <%= listing.type_icon %>
+            </li>
+            <li><strong>Verified: </strong>
+                <%= listing.verified %>
+            </li>
+        </ul>
+        <% }) %>
+</div>

@@ -23,7 +23,7 @@ user.password = request.body.password
 user.type = "admin";
 user.save( error => {
   if (error) {
-    return res.json({message: 'could not create user'});
+    return res.json({message: 'Could Not Create User'});
   }
   response.send("success");
 });
