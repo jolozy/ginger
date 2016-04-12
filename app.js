@@ -7,6 +7,9 @@ var morgan = require('morgan')
 var restful = require('node-restful')
 var mongoose = require('mongoose');
 var helpers = require('express-helpers')
+// Authentication
+var passport = require('passport');
+var LocalStrategy = require('passport-local').Strategy;
 
 // Models
 // var Listing = require('./models/listing');
@@ -24,6 +27,9 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({'extended':'false'}));
 app.use(methodOverride());
 app.use(express.static(path.join(__dirname, 'public')));
+// Passport Middleware
+app.use(passport.initialize());
+app.use(passport.session());
 // app.use(helpers('ginger'))
 helpers(app);
 
@@ -58,7 +64,7 @@ app.get('/about', function(req,res) {
 
 //Login Page Route
 app.get('/login', function(req, res) {
-  res.sendfile('views/login.html');
+  res.render('login', { title: 'Login Page'});
 });
 
 
