@@ -473,6 +473,7 @@ function pushItemsToArray(json, a, category, visibleItemsArray){
                             '<i><img src="' + json.data[a].type_icon + '" alt=""></i>' +
                             '<span>' + json.data[a].type + '</span>' +
                         '</div>' +
+                        '<div class="type" id="walk'+a+'"></div>' +
                         '<div class="type" id="dist'+a+'"></div>' +
                         // '<div class="type">Lat: '+ json.data[a].latitude + ' , ' + currentLat + '</div>' +
                         // '<div class="type">Long: '+ json.data[a].longitude +  ' , ' + currentLong + '</div>' +
@@ -493,6 +494,7 @@ function pushItemsToArray(json, a, category, visibleItemsArray){
     }
 
     var destination = { lat: json.data[a].latitude, lng: json.data[a].longitude};
+
     service.getDistanceMatrix({
       origins: [origin],
       destinations: [destination],
@@ -518,6 +520,35 @@ function pushItemsToArray(json, a, category, visibleItemsArray){
         }
       }
     });
+
+    service.getDistanceMatrix({
+      origins: [origin],
+      destinations: [destination],
+      travelMode: google.maps.TravelMode.WALKING,
+      unitSystem: google.maps.UnitSystem.METRIC,
+      avoidHighways: false,
+      avoidTolls: false
+    }, function(response, status) {
+      if (status !== google.maps.DistanceMatrixStatus.OK) {
+        alert('Error was: ' + status);
+      } else {
+        var originList = response.originAddresses;
+        var destinationList = response.destinationAddresses;
+
+        for (var i = 0; i < originList.length; i++) {
+            var results = response.rows[i].elements;
+            for (var j = 0; j < results.length; j++) {
+              var res = results[j].distance.text.split(" ")
+              if(parseFloat(res[0])<2.01){
+              var walk = "div#walk" + a;
+              var walkValue = "Walking: " + results[j].distance.text;
+              $(walk).html(walkValue);
+            }
+          }
+        }
+      }
+    });
+
 }
 
 // Center map to marker position if function is called (disabled) ------------------------------------------------------
