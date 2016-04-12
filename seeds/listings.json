@@ -5,7 +5,7 @@
 	"latitude": 1.3187566,
 	"longitude": 103.8202386,
 	"url": "http://www.hungrygowhere.com/singapore/mr_prata_evans_road/",
-	"type": "Halal",
+	"type": "halal",
 	"verified": true,
 	"type_icon": "assets/icons/restaurants-bars/restaurants/restaurant.png",
 	"gallery": [
@@ -18,7 +18,7 @@
 	"latitude": 1.3425021,
 	"longitude": 103.7753333,
 	"url": "http://www.hungrygowhere.com/singapore/al_azhar_eating_restaurant/",
-	"type": "Halal",
+	"type": "halal",
 	"verified": true,
 	"type_icon": "assets/icons/restaurants-bars/restaurants/restaurant.png",
 	"gallery": [
@@ -31,7 +31,7 @@
 	"latitude": 1.331044,
 	"longitude": 103.9481236,
 	"url": "http://www.hungrygowhere.com/singapore/syed_restaurant/",
-	"type": "Halal",
+	"type": "halal",
 	"verified": true,
 	"type_icon": "assets/icons/restaurants-bars/restaurants/restaurant.png",
 	"gallery": [
@@ -44,7 +44,7 @@
 	"latitude": 1.2736481,
 	"longitude": 103.8427879,
 	"url": "https://www.facebook.com/Akbar-24-Hours-Restaurant-Pte-Ltd-213716465473372/",
-	"type": "Halal",
+	"type": "halal",
 	"verified": true,
 	"type_icon": "assets/icons/restaurants-bars/restaurants/restaurant.png",
 	"gallery": [
@@ -57,7 +57,7 @@
 	"latitude": 1.3008031,
 	"longitude": 103.8517648,
 	"url": "http://www.hungrygowhere.com/singapore/al_jilani_restaurant/",
-	"type": "Halal",
+	"type": "halal",
 	"verified": true,
 	"type_icon": "assets/icons/restaurants-bars/restaurants/restaurant.png",
 	"gallery": [
@@ -70,7 +70,7 @@
 	"latitude": 1.3540051,
 	"longitude": 103.8338392,
 	"url": "https://www.mingfafishball.com/",
-	"type": "Non-Halal",
+	"type": "non-halal",
 	"verified": true,
 	"type_icon": "assets/icons/restaurants-bars/restaurants/restaurant.png",
 	"gallery": [
@@ -83,7 +83,7 @@
 	"latitude": 1.3142063,
 	"longitude": 103.8784106,
 	"url": "https://www.facebook.com/126-%E6%90%B5%E5%88%B0%E9%A3%9F-185385724816474/",
-	"type": "Non-Halal",
+	"type": "non-halal",
 	"verified": true,
 	"type_icon": "assets/icons/restaurants-bars/restaurants/restaurant.png",
 	"gallery": [
@@ -96,7 +96,7 @@
 	"latitude": 1.3108083,
 	"longitude": 103.8643586,
 	"url": "http://www.timhowan.com/",
-	"type": "Non-Halal",
+	"type": "non-halal",
 	"verified": true,
 	"type_icon": "assets/icons/restaurants-bars/restaurants/restaurant.png",
 	"gallery": [
@@ -109,7 +109,7 @@
 	"latitude": 1.3135596,
 	"longitude": 103.9021992,
 	"url": "http://www.hungrygowhere.com/singapore/fei_fei_wanton_mee_62_joo_chiat_place/",
-	"type": "Non-Halal",
+	"type": "non-halal",
 	"verified": true,
 	"type_icon": "assets/icons/restaurants-bars/restaurants/restaurant.png",
 	"gallery": [
@@ -122,7 +122,7 @@
 	"latitude": 1.3239676,
 	"longitude": 103.8514496,
 	"url": "http://www.burpple.com/333-bak-kut-teh",
-	"type": "Non-Halal",
+	"type": "non-halal",
 	"verified": true,
 	"type_icon": "assets/icons/restaurants-bars/restaurants/restaurant.png",
 	"gallery": [
@@ -135,7 +135,7 @@
 	"latitude": 1.3007598,
 	"longitude": 103.8588499,
 	"url": "http://www.musa-group.com/24hrsinternet/printing.html",
-	"type": "Printing",
+	"type": "printing",
 	"verified": true,
 	"type_icon": "assets/icons/media/text.png",
 	"gallery": [
@@ -148,7 +148,7 @@
 	"latitude": 1.2778769,
 	"longitude": 103.8308443,
 	"url": "http://www.rocketprinters-sg.com/",
-	"type": "Printing",
+	"type": "printing",
 	"verified": true,
 	"type_icon": "assets/icons/media/text.png",
 	"gallery": [
@@ -161,7 +161,7 @@
 	"latitude": 1.3144814,
 	"longitude": 103.8799419,
 	"url": "http://wonderwash.com.sg/geylang-branches/",
-	"type": "Laundromats",
+	"type": "laundromat",
 	"verified": true,
 	"type_icon": "assets/icons/store/apparel/clothers_female.png",
 	"gallery": [
@@ -174,7 +174,7 @@
 	"latitude": 1.346653,
 	"longitude": 103.944868,
 	"url": "http://wonderwash.com.sg/tampines-branch-new/",
-	"type": "Laundromats",
+	"type": "laundromat",
 	"verified": true,
 	"type_icon": "assets/icons/store/apparel/clothers_female.png",
 	"gallery": [
@@ -187,7 +187,7 @@
 	"latitude": 1.4413065,
 	"longitude": 103.7919416,
 	"url": "http://wonderwash.com.sg/woodlands-branch-2/",
-	"type": "Laundromats",
+	"type": "laundromat",
 	"verified": true,
 	"type_icon": "assets/icons/store/apparel/clothers_female.png",
 	"gallery": [
@@ -200,7 +200,7 @@
 	"latitude": 1.3076577,
 	"longitude": 103.7934963,
 	"url": "http://wonderwash.com.sg/holland-drive-branch-2/",
-	"type": "Laundromats",
+	"type": "laundromat",
 	"verified": true,
 	"type_icon": "assets/icons/store/apparel/clothers_female.png",
 	"gallery": [
@@ -213,7 +213,7 @@
 	"latitude": 1.338689,
 	"longitude": 103.692795,
 	"url": "http://www.caltex.com/sg/",
-	"type": "Petrol Kiosks",
+	"type": "petrol_kiosk",
 	"verified": true,
 	"type_icon": "assets/icons/transportation/road-transportation/car.png",
 	"gallery": [
@@ -226,7 +226,7 @@
 	"latitude": 1.4034671,
 	"longitude": 103.8185888,
 	"url": "http://www.caltex.com/sg/",
-	"type": "Petrol Kiosks",
+	"type": "petrol_kiosk",
 	"verified": true,
 	"type_icon": "assets/icons/transportation/road-transportation/car.png",
 	"gallery": [
@@ -239,7 +239,7 @@
 	"latitude": 1.343556,
 	"longitude": 103.845871,
 	"url": "http://www.caltex.com/sg/",
-	"type": "Petrol Kiosks",
+	"type": "petrol_kiosk",
 	"verified": true,
 	"type_icon": "assets/icons/transportation/road-transportation/car.png",
 	"gallery": [
@@ -252,7 +252,7 @@
 	"latitude": 1.328347,
 	"longitude": 103.870923,
 	"url": "http://www.caltex.com/sg/",
-	"type": "Petrol Kiosks",
+	"type": "petrol_kiosk",
 	"verified": true,
 	"type_icon": "assets/icons/transportation/road-transportation/car.png",
 	"gallery": [
@@ -265,7 +265,7 @@
 	"latitude": 1.310173,
 	"longitude": 103.855115,
 	"url": "http://www.mustafa.com.sg/",
-	"type": "Shopping Mall",
+	"type": "shopping_mall",
 	"verified": true,
 	"type_icon": "assets/icons/store/apparel/umbrella-2.png",
 	"gallery": [
@@ -278,7 +278,7 @@
 	"latitude": 1.310402,
 	"longitude": 103.882267,
 	"url": "http://www.gspa.com.sg/",
-	"type": "Spa",
+	"type": "spa",
 	"verified": true,
 	"type_icon": "assets/icons/store/apparel/umbrella-2.png",
 	"gallery": [
@@ -291,7 +291,7 @@
 	"latitude": 1.34186,
 	"longitude": 103.77499,
 	"url": "http://www.lespa.com.sg/",
-	"type": "Spa",
+	"type": "spa",
 	"verified": true,
 	"type_icon": "assets/icons/store/apparel/umbrella-2.png",
 	"gallery": [
@@ -304,7 +304,7 @@
 	"latitude": 1.340556,
 	"longitude": 103.949167,
 	"url": "http://www.cgh.com.sg",
-	"type": "Public Hospital",
+	"type": "public_hospital",
   "verified": true,
 	"type_icon": "assets/icons/health-education/health/hospital-building.png",
 	"gallery": [
@@ -317,7 +317,7 @@
 	"latitude": 1.335043,
 	"longitude": 103.74399,
 	"url": "http://www.ntfgh.com.sg",
-	"type": "Public Hospital",
+	"type": "public_hospital",
   "verified": true,
 	"type_icon": "assets/icons/health-education/health/hospital-building.png",
 	"gallery": [
@@ -330,7 +330,7 @@
 	"latitude": 1.295083,
 	"longitude": 103.782833,
 	"url": "http://www.nuh.com.sg",
-	"type": "Public Hospital",
+	"type": "public_hospital",
   "verified": true,
 	"type_icon": "assets/icons/health-education/health/hospital-building.png",
 	"gallery": [
@@ -343,7 +343,7 @@
 	"latitude": 1.424635,
 	"longitude": 103.838208,
 	"url": "http://www.ktph.com.sg",
-	"type": "Public Hospital",
+	"type": "public_hospital",
   "verified": true,
 	"type_icon": "assets/icons/health-education/health/hospital-building.png",
 	"gallery": [
@@ -356,7 +356,7 @@
 	"latitude": 1.278667,
 	"longitude": 103.834361,
 	"url": "http://www.sgh.com.sg",
-	"type": "Public Hospital",
+	"type": "public_hospital",
 	"type_icon": "assets/icons/health-education/health/hospital-building.png",
 	"gallery": [
 		"http://i.imgur.com/dkt99R2.jpg"
@@ -368,7 +368,7 @@
 	"latitude": 1.321611,
 	"longitude": 103.845944,
 	"url": "http://www.ttsh.com.sg",
-	"type": "Public Hospital",
+	"type": "public_hospital",
   "verified": true,
 	"type_icon": "assets/icons/health-education/health/hospital-building.png",
 	"gallery": [
@@ -381,7 +381,7 @@
 	"latitude": 1.310556,
 	"longitude": 103.846944,
 	"url": "http://www.kkh.com.sg",
-	"type": "Public Hospital",
+	"type": "public_hospital",
   "verified": true,
 	"type_icon": "assets/icons/health-education/health/hospital-building.png",
 	"gallery": [
@@ -394,7 +394,7 @@
 	"latitude": 1.372575,
 	"longitude": 103.8856784,
 	"url": "http://www.centralclinic.com.sg/",
-	"type": "General Practitioner",
+	"type": "gp",
   "verified": true,
 	"type_icon": "assets/icons/health-education/health/firstaid.png",
 	"gallery": [
@@ -407,7 +407,7 @@
 	"latitude": 1.3472473,
 	"longitude": 103.8511257,
 	"url": "",
-	"type": "General Practitioner",
+	"type": "gp",
   "verified": true,
 	"type_icon": "assets/icons/health-education/health/firstaid.png",
 	"gallery": [
@@ -420,7 +420,7 @@
 	"latitude": 1.3263788,
 	"longitude": 103.8496636,
 	"url": "http://www.comvet.com/contact.php",
-	"type": "Veterinary Clinic",
+	"type": "veterinary_clinic",
   "verified": true,
 	"type_icon": "assets/icons/health-education/health/veterinary.png",
 	"gallery": [
@@ -433,7 +433,7 @@
 	"latitude": 1.297592,
 	"longitude": 103.838707,
 	"url": "http://www.fairprice.com.sg/",
-	"type": "Supermarket",
+	"type": "supermarket",
   "verified": true,
 	"type_icon": "assets/icons/store/apparel/umbrella-2.png",
 	"gallery": [
@@ -446,7 +446,7 @@
 	"latitude": 1.276394,
 	"longitude": 103.842453,
 	"url": "http://www.fairprice.com.sg/",
-	"type": "Supermarket",
+	"type": "supermarket",
   "verified": true,
 	"type_icon": "assets/icons/store/apparel/umbrella-2.png",
 	"gallery": [
@@ -459,7 +459,7 @@
 	"latitude": 1.314280,
 	"longitude": 103.888392,
 	"url": "http://www.fairprice.com.sg/",
-	"type": "Supermarket",
+	"type": "supermarket",
   "verified": true,
 	"type_icon": "assets/icons/store/apparel/umbrella-2.png",
 	"gallery": [
@@ -472,7 +472,7 @@
 	"latitude": 1.391184,
 	"longitude": 103.876308,
 	"url": "http://www.fairprice.com.sg/",
-	"type": "Supermarket",
+	"type": "supermarket",
   "verified": true,
 	"type_icon": "assets/icons/store/apparel/umbrella-2.png",
 	"gallery": [
@@ -485,7 +485,7 @@
 	"latitude": 1.369271,
 	"longitude": 103.958307,
 	"url": "http://www.giantsingapore.com.sg/",
-	"type": "Supermarket",
+	"type": "supermarket",
   "verified": true,
 	"type_icon": "assets/icons/store/apparel/umbrella-2.png",
 	"gallery": [
@@ -498,7 +498,7 @@
 	"latitude": 1.331731,
 	"longitude": 103.948049,
 	"url": "http://www.giantsingapore.com.sg/",
-	"type": "Supermarket",
+	"type": "supermarket",
 	"type_icon": "assets/icons/store/apparel/umbrella-2.png",
 	"gallery": [
 		"http://i.imgur.com/rR6ffa0.jpg"
@@ -510,7 +510,7 @@
 	"latitude": 1.331731,
 	"longitude": 103.948049,
 	"url": "http://www.giantsingapore.com.sg/",
-	"type": "Supermarket",
+	"type": "supermarket",
   "verified": true,
 	"type_icon": "assets/icons/store/apparel/umbrella-2.png",
 	"gallery": [
@@ -523,7 +523,7 @@
 	"latitude": 1.305628,
 	"longitude": 103.915389,
 	"url": "http://www.giantsingapore.com.sg/",
-	"type": "Supermarket",
+	"type": "supermarket",
   "verified": true,
 	"type_icon": "assets/icons/store/apparel/umbrella-2.png",
 	"gallery": [
@@ -536,7 +536,7 @@
 	"latitude": 1.403302,
 	"longitude": 103.905807,
 	"url": "http://www.shengsiong.com.sg/",
-	"type": "Supermarket",
+	"type": "supermarket",
   "verified": true,
 	"type_icon": "assets/icons/store/apparel/umbrella-2.png",
 	"gallery": [
@@ -549,7 +549,7 @@
 	"latitude": 1.375347,
 	"longitude": 103.871996,
 	"url": "http://www.shengsiong.com.sg/",
-	"type": "Supermarket",
+	"type": "supermarket",
   "verified": true,
 	"type_icon": "assets/icons/store/apparel/umbrella-2.png",
 	"gallery": [
@@ -562,7 +562,7 @@
 	"latitude": 1.305628,
 	"longitude": 103.915389,
 	"url": "http://www.cheers.com.sg/",
-	"type": "convenience store",
+	"type": "convenience_store",
   "verified": true,
 	"type_icon": "assets/icons/store/apparel/umbrella-2.png",
 	"gallery": [
@@ -575,7 +575,7 @@
 	"latitude": 1.439883,
 	"longitude": 103.769855,
 	"url": "http://www.cheers.com.sg/",
-	"type": "convenience store",
+	"type": "convenience_store",
   "verified": true,
 	"type_icon": "assets/icons/store/apparel/umbrella-2.png",
 	"gallery": [
@@ -588,7 +588,7 @@
 	"latitude": 1.324135,
 	"longitude": 103.851839,
 	"url": "http://www.7-eleven.com.sg/",
-	"type": "convenience store",
+	"type": "convenience_store",
   "verified": true,
 	"type_icon": "assets/icons/store/apparel/umbrella-2.png",
 	"gallery": [
@@ -601,7 +601,7 @@
 	"latitude": 1.335260,
 	"longitude": 103.738914,
 	"url": "http://www.7-eleven.com.sg/",
-	"type": "convenience store",
+	"type": "convenience_store",
   "verified": true,
 	"type_icon": "assets/icons/store/apparel/umbrella-2.png",
 	"gallery": [
