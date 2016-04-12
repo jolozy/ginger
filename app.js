@@ -66,6 +66,35 @@ app.get('/about', function(req,res) {
 app.get('/login', function(req, res) {
   res.render('login', { title: 'Login Page'});
 });
+//Login Handler Route
+app.post('/login',
+  passport.authenticate('local', {
+    successRedirect: '/index',
+    failureRedirect: '/'
+  })
+);
+
+app.get('/loginFailure', function(req, res, next) {
+  res.send('Failed to authenticate');
+});
+
+app.get('/loginSuccess', function(req, res, next) {
+  res.send('Successfully authenticated');
+});
+//Passport Serializer
+passport.serializeUser(function(user, done) {
+  done(null, user);
+});
+
+passport.deserializeUser(function(user, done) {
+  done(null, user);
+});
+//Authentication Strategy
+passport.use(new LocalStrategy(function(username, password, done) {
+  process.nextTick(function() {
+    // Auth Check Logic
+  });
+}));
 
 
 // Connection
