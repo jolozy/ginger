@@ -123,7 +123,7 @@ function adminCreateListing(request, response) {
   listing.save(function(error) {
     if(error) response.json({messsage: 'Could not ceate listing because:' + error});
     console.log(listing);
-    response.render('admin/showall-admin', {listings: listings});
+    response.redirect('/admin/listings/');
   });
 }
 // SHOW ONE CURRENT LISTING
@@ -159,7 +159,7 @@ function updateListing(request, response) {
 
       // response.redirect('/admin/listings/:id');
       // response.json({message: 'Listing successfully updated'});
-      response.render('admin/show-admin', {listing: listing});
+      response.redirect('/admin/listings');
     });
   });
 }
@@ -170,7 +170,8 @@ function removeListing(request, response) {
   Listing.remove({_id: id}, function(error) {
     if(error) response.json({message: 'Could not delete listing because:' + error});
 
-    response.json({message: 'Listing successfully deleted'});
+    // response.json({message: 'Listing successfully deleted'});
+    response.redirect('/admin/listings');
   });
 }
 

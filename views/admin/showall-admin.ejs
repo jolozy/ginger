@@ -1,9 +1,11 @@
 <h1>SHOW ALL LISTINGS</h1>
+<a href = "/admin/listings/new">CREATE NEW LISTING</a>
+
 <div class="container">
     <% listings.forEach( listing => { %>
         <ul>
             <li><strong>Title: </strong>
-                <%- link_to(listing.title, 'listings/'+listing.id) %>
+                <%- link_to(listing.title, '/admin/listings/'+listing.id) %>
             </li>
             <li><strong>Address: </strong>
                 <%= listing.location %>
