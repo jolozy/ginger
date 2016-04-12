@@ -44,17 +44,22 @@ res.render('index', { title: 'Ginger' });
 // Create User Page Route
 app.get('/user', function(req,res) {
   res.render('user', { title: 'New User Creation'});
-})
+});
 
 // Listing Form Page Route
 app.get('/listing', function(req,res) {
   res.render('listing-form', { title: 'Update Listing'});
-})
+});
 
 // About Us Page Route
 app.get('/about', function(req,res) {
   res.render('about', { title: 'About Ginger'});
-})
+});
+
+//Login Page Route
+app.get('/login', function(req, res) {
+  res.sendfile('views/login.html');
+});
 
 
 // Connection
