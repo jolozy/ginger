@@ -41,7 +41,7 @@
                             <li><a href="/about">About Us</a></li>
                         </ul>
                         <a href="submit.html" class="submit-item">
-                            <div class="content"><span>Submit Your Item</span></div>
+                            <div class="content"><span>Suggest a Listing</span></div>
                             <div class="icon">
                                 <i class="fa fa-plus"></i>
                             </div>
@@ -118,39 +118,5 @@
 <script type="text/javascript" src="assets/js/custom.js"></script>
 <script type="text/javascript" src="assets/js/maps.js"></script>
 
-<!--[if lte IE 9]>
-<script type="text/javascript" src="assets/js/ie-scripts.js"></script>
-<![endif]-->
-
-<script>
-    var _latitude = 1.36080344;
-    var _longitude = 103.81565094;
-    var jsonPath = '/api/listings';
-
-    // Load JSON data and create Google Maps
-
-    $.getJSON(jsonPath)
-        .done(function(json) {
-            createHomepageGoogleMap(_latitude,_longitude,json);
-        })
-        .fail(function( jqxhr, textStatus, error ) {
-            console.log(error);
-        })
-    ;
-
-    // Set if language is RTL and load Owl Carousel
-
-    $(window).load(function(){
-        var rtl = false; // Use RTL
-        initializeOwl(rtl);
-    });
-
-    autoComplete();
-
-</script>
-
-<!--[if lte IE 9]>
-<script type="text/javascript" src="assets/js/ie-scripts.js"></script>
-<![endif]-->
 </body>
 </html>
