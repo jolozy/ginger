@@ -479,7 +479,7 @@ function pushItemsToArray(json, a, category, visibleItemsArray){
                         '</div>' +
                         '<div class="type" id="walk'+a+'"></div>' +
                         '<div class="type" id="dist'+a+'"></div>' +
-                        '<div class="startRoute">Start Route</div>' +
+                        '<div id="startRoute">Start Route</div>' +
                         // '<div class="type">Lat: '+ json.data[a].latitude + ' , ' + currentLat + '</div>' +
                         // '<div class="type">Long: '+ json.data[a].longitude +  ' , ' + currentLong + '</div>' +
                     '</div>' +
@@ -560,10 +560,18 @@ function pushItemsToArray(json, a, category, visibleItemsArray){
 directionsDisplay.setMap(map);
 directionsDisplay.setPanel(document.getElementById('route-display'));
 
-$(".startRoute").on( "click", function() {
-      calculateAndDisplayRoute(directionsService, directionsDisplay);
-    });
+// $(".startRoute").click(function() {
+//     alert("start route");
+//       calculateAndDisplayRoute(directionsService, directionsDisplay);
+//     });
 
+$( document ).ready(function() {
+var onClickHandler = function() {
+      calculateAndDisplayRoute(directionsService, directionsDisplay);
+    };
+
+    document.getElementById('startRoute').addEventListener('click', onClickHandler);
+});
 
   function calculateAndDisplayRoute(directionsService, directionsDisplay) {
 
