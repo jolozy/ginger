@@ -7,7 +7,7 @@ function getCategory (req, res) {
   })
 }
 
-// Get all listings
+// GET ALL LISTINGS FOR MAP
 function getAll(request, response) {
   Listing.find({"verified": true}).exec(function (error, listings) {
     if(error) response.json({message: 'Could not find any listing'});
@@ -16,6 +16,7 @@ function getAll(request, response) {
   });
 }
 
+// ==================================================================================================================
 // Get Food Category
 function getFood(request, response) {
   Listing.find({verified: true}).
@@ -70,35 +71,59 @@ function getGroceries(request, response) {
     response.json({data: listings});
   });
 }
+// ==================================================================================================================
 
-// CREATE
-// CREATE // FOR MAP
+// FOR PUBLIC USERS //
+// SUBMIT NEW LISTING
+function submitForm(request, response) {
+  response.render('listing');
+}
+// CREATE NEW LISTING
 function createListing(request, response) {
   var listing = new Listing();
-  listing.title = req.body.title;
-  listing.location = req.body.location;
-  listing.url = req.body.url;
-  listing.verified = true;
+  listing.title = request.body.title;
+  listing.location = request.body.location;
+  listing.url = request.body.url;
+  listing.verified = false;
 
   listing.save(function(error) {
     if(error) response.json({messsage: 'Could not ceate listing because:' + error});
     console.log(listing);
-    response.json({listings});
+    // response.json({listings});
+    response.render('users/thankyou');
   });
 }
 
-// FOR PUBLIC USERS
-function submitForm(request, response) {
-  response.render('listing');
-}
-
-// FOR ADMIN
+// FOR ADMIN //
 // SHOW ALL LISTING
 function getAllListings(request, response) {
   Listing.find(function (error, listings) {
     if(error) response.json({message: 'Could not find any listing'});
 
-    response.render('showall-admin', {listings: listings});
+    response.render('admin/showall-admin', {listings: listings});
+  });
+}
+// SUBMIT NEW LISTING
+function adminSubmitForm(request, response) {
+  response.render('admin/newlisting-admin');
+}
+// CREATE NEW LISTING
+function adminCreateListing(request, response) {
+  var listing = new Listing();
+  listing.title = request.body.title;
+  listing.location = request.body.location;
+  listing.url = request.body.url;
+  listing.category = request.body.category;
+  listing.latitude = request.body.latitude;
+  listing.longitude = request.body.longitude;
+  listing.type = request.body.type;
+  listing.type_icon = request.body.type_icon;
+  listing.verified = request.body.verified;
+
+  listing.save(function(error) {
+    if(error) response.json({messsage: 'Could not ceate listing because:' + error});
+    console.log(listing);
+    response.render('admin/showall-admin', {listings: listings});
   });
 }
 // SHOW ONE CURRENT LISTING
@@ -106,10 +131,10 @@ function getListing(request, response) {
   var id = request.params.id;
 
   Listing.findById({_id: id}, function(error, listing) {
-    if(error) response.json({message: 'Could not find listing b/c:' + error});
+    if(error) response.json({message: 'Could not find listing because:' + error});
 
     // response.json({data: listing});
-    response.render('show-admin', {listing: listing});
+    response.render('admin/show-admin', {listing: listing});
   });
 }
 // UPDATE
@@ -117,7 +142,7 @@ function updateListing(request, response) {
   var id = request.params.id;
 
   Listing.findById({_id: id}, function(error, listing) {
-    if(error) response.json({message: 'Could not find listing b/c:' + error});
+    if(error) response.json({message: 'Could not find listing because:' + error});
 
     if(request.body.category) listing.category = request.body.category;
     if(request.body.title) listing.title = request.body.title;
@@ -130,9 +155,11 @@ function updateListing(request, response) {
     if(request.body.type_icon) listing.type_icon = request.body.type_icon;
 
     listing.save(function(error) {
-      if(error) response.json({messsage: 'Could not update listing b/c:' + error});
+      if(error) response.json({messsage: 'Could not update listing because:' + error});
 
-      response.json({message: 'Listing successfully updated'});
+      // response.redirect('/admin/listings/:id');
+      // response.json({message: 'Listing successfully updated'});
+      response.render('admin/show-admin', {listing: listing});
     });
   });
 }
@@ -141,7 +168,7 @@ function removeListing(request, response) {
   var id = request.params.id;
 
   Listing.remove({_id: id}, function(error) {
-    if(error) response.json({message: 'Could not delete listing b/c:' + error});
+    if(error) response.json({message: 'Could not delete listing because:' + error});
 
     response.json({message: 'Listing successfully deleted'});
   });
@@ -150,9 +177,11 @@ function removeListing(request, response) {
 module.exports = {
   getFood: getFood,
   getAll: getAll,
-  createListing: createListing,
   submitForm: submitForm,
+  createListing: createListing,
   getAllListings: getAllListings,
+  adminSubmitForm: adminSubmitForm,
+  adminCreateListing: adminCreateListing,
   getListing: getListing,
   updateListing: updateListing,
   removeListing: removeListing

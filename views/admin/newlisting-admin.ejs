@@ -1,7 +1,7 @@
+<h1>CREATE NEW LISTING (ADMIN)</h1>
 <div class="col-md-8" , align="center">
     <div class="row">
-        <form method="post" action=<%="/api/listings/" + listing._id + "?_method=PATCH" %> >
-
+        <form action="/admin/listings/new" method="post">
             <br>
             <input type="string" name="title" placeholder="Listing Name" id="title">
             <br>
@@ -30,12 +30,7 @@
             <input type="boolean" name="verified" placeholder="verified" id="verified">
             <br>
             <br>
-
-            <div class="form-group col-md-4">
-                <input type="hidden" name="id" value="<%= listing.id %>">
-                <button type="submit" class="btn btn-primary col-md-12">Submit</button>
-            </div>
-
+            <button type="submit" class="btn btn-primary col-md-12">Submit</button>
         </form>
         <br>
     </div>
