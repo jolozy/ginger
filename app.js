@@ -28,7 +28,7 @@ app.use(bodyParser.urlencoded({'extended':'false'}));
 app.use(methodOverride());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use(methodOverride('_method')
+app.use(methodOverride('_method'));
 
 // Passport Middleware
 app.use(passport.initialize());
