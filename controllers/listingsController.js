@@ -20,13 +20,30 @@ function getAll(request, response) {
 // Get Food Category
 function getFood(request, response) {
   Listing.find({verified: true}).
-  where("category").equals('food').
+  where("category").in(['food']).
   exec(function (error, listings) {
     if(error) response.json({message: 'Could not find any listing'});
 
     response.json({data: listings});
   });
 }
+
+// Get Custom Category
+function getCustom(request, response) {
+console.log("HELLLLLO");
+console.log(request.param('mainCategory').split(','));
+console.log(request.param('categoryType').split(','));
+  Listing.find({verified: true}).
+  where("category").in(request.param('mainCategory').split(',')).
+  exec(function (error, listings) {
+    if(error) response.json({message: 'Could not find any listing'});
+
+    response.json({data: listings});
+  });
+}
+
+
+
 
 // Get Services Category
 function getServices(request, response) {
@@ -175,6 +192,7 @@ function removeListing(request, response) {
 }
 
 module.exports = {
+  getCustom: getCustom,
   getFood: getFood,
   getAll: getAll,
   submitForm: submitForm,

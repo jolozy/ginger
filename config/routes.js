@@ -31,6 +31,9 @@ router.route('/admin/listings/:id')
   .patch(listingsController.updateListing)
   .delete(listingsController.removeListing);
 
+router.route('/api/custom')
+  .get(listingsController.getCustom);
+
 router.route('/api/food')
   .get(listingsController.getFood)
 router.route('/api/services')
