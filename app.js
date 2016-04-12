@@ -7,6 +7,9 @@ var morgan = require('morgan')
 var restful = require('node-restful')
 var mongoose = require('mongoose');
 var helpers = require('express-helpers')
+// Authentication
+var passport = require('passport');
+var LocalStrategy = require('passport-local').Strategy;
 
 // Models
 // var Listing = require('./models/listing');
@@ -24,6 +27,9 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({'extended':'false'}));
 app.use(methodOverride());
 app.use(express.static(path.join(__dirname, 'public')));
+// Passport Middleware
+app.use(passport.initialize());
+app.use(passport.session());
 // app.use(helpers('ginger'))
 helpers(app);
 
@@ -44,17 +50,51 @@ res.render('index', { title: 'Ginger' });
 // Create User Page Route
 app.get('/user', function(req,res) {
   res.render('user', { title: 'New User Creation'});
-})
+});
 
 // Listing Form Page Route
 app.get('/listing', function(req,res) {
   res.render('listing-form', { title: 'Update Listing'});
-})
+});
 
 // About Us Page Route
 app.get('/about', function(req,res) {
   res.render('about', { title: 'About Ginger'});
-})
+});
+
+//Login Page Route
+app.get('/login', function(req, res) {
+  res.render('login', { title: 'Login Page'});
+});
+//Login Handler Route
+app.post('/login',
+  passport.authenticate('local', {
+    successRedirect: '/index',
+    failureRedirect: '/'
+  })
+);
+
+app.get('/loginFailure', function(req, res, next) {
+  res.send('Failed to authenticate');
+});
+
+app.get('/loginSuccess', function(req, res, next) {
+  res.send('Successfully authenticated');
+});
+//Passport Serializer
+passport.serializeUser(function(user, done) {
+  done(null, user);
+});
+
+passport.deserializeUser(function(user, done) {
+  done(null, user);
+});
+//Authentication Strategy
+passport.use(new LocalStrategy(function(username, password, done) {
+  process.nextTick(function() {
+    // Auth Check Logic
+  });
+}));
 
 
 // Connection
