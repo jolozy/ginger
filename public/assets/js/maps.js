@@ -28,6 +28,7 @@ function createHomepageGoogleMap(_latitude,_longitude,json){
     $.get("assets/external/_infobox.js", function() {
         gMap();
     });
+
     function gMap(){
         var mapCenter = new google.maps.LatLng(_latitude,_longitude);
         var mapOptions = {
@@ -361,6 +362,7 @@ function createHomepageGoogleMap(_latitude,_longitude,json){
     }
 }
 
+
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // Item Detail Map - Google
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -477,6 +479,7 @@ function pushItemsToArray(json, a, category, visibleItemsArray){
                         '</div>' +
                         '<div class="type" id="walk'+a+'"></div>' +
                         '<div class="type" id="dist'+a+'"></div>' +
+                        '<div class="startRoute">Start Route</div>' +
                         // '<div class="type">Lat: '+ json.data[a].latitude + ' , ' + currentLat + '</div>' +
                         // '<div class="type">Long: '+ json.data[a].longitude +  ' , ' + currentLong + '</div>' +
                     '</div>' +
@@ -550,6 +553,33 @@ function pushItemsToArray(json, a, category, visibleItemsArray){
         }
       }
     });
+
+
+// Start ROUTE API
+
+directionsDisplay.setMap(map);
+directionsDisplay.setPanel(document.getElementById('route-display'));
+
+$(".startRoute").on( "click", function() {
+      calculateAndDisplayRoute(directionsService, directionsDisplay);
+    });
+
+
+  function calculateAndDisplayRoute(directionsService, directionsDisplay) {
+
+    directionsService.route({
+      origin: origin,
+      destination: destination,
+      travelMode: google.maps.TravelMode.DRIVING
+    }, function(response, status) {
+      if (status === google.maps.DirectionsStatus.OK) {
+        directionsDisplay.setDirections(response);
+      } else {
+        window.alert('Directions request failed due to ' + status);
+      }
+    });
+  }
+
 
 }
 

@@ -101,7 +101,7 @@
                                         <option value="a2" class="sub-category">Non-halal</option>
                                         <option value="b">Groceries</option>
                                         <option value="b1" class="sub-category">Supermarkets</option>
-                                        <option value="b2" class="sub-category">Provision Shops</option>
+                                        <option value="b2" class="sub-category">Convenience Stores</option>
                                         <option value="c">Leisure</option>
                                         <option value="c1" class="sub-category">Night Spots</option>
                                         <option value="c2" class="sub-category">Shopping Malls</option>
@@ -214,25 +214,104 @@
        $(".selectpicker li").click(function(){
          setTimeout(pop, 0);
        });
-
     });
+
     autoComplete();
 
     function pop() {
       var elements = $( ".selectpicker li.selected" );
-      var id = []
+      var categoryArray = []
+      var mainCategoryText = [];
+      var typeCategoryText = [];
       elements.each(function() {
-        id.push($(this).attr("rel"));
+        categoryArray.push($(this).attr("rel"));
         console.log($(this))
       });
-      alert(id);
-      remap();
+
+      alert("Category Array is: " + categoryArray);
+
+      categoryArray.forEach(function(item){
+
+          if (item == 0) {
+            mainCategoryText.push("food");
+          }
+          else if (item == 1) {
+            typeCategoryText.push("halal")
+          }
+          else if (item == 2) {
+            typeCategoryText.push("non-halal")
+          }
+          else if (item == 3) {
+            mainCategoryText.push("groceries")
+          }
+          else if (item == 4) {
+            typeCategoryText.push("supermarket")
+          }
+          else if (item == 5) {
+            typeCategoryText.push("convenience_store")
+          }
+          else if (item == 6) {
+            mainCategoryText.push("leisure")
+          }
+          else if (item == 7) {
+            typeCategoryText.push("night_spot")
+          }
+          else if (item == 8) {
+            typeCategoryText.push("shopping_mall")
+          }
+          else if (item == 9) {
+            typeCategoryText.push("spa")
+          }
+          else if (item == 10) {
+            typeCategoryText.push("lan_shop")
+          }
+          else if (item == 11) {
+            typeCategoryText.push("gym")
+          }
+          else if (item == 12) {
+            mainCategoryText.push("medical")
+          }
+          else if (item == 13) {
+            typeCategoryText.push("public_hospital")
+          }
+          else if (item == 14) {
+            typeCategoryText.push("gp")
+          }
+          else if (item == 15) {
+            typeCategoryText.push("veterinary_clinic")
+          }
+          else if (item == 16) {
+            mainCategoryText.push("services")
+          }
+          else if (item == 17) {
+            typeCategoryText.push("petrol_kiosk")
+          }
+          else if (item == 18) {
+            typeCategoryText.push("printing")
+          }
+          else if (item == 19) {
+            typeCategoryText.push("laundromat")
+          }
+        })
+
+      alert("Min Category: " + mainCategoryText + " | Type: " + typeCategoryText);
+
+      remap(mainCategoryText, typeCategoryText);
     }
 
+
+    function remap(mainCategoryText, typeCategoryText) {
+    var jsonPath = '/api/custom?mainCategory=' + mainCategoryText.join(',') + '&categoryType=' + typeCategoryText.join(',')
+    console.log(jsonPath)
+  }
+
     function remap() {
-    var jsonPath = '/api/food'
+    var jsonPath = '/api/listings'
     loadGoogleMap(jsonPath);
     }
+
+
+
 </script>
 
 <!--[if lte IE 9]>
