@@ -267,7 +267,7 @@
 	"url": "http://www.mustafa.com.sg/",
 	"type": "Shopping Mall",
 	"verified": true,
-	"type_icon": "assets/icons/store/apparel/umbrella-2.png",
+	"type_icon": "assets/icons/store/general-merchandise/departmentstore.png",
 	"gallery": [
 		"http://imgur.com/rN9leUj.jpg"
 	]
@@ -615,9 +615,10 @@
 	"longitude": 103.770778,
 	"url": "http://www.rosespa.com.sg",
 	"type": "Spa",
+	"verified": true,
 	"type_icon": "assets/icons/health-education/health/massage.png",
 	"gallery": [
-						"http://i.imgur.com/jZyYAoZ.jpg"
+		"http://i.imgur.com/jZyYAoZ.jpg"
 	]
 }, {
 
@@ -628,6 +629,7 @@
 	"longitude": 103.742555,
 	"url": "http://www.sspa.sg/",
 	"type": "Spa",
+	"verified": true,
 	"type_icon": "assets/icons/health-education/health/massage.png",
 	"gallery": [
 		"http://i.imgur.com/oYgL9qA.jpg"
@@ -641,6 +643,7 @@
 	"longitude": 103.856045,
 	"url": "http://www.enzo.sg/",
 	"type": "Lan Shop",
+	"verified": true,
 	"type_icon": "assets/icons/culture-entertainment/entertainment/videogames.png",
 	"gallery": [
 						"http://i.imgur.com/GfHXGFB.jpg"
@@ -654,6 +657,7 @@
 	"longitude": 103.8524939,
 	"url": "https://www.facebook.com/Khakabo/",
 	"type": "Lan Shop",
+	"verified": true,
 	"type_icon": "assets/icons/culture-entertainment/entertainment/videogames.png",
 	"gallery": [
 						"http://i.imgur.com/RsMkkRQ.jpg"
@@ -667,6 +671,7 @@
 	"longitude": 103.947475,
 	"url": "http://steamcommunity.com/groups/CFLG",
 	"type": "Lan Shop",
+	"verified": true,
 	"type_icon": "assets/icons/culture-entertainment/entertainment/videogames.png",
 	"gallery": [
 						"http://i.imgur.com/G698cDz.jpg"
@@ -680,6 +685,7 @@
 	"longitude": 103.739339,
 	"url": "http://www.anytimefitness.sg/",
 	"type": "Gym",
+	"verified": true,
 	"type_icon": "assets/icons/sports/relaxing-sports/fitness.png",
 	"gallery":[
 						"http://i.imgur.com/3JsWLAo.jpg"
@@ -693,6 +699,7 @@
 	"longitude": 103.871806,
 	"url": "http://www.anytimefitness.sg/",
 	"type": "Gym",
+	"verified": true,
 	"type_icon": "assets/icons/sports/relaxing-sports/fitness.png",
 	"gallery": [
 						"http://i.imgur.com/3JsWLAo.jpg"
@@ -706,6 +713,7 @@
 	"longitude": 103.845583,
 	"url": "http://www.anytimefitness.sg/",
 	"type": "Gym",
+	"verified": true,
 	"type_icon": "assets/icons/sports/relaxing-sports/fitness.png",
 	"gallery": [
 						"http://i.imgur.com/3JsWLAo.jpg"
@@ -719,6 +727,7 @@
 	"longitude": 103.84942,
 	"url": "http://www.anytimefitness.sg/",
 	"type": "Gym",
+	"verified": true,
 	"type_icon": "assets/icons/sports/relaxing-sports/fitness.png",
 	"gallery":[
 						"http://i.imgur.com/3JsWLAo.jpg"
@@ -732,6 +741,7 @@
 	"longitude": 103.845924,
 	"url": "http://www.anytimefitness.sg/",
 	"type": "Gym",
+	"verified": true,
 	"type_icon": "assets/icons/sports/relaxing-sports/fitness.png",
 	"gallery": [
 						"http://i.imgur.com/3JsWLAo.jpg"
@@ -745,6 +755,7 @@
 	"longitude": 103.929898,
 	"url": "http://www.anytimefitness.sg/",
 	"type": "Gym",
+	"verified": true,
 	"type_icon": "assets/icons/sports/relaxing-sports/fitness.png",
 	"gallery":[
 						"http://i.imgur.com/3JsWLAo.jpg"
@@ -758,6 +769,7 @@
 	"longitude": 103.729003,
 	"url": "http://www.anytimefitness.sg/",
 	"type": "Gym",
+	"verified": true,
 	"type_icon": "assets/icons/sports/relaxing-sports/fitness.png",
 	"gallery":[
 						"http://i.imgur.com/3JsWLAo.jpg"
@@ -771,6 +783,7 @@
 	"longitude": 103.94193,
 	"url": "http://www.anytimefitness.sg/",
 	"type": "Gym",
+	"verified": true,
 	"type_icon": "assets/icons/sports/relaxing-sports/fitness.png",
 	"gallery":[
 						"http://i.imgur.com/3JsWLAo.jpg"
@@ -784,6 +797,7 @@
 	"longitude": 103.85283,
 	"url": "http://www.anytimefitness.sg/",
 	"type": "Gym",
+	"verified": true,
 	"type_icon": "assets/icons/sports/relaxing-sports/fitness.png",
 	"gallery":[
 						"http://i.imgur.com/3JsWLAo.jpg"
@@ -797,6 +811,7 @@
 	"longitude": 103.826933,
 	"url": "http://www.anytimefitness.sg/",
 	"type": "Gym",
+	"verified": true,
 	"type_icon": "assets/icons/sports/relaxing-sports/fitness.png",
 	"gallery":[
 						"http://i.imgur.com/3JsWLAo.jpg"
@@ -810,6 +825,7 @@
 	"longitude": 103.88467,
 	"url": "http://www.anytimefitness.sg/",
 	"type": "Gym",
+	"verified": true,
 	"type_icon": "assets/icons/sports/relaxing-sports/fitness.png",
 	"gallery":[
 						"http://i.imgur.com/3JsWLAo.jpg"
@@ -823,6 +839,7 @@
 	"longitude": 103.906681,
 	"url": "http://www.anytimefitness.sg/",
 	"type": "Gym",
+	"verified": true,
 	"type_icon": "assets/icons/sports/relaxing-sports/fitness.png",
 	"gallery":[
 						"http://i.imgur.com/3JsWLAo.jpg"
