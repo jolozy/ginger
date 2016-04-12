@@ -1,0 +1,39 @@
+<h1>SHOW ALL LISTINGS</h1>
+<a href = "/admin/listings/new">CREATE NEW LISTING</a>
+
+<div class="container">
+    <% listings.forEach( listing => { %>
+        <ul>
+            <li><strong>Category: </strong>
+                <%= listing.category %>
+            </li>
+            <li><strong>Title: </strong>
+                <%- link_to(listing.title, '/admin/listings/'+listing.id) %>
+            </li>
+            <li><strong>Address: </strong>
+                <%= listing.location %>
+            </li>
+            <li><strong>Latitude: </strong>
+                <%= listing.latitude %>
+            </li>
+            <li><strong>Longitude: </strong>
+                <%= listing.longitude %>
+            </li>
+            <li><strong>Website: </strong>
+                <%= listing.url %>
+            </li>
+            <li><strong>Type: </strong>
+                <%= listing.type %>
+            </li>
+            <li><strong>Type Icon: </strong>
+                <%= listing.type_icon %>
+            </li>
+            <li><strong>Verified: </strong>
+                <%= listing.verified %>
+            </li>
+            <li><strong>Image URL: </strong>
+                <%= listing.gallery %>
+            </li>
+        </ul>
+        <% }) %>
+</div>

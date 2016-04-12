@@ -27,15 +27,15 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({'extended':'false'}));
 app.use(methodOverride());
 app.use(express.static(path.join(__dirname, 'public')));
-app.use(methodOverride('_method')
 
-1 new message since 6:39 PM
-About this conversation
+app.use(methodOverride('_method')
 
 // Passport Middleware
 app.use(passport.initialize());
 app.use(passport.session());
+
 // app.use(helpers('ginger'))
+
 helpers(app);
 
 var routes = require('./config/routes');
