@@ -1,45 +1,203 @@
-<h1>CREATE NEW LISTING (ADMIN)</h1>
-<div class="col-md-8" , align="center">
-    <div class="row">
-        <form action="/admin/listings/new" method="post">
-            <br>
-            <input type="string" name="category" placeholder="category" id="category">
-            <br>
-            <br>
-            <input type="string" name="title" placeholder="Title" id="title">
-            <br>
-            <br>
-            <input type="string" name="location" placeholder="Address" id="location">
-            <br>
-            <br>
-            <input type="text" name="latitude" placeholder="latitude" id="latitude">
-            <br>
-            <br>
-            <input type="text" name="longitude" placeholder="longitude" id="longitude">
-            <br>
-            <br>
-            <input type="string" name="url" placeholder="Listing url" id="url">
-            <br>
-            <br>
-            <input type="string" name="type" placeholder="type" id="type">
-            <br>
-            <br>
-            <input type="string" name="type_icon" placeholder="type_icon" id="type_icon">
-            <br>
-            <br>
-            <input type="boolean" name="verified" placeholder="verified" id="verified">
-            <br>
-            <br>
-            <input type="string" name="gallery" placeholder="image" id="type_icon">
-            <br>
-            <br>
-          <button type="submit" class="btn btn-primary col-md-12">Submit</button>
-        </form>
-        <br>
-    </div>
-</div>
+<!DOCTYPE html> ​
+<html lang="en-US">
+​
 
-<div class="col-lg-2">
-    <h2></h2>
-    <p></p>
-</div>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../assets/fonts/font-awesome.css" rel="stylesheet" type="text/css">
+    <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="../../assets/bootstrap/css/bootstrap.css" type="text/css">
+    <link rel="stylesheet" href="../../assets/css/bootstrap-select.min.css" type="text/css">
+    <link rel="stylesheet" href="../../assets/css/owl.carousel.css" type="text/css">
+    <link rel="stylesheet" href="../../assets/css/jquery.mCustomScrollbar.css" type="text/css">
+    <link rel="stylesheet" href="../../assets/css/style.css" type="text/css">
+    <link rel="stylesheet" href="../../assets/css/user.style.css" type="text/css">
+    <title>
+        Thank You For Submitting
+    </title>
+    <style>
+        a {
+            color: #ff513f;
+        }
+
+        #verified1,#verified2 {
+          background-color: black;
+        }
+
+    </style>
+</head>
+​
+
+<body onunload="" class="map-fullscreen page-homepage navigation-off-canvas" id="page-top">
+    ​
+    <!-- Outer Wrapper-->
+    <div id="outer-wrapper">
+        <!-- Inner Wrapper -->
+        <div id="inner-wrapper">
+            <!-- Navigation-->
+            <div class="header">
+                <div class="wrapper">
+                    <div class="brand">
+                        <a href="/"><img src="../../assets/img/logo.png" alt="logo"></a>
+                    </div>
+                    <nav class="navigation-items">
+                        <div class="wrapper">
+                            <ul class="main-navigation navigation-top-header"></ul>
+                            <ul class="user-area">
+                                <li><a href="sign-in.html">Sign In</a></li>
+                                <li><a href="register.html"><strong>Register</strong></a></li>
+                                <li><a href="/about">About Us</a></li>
+                            </ul>
+                            <div class="toggle-navigation">
+                                <div class="icon" id="burger">
+                                    <div class="line"></div>
+                                    <div class="line"></div>
+                                    <div class="line"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+            <!-- end Navigation-->
+
+            <div class="jumbotron">
+                <h1>Hello, fellow Ginger admin!</h1>
+            </div>
+            <div id="page-canvas" style="padding-top: 50px; padding-bottom: 20px;">
+
+                <div class="container">
+
+                    <div class="row">
+
+                        <h2 align="center">Add a new listing by filling up the form below:</h2>
+                        <div class="col-lg-3">
+                        </div>
+
+                        <div class="col-lg-6">
+                            <!-- START OF FORM FOR ADMIN'S LISTING SUBMISSION -->
+                            <div align="center">
+                                <form action="/admin/listings/new" method="post">
+                                    <br>
+                                    <input type="string" name="category" class="form-control public-submission" placeholder="Add category" id="category">
+                                    <br>
+                                    <br>
+                                    <input type="string" name="title" class="form-control public-submission" placeholder="Add title" id="title">
+                                    <br>
+                                    <br>
+                                    <input type="string" name="location" class="form-control public-submission" placeholder="Add address" id="location">
+                                    <br>
+                                    <br>
+                                    <input type="string" name="latitude" class="form-control public-submission" placeholder="Add latitude" id="latitude">
+                                    <br>
+                                    <br>
+                                    <input type="string" name="longitude" class="form-control public-submission" placeholder="Add longitude" id="longitude">
+                                    <br>
+                                    <br>
+                                    <input type="string" name="url" class="form-control public-submission" placeholder="Add website url" id="url">
+                                    <br>
+                                    <br>
+                                    <input type="string" name="type" class="form-control public-submission" placeholder="Add type" id="type">
+                                    <br>
+                                    <br>
+                                    <input type="string" name="type_icon" class="form-control public-submission" placeholder="Add type icon" id="type_icon">
+                                    <br>
+                                    <br>
+                                    <input type="boolean" name="verified" class="form-control public-submission" placeholder="Verified: please enter true/false" id="verified">
+                                    <br>
+                                    <br>
+
+                                    <!-- <h3>Verified?</h3>
+                                    <div class="btn-group" role="group">
+                                      <button id = "verified1" name ="verified" type="button" class="btn btn-danger" value = "true">True</button>
+                                      <button id = "verified2" name ="verified" type="button" class="btn btn-danger" value = "false">False</button>
+                                    </div> -->
+                                    
+                                    <input type="string" name="gallery" class="form-control public-submission" placeholder="Add image" id="type_icon">
+                                    <br>
+                                    <br>
+                                    <button style="width:100%; border-radius: 5px;" type="submit" class="btn btn-default">Submit</button>
+                                </form>
+                            </div>
+                            <!-- END OF ADMIN'S FORM FOR LISTING SUBMISSION -->
+                        </div>
+                        <div class="col-lg-3">
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+            <!-- end Container-->
+
+            <!--Page Footer-->
+            <footer id="page-footer">
+              <div class="inner">
+                <div class="footer-bottom">
+                  <div class="container" align="center">
+                    © Ginger Singapore, Inc.
+                  </div>
+                </div>
+                <!--/.footer-bottom-->
+              </div>
+            </footer>
+            <!--end Page Footer-->
+          </div>
+          <!-- end Inner Wrapper -->
+        </div>
+        <!-- end Outer Wrapper-->
+
+        <script type="text/javascript" src="../../assets/js/jquery-2.1.0.min.js"></script>
+        <script type="text/javascript" src="../../assets/js/before.load.js"></script>
+        <script type="text/javascript" src="../../assets/js/jquery-migrate-1.2.1.min.js"></script>
+        <script type="text/javascript" src="../../assets/bootstrap/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="../../assets/js/smoothscroll.js"></script>
+        <script type="text/javascript" src="../../assets/js/bootstrap-select.min.js"></script>
+        <script type="text/javascript" src="../../assets/js/jquery.hotkeys.js"></script>
+        <script type="text/javascript" src="../../assets/js/jquery.nouislider.all.min.js"></script>
+        <script type="text/javascript" src="../../assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+        <script type="text/javascript" src="../../assets/js/infobox.js"></script>
+        <script type="text/javascript" src="../../assets/js/richmarker-compiled.js"></script>
+        <script type="text/javascript" src="../../assets/js/markerclusterer.js"></script>
+        <script type="text/javascript" src="../../assets/js/custom.js"></script>
+        <script type="text/javascript" src="../../assets/js/maps.js"></script>
+
+        <!--[if lte IE 9]>
+      =======
+              </footer>
+              <!--end Page Footer-->
+
+        </div>
+        <!-- end Inner Wrapper -->
+        </div>
+        <!-- end Outer Wrapper-->
+
+
+        <script type="text/javascript" src="../../assets/js/jquery-2.1.0.min.js"></script>
+        <script type="text/javascript" src="../../assets/js/before.load.js"></script>
+        <script type="text/javascript" src="../../assets/js/jquery-migrate-1.2.1.min.js"></script>
+        <script type="text/javascript" src="../../assets/bootstrap/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="../../assets/js/smoothscroll.js"></script>
+        <script type="text/javascript" src="../../assets/js/bootstrap-select.min.js"></script>
+        <script type="text/javascript" src="../../assets/js/jquery.hotkeys.js"></script>
+        <script type="text/javascript" src="../../assets/js/jquery.nouislider.all.min.js"></script>
+        <script type="text/javascript" src="../../assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+        <script type="text/javascript" src="../../assets/js/infobox.js"></script>
+        <script type="text/javascript" src="../../assets/js/richmarker-compiled.js"></script>
+        <script type="text/javascript" src="../../assets/js/markerclusterer.js"></script>
+        <script type="text/javascript" src="../../assets/js/custom.js"></script>
+        <script type="text/javascript" src="../../assets/js/maps.js"></script>
+
+        <!--[if lte IE 9]>
+      >>>>>>> 5dc1e8b5534f3955d52a5b851da4587a7586165a
+      <script type="text/javascript" src="assets/js/ie-scripts.js"></script>
+      <![endif]-->
+
+        <!--[if lte IE 9]>
+      <script type="text/javascript" src="assets/js/ie-scripts.js"></script>
+      <![endif]-->
+      </body>
+
+      </html>
