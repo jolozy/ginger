@@ -143,6 +143,9 @@
                 <header>
                   <h3>Results</h3>
                 </header>
+                <div class="route-control"><a href="#">click to hide directions</a></div>
+                <div id="route-display"></div>
+                <div class="route-control"><a href="#">click to hide directions</a></div>
                 <ul class="results list">
 
                 </ul>
@@ -198,6 +201,11 @@
     var _latitude = 1.36080344;
     var _longitude = 103.81565094;
     var jsonPath = '/api/listings';
+    $(".route-control").hide();
+    $(".route-control").click(function(){
+        $(".route-control").fadeOut("slow");
+        $("#route-display").fadeOut("slow");
+    });
 
     // Load JSON data and create Google Maps
     loadGoogleMap(jsonPath);
