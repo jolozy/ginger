@@ -105,7 +105,7 @@ function createListing(request, response) {
     if(error) response.json({messsage: 'Could not ceate listing because:' + error});
     console.log(listing);
     // response.json({listings});
-    response.render('users/thankyou');
+    response.render('users/thankyou', { title: 'Thank You'});
   });
 }
 
