@@ -289,6 +289,8 @@ function createHomepageGoogleMap(_latitude,_longitude,json){
             var locationCenter = new google.maps.LatLng( position.coords.latitude, position.coords.longitude);
             map.setCenter( locationCenter );
             map.setZoom(14);
+            directionsDisplay.setMap(map);
+            directionsDisplay.setPanel(document.getElementById('route-display'));
 
 			var markerContent = document.createElement('DIV');
 			markerContent.innerHTML =
@@ -457,9 +459,10 @@ function simpleMap(_latitude, _longitude, draggableMarker){
 
 function pushItemsToArray(json, a, category, visibleItemsArray){
     var itemPrice;
+    var destination = { lat: json.data[a].latitude, lng: json.data[a].longitude};
     visibleItemsArray.push(
         '<li>' +
-            '<div class="item" id="' + json.data[a].id + '">' +
+            '<div class="item" id="' + json.data[a]._id + '">' +
                 '<a href="#" class="image">' +
                     '<div class="inner">' +
                         '<div class="item-specific">' +
@@ -479,7 +482,6 @@ function pushItemsToArray(json, a, category, visibleItemsArray){
                         '</div>' +
                         '<div class="type" id="walk'+a+'"></div>' +
                         '<div class="type" id="dist'+a+'"></div>' +
-                        '<div id="startRoute">Start Route</div>' +
                         // '<div class="type">Lat: '+ json.data[a].latitude + ' , ' + currentLat + '</div>' +
                         // '<div class="type">Long: '+ json.data[a].longitude +  ' , ' + currentLong + '</div>' +
                     '</div>' +
@@ -487,6 +489,10 @@ function pushItemsToArray(json, a, category, visibleItemsArray){
             '</div>' +
         '</li>'
     );
+
+    $("ul.results").on( "click", "#dist"+a, function() {
+          calculateAndDisplayRoute(directionsService, directionsDisplay, origin, destination );
+        });
 
     function drawPrice(price){
         if( price ){
@@ -498,7 +504,21 @@ function pushItemsToArray(json, a, category, visibleItemsArray){
         }
     }
 
-    var destination = { lat: json.data[a].latitude, lng: json.data[a].longitude};
+// Start ROUTE API
+    function calculateAndDisplayRoute(directionsService, directionsDisplay, origin, destination) {
+
+      directionsService.route({
+        origin: origin,
+        destination: destination,
+        travelMode: google.maps.TravelMode.DRIVING
+      }, function(response, status) {
+        if (status === google.maps.DirectionsStatus.OK) {
+          directionsDisplay.setDirections(response);
+        } else {
+          window.alert('Directions request failed due to ' + status);
+        }
+      });
+    }
 
     service.getDistanceMatrix({
       origins: [origin],
@@ -555,40 +575,6 @@ function pushItemsToArray(json, a, category, visibleItemsArray){
     });
 
 
-// Start ROUTE API
-
-directionsDisplay.setMap(map);
-directionsDisplay.setPanel(document.getElementById('route-display'));
-
-// $(".startRoute").click(function() {
-//     alert("start route");
-//       calculateAndDisplayRoute(directionsService, directionsDisplay);
-//     });
-
-$( document ).ready(function() {
-var onClickHandler = function() {
-      calculateAndDisplayRoute(directionsService, directionsDisplay);
-    };
-
-    document.getElementById('startRoute').addEventListener('click', onClickHandler);
-});
-
-  function calculateAndDisplayRoute(directionsService, directionsDisplay) {
-
-    directionsService.route({
-      origin: origin,
-      destination: destination,
-      travelMode: google.maps.TravelMode.DRIVING
-    }, function(response, status) {
-      if (status === google.maps.DirectionsStatus.OK) {
-        directionsDisplay.setDirections(response);
-      } else {
-        window.alert('Directions request failed due to ' + status);
-      }
-    });
-  }
-
-
 }
 
 // Center map to marker position if function is called (disabled) ------------------------------------------------------
@@ -619,12 +605,12 @@ function multiChoice(sameLatitude, sameLongitude, json) {
             $('.modal-window .modal-wrapper .items').html( multipleItems );
             rating('.modal-window');
         });
-        $('.modal-window .modal-background, .modal-close').live('click',  function(e){
-            $('.modal-window').addClass('fade_out');
-            setTimeout(function() {
-                $('.modal-window').remove();
-            }, 300);
-        });
+        // $('.modal-window .modal-background, .modal-close').live('click',  function(e){
+        //     $('.modal-window').addClass('fade_out');
+        //     setTimeout(function() {
+        //         $('.modal-window').remove();
+        //     }, 300);
+        // });
     //}
 }
 
@@ -659,18 +645,18 @@ function animateOSMMarkers(map, loadedMarkers, json){
 
     rating('.results .item');
 
-    $('.results .item').hover(
-        function(){
-            if( loadedMarkers[ $(this).attr('id') - 1 ]._icon ){
-                loadedMarkers[ $(this).attr('id') - 1 ]._icon.className = 'leaflet-marker-icon leaflet-zoom-animated leaflet-clickable marker-loaded marker-active';
-            }
-        },
-        function() {
-            if( loadedMarkers[ $(this).attr('id') - 1 ]._icon ){
-                loadedMarkers[ $(this).attr('id') - 1 ]._icon.className = 'leaflet-marker-icon leaflet-zoom-animated leaflet-clickable marker-loaded';
-            }
-        }
-    );
+    // $('.results .item').hover(
+    //     function(){
+    //         if( loadedMarkers[ $(this).attr('id') - 1 ]._icon ){
+    //             loadedMarkers[ $(this).attr('id') - 1 ]._icon.className = 'leaflet-marker-icon leaflet-zoom-animated leaflet-clickable marker-loaded marker-active';
+    //         }
+    //     },
+    //     function() {
+    //         if( loadedMarkers[ $(this).attr('id') - 1 ]._icon ){
+    //             loadedMarkers[ $(this).attr('id') - 1 ]._icon.className = 'leaflet-marker-icon leaflet-zoom-animated leaflet-clickable marker-loaded';
+    //         }
+    //     }
+    // );
 
 }
 

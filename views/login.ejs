@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="assets/css/style.css" type="text/css">
     <link rel="stylesheet" href="assets/css/user.style.css" type="text/css">
 
-    <title>Login</title>
+    <title><%= title %></title>
       <style>
           @media (min-width: 767px) {#burger {visibility: hidden}};
           }
@@ -61,18 +61,17 @@
         <!-- Page Canvas-->
         <div class="jumbotron">
           <h1>Admin Login Page</h1>
-          <div class="container">
-
             <div class="container">
           <p class="lead">
-            Because Admins Are The Most Gangstaa People In The World
+            Because Admins are the most gangstaa people in the world
               </p>
           </div>
-        </div>
       </div>
         <div class="container">
         <!-- Example row of columns -->
-<div class="col-md-6" align="center">
+          <div class="col-lg-3">
+          </div>
+<div class="col-lg-6" align="center">
   <% include ./partials/loginform %>
 </div>
       <div class="col-lg-3">
@@ -113,39 +112,5 @@
 <script type="text/javascript" src="assets/js/custom.js"></script>
 <script type="text/javascript" src="assets/js/maps.js"></script>
 
-<!--[if lte IE 9]>
-<script type="text/javascript" src="assets/js/ie-scripts.js"></script>
-<![endif]-->
-
-<script>
-    var _latitude = 1.36080344;
-    var _longitude = 103.81565094;
-    var jsonPath = '/api/listings';
-
-    // Load JSON data and create Google Maps
-
-    $.getJSON(jsonPath)
-        .done(function(json) {
-            createHomepageGoogleMap(_latitude,_longitude,json);
-        })
-        .fail(function( jqxhr, textStatus, error ) {
-            console.log(error);
-        })
-    ;
-
-    // Set if language is RTL and load Owl Carousel
-
-    $(window).load(function(){
-        var rtl = false; // Use RTL
-        initializeOwl(rtl);
-    });
-
-    autoComplete();
-
-</script>
-
-<!--[if lte IE 9]>
-<script type="text/javascript" src="assets/js/ie-scripts.js"></script>
-<![endif]-->
 </body>
 </html>
