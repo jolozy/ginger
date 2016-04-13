@@ -6,7 +6,7 @@ function getCategory (req, res) {
 
   })
 }
-
+//Hello
 // GET ALL LISTINGS FOR MAP
 function getAll(request, response) {
   Listing.find({"verified": true}).exec(function (error, listings) {
