@@ -506,7 +506,6 @@ function pushItemsToArray(json, a, category, visibleItemsArray){
 
 // Start ROUTE API
     function calculateAndDisplayRoute(directionsService, directionsDisplay, origin, destination) {
-
       directionsService.route({
         origin: origin,
         destination: destination,
@@ -538,7 +537,7 @@ function pushItemsToArray(json, a, category, visibleItemsArray){
             var results = response.rows[i].elements;
             for (var j = 0; j < results.length; j++) {
               var dist = "div#dist" + a;
-              var distValue = "Driving: " + results[j].distance.text;
+              var distValue = '<a href="#" title="get driving directions">Drive Route: ' + results[j].distance.text + '</a>';
               $(dist).html(distValue);
 
           }
@@ -645,18 +644,18 @@ function animateOSMMarkers(map, loadedMarkers, json){
 
     rating('.results .item');
 
-    // $('.results .item').hover(
-    //     function(){
-    //         if( loadedMarkers[ $(this).attr('id') - 1 ]._icon ){
-    //             loadedMarkers[ $(this).attr('id') - 1 ]._icon.className = 'leaflet-marker-icon leaflet-zoom-animated leaflet-clickable marker-loaded marker-active';
-    //         }
-    //     },
-    //     function() {
-    //         if( loadedMarkers[ $(this).attr('id') - 1 ]._icon ){
-    //             loadedMarkers[ $(this).attr('id') - 1 ]._icon.className = 'leaflet-marker-icon leaflet-zoom-animated leaflet-clickable marker-loaded';
-    //         }
-    //     }
-    // );
+    $('.results .item').hover(
+        function(){
+            if( loadedMarkers[ $(this).attr('id') - 1 ]._icon ){
+                loadedMarkers[ $(this).attr('id') - 1 ]._icon.className = 'leaflet-marker-icon leaflet-zoom-animated leaflet-clickable marker-loaded marker-active';
+            }
+        },
+        function() {
+            if( loadedMarkers[ $(this).attr('id') - 1 ]._icon ){
+                loadedMarkers[ $(this).attr('id') - 1 ]._icon.className = 'leaflet-marker-icon leaflet-zoom-animated leaflet-clickable marker-loaded';
+            }
+        }
+    );
 
 }
 
