@@ -5305,7 +5305,7 @@ form .form-group.large input {
   width: 47%;
 }
 .search-bar.horizontal .main-search.inputs-3 .input-row > .form-group {
-  width: 31.2%;
+  width: 30%;
 }
 .search-bar.horizontal .main-search.inputs-4 .input-row > .form-group {
   width: 23.2%;
@@ -6014,7 +6014,7 @@ body.navigation-top-header .header .wrapper .toggle-navigation {
   position: relative;
 }
 #page-footer .inner {
-  padding-top: 60px;
+  padding-top: 0px;
 }
 #page-footer .inner address figure {
   margin-top: 20px;
@@ -6043,7 +6043,7 @@ body.navigation-top-header .header .wrapper .toggle-navigation {
 #page-footer .inner .footer-bottom {
   border-bottom: 2px solid #ff513f;
   border-top: 1px solid rgba(0, 0, 0, 0.08);
-  margin-top: 20px;
+  margin-top: 00px;
   padding: 30px;
 }
 #page-footer .inner .footer-bottom .left {

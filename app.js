@@ -5,11 +5,14 @@ var path = require('path');
 var methodOverride = require('method-override')
 var morgan = require('morgan')
 var restful = require('node-restful')
-var mongoose = restful.mongoose;
+var mongoose = require('mongoose');
+var helpers = require('express-helpers')
+// Authentication
+var passport = require('passport');
+var LocalStrategy = require('passport-local').Strategy;
 
 // Models
-var Listing = require('./models/listing');
-var Clinic = require('./models/clinic');
+// var Listing = require('./models/listing');
 
 // Express
 var app = express();
@@ -25,14 +28,48 @@ app.use(bodyParser.urlencoded({'extended':'false'}));
 app.use(methodOverride());
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.use(methodOverride('_method'));
 
+// Passport Middleware
+app.use(passport.initialize());
+app.use(passport.session());
+
+// app.use(helpers('ginger'))
+
+helpers(app);
+
+var routes = require('./config/routes');
+app.use(routes);
+
+// Listing Routes
+// Listing.methods(['get', 'post', 'put', 'delete']);
+// Listing.register(router, '/listing');
 // Routes for API
 app.use('/api', require('./config/routes'));
 
 // Conventional Routes
 app.get('/', function(req, res) {
-    // res.send("homepage")
-    res.render('index', { title: 'WDI-2 App' });
+res.render('index', { title: 'Ginger' });
+});
+
+// Create User Page Route
+app.get('/user', function(req,res) {
+  res.render('user', { title: 'New User Creation'});
+});
+
+// Listing Form Page Route
+app.get('/listing', function(req,res) {
+  res.render('listing-form', { title: 'Update Listing'});
+});
+
+// About Us Page Route
+app.get('/about', function(req,res) {
+  res.render('about', { title: 'About Ginger'});
+});
+
+//Login Page Route
+app.get('/login', function(req, res) {
+  res.render('login', { title: 'Login Page'});
 });
 
 

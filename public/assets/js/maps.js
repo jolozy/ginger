@@ -1,6 +1,11 @@
 "use strict";
 var $ = jQuery.noConflict();
-
+var currentLat;
+var currentLong;
+var origin;
+var service = new google.maps.DistanceMatrixService; //Google Distance api
+var directionsDisplay = new google.maps.DirectionsRenderer; //Google Routing api
+var directionsService = new google.maps.DirectionsService; //Google Routing api
 var mapStyles = [ {"featureType":"road","elementType":"labels","stylers":[{"visibility":"simplified"},{"lightness":20}]},{"featureType":"administrative.land_parcel","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"landscape.man_made","elementType":"all","stylers":[{"visibility":"on"}]},{"featureType":"transit","elementType":"all","stylers":[{"saturation":-100},{"visibility":"on"},{"lightness":10}]},{"featureType":"road.local","elementType":"all","stylers":[{"visibility":"on"}]},{"featureType":"road.local","elementType":"all","stylers":[{"visibility":"on"}]},{"featureType":"road.highway","elementType":"labels","stylers":[{"visibility":"simplified"}]},{"featureType":"poi","elementType":"labels","stylers":[{"visibility":"off"}]},{"featureType":"road.arterial","elementType":"labels","stylers":[{"visibility":"on"},{"lightness":50}]},{"featureType":"water","elementType":"all","stylers":[{"hue":"#a1cdfc"},{"saturation":30},{"lightness":49}]},{"featureType":"road.highway","elementType":"geometry","stylers":[{"hue":"#f49935"}]},{"featureType":"road.arterial","elementType":"geometry","stylers":[{"hue":"#fad959"}]}, {featureType:'road.highway',elementType:'all',stylers:[{hue:'#dddbd7'},{saturation:-92},{lightness:60},{visibility:'on'}]}, {featureType:'landscape.natural',elementType:'all',stylers:[{hue:'#c8c6c3'},{saturation:-71},{lightness:-18},{visibility:'on'}]},  {featureType:'poi',elementType:'all',stylers:[{hue:'#d9d5cd'},{saturation:-70},{lightness:20},{visibility:'on'}]} ];
 
 // Set map height to 100% ----------------------------------------------------------------------------------------------
@@ -23,6 +28,7 @@ function createHomepageGoogleMap(_latitude,_longitude,json){
     $.get("assets/external/_infobox.js", function() {
         gMap();
     });
+
     function gMap(){
         var mapCenter = new google.maps.LatLng(_latitude,_longitude);
         var mapOptions = {
@@ -208,8 +214,10 @@ function createHomepageGoogleMap(_latitude,_longitude,json){
 
             var visibleItemsArray = [];
             $.each(json.data, function(a) {
+
                 if( map.getBounds().contains( new google.maps.LatLng( json.data[a].latitude, json.data[a].longitude ) ) ) {
                     var category = json.data[a].category;
+
                     pushItemsToArray(json, a, category, visibleItemsArray);
                 }
             });
@@ -275,9 +283,14 @@ function createHomepageGoogleMap(_latitude,_longitude,json){
         });
 
         function success(position) {
+            currentLat = position.coords.latitude;
+            currentLong = position.coords.longitude;
+            origin = { lat: currentLat, lng: currentLong};
             var locationCenter = new google.maps.LatLng( position.coords.latitude, position.coords.longitude);
             map.setCenter( locationCenter );
             map.setZoom(14);
+            directionsDisplay.setMap(map);
+            directionsDisplay.setPanel(document.getElementById('route-display'));
 
 			var markerContent = document.createElement('DIV');
 			markerContent.innerHTML =
@@ -350,6 +363,7 @@ function createHomepageGoogleMap(_latitude,_longitude,json){
 
     }
 }
+
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // Item Detail Map - Google
@@ -445,9 +459,10 @@ function simpleMap(_latitude, _longitude, draggableMarker){
 
 function pushItemsToArray(json, a, category, visibleItemsArray){
     var itemPrice;
+    var destination = { lat: json.data[a].latitude, lng: json.data[a].longitude};
     visibleItemsArray.push(
         '<li>' +
-            '<div class="item" id="' + json.data[a].id + '">' +
+            '<div class="item" id="' + json.data[a]._id + '">' +
                 '<a href="#" class="image">' +
                     '<div class="inner">' +
                         '<div class="item-specific">' +
@@ -465,12 +480,27 @@ function pushItemsToArray(json, a, category, visibleItemsArray){
                             '<i><img src="' + json.data[a].type_icon + '" alt=""></i>' +
                             '<span>' + json.data[a].type + '</span>' +
                         '</div>' +
-                        '<div class="rating" data-rating="' + json.data[a].rating + '"></div>' +
+                        '<div class="type" id="walk'+a+'"></div>' +
+                        '<div class="type" id="dist'+a+'"></div>' +
+                        // '<div class="type">Lat: '+ json.data[a].latitude + ' , ' + currentLat + '</div>' +
+                        // '<div class="type">Long: '+ json.data[a].longitude +  ' , ' + currentLong + '</div>' +
                     '</div>' +
                 '</div>' +
             '</div>' +
         '</li>'
     );
+
+    $("ul.results").on( "click", "#dist"+a, function() {
+          $(".route-control").show();
+          $("#route-display").show();
+          calculateAndDisplayRoute(directionsService, directionsDisplay, origin, destination, google.maps.TravelMode.DRIVING);
+        });
+
+    $("ul.results").on( "click", "#walk"+a, function() {
+          $(".route-control").show();
+          $("#route-display").show();
+          calculateAndDisplayRoute(directionsService, directionsDisplay, origin, destination, google.maps.TravelMode.WALKING);
+        });
 
     function drawPrice(price){
         if( price ){
@@ -481,6 +511,77 @@ function pushItemsToArray(json, a, category, visibleItemsArray){
             return '';
         }
     }
+
+// Start ROUTE API
+    function calculateAndDisplayRoute(directionsService, directionsDisplay, origin, destination, mode) {
+      directionsService.route({
+        origin: origin,
+        destination: destination,
+        travelMode: mode
+      }, function(response, status) {
+        if (status === google.maps.DirectionsStatus.OK) {
+          directionsDisplay.setDirections(response);
+        } else {
+          window.alert('Directions request failed due to ' + status);
+        }
+      });
+    }
+
+    service.getDistanceMatrix({
+      origins: [origin],
+      destinations: [destination],
+      travelMode: google.maps.TravelMode.DRIVING,
+      unitSystem: google.maps.UnitSystem.METRIC,
+      avoidHighways: false,
+      avoidTolls: false
+    }, function(response, status) {
+      if (status !== google.maps.DistanceMatrixStatus.OK) {
+        alert('Error was: ' + status);
+      } else {
+        var originList = response.originAddresses;
+        var destinationList = response.destinationAddresses;
+
+        for (var i = 0; i < originList.length; i++) {
+            var results = response.rows[i].elements;
+            for (var j = 0; j < results.length; j++) {
+              var dist = "div#dist" + a;
+              var distValue = '<a href="#" title="get driving directions">Drive Route: ' + results[j].distance.text + '</a>';
+              $(dist).html(distValue);
+
+          }
+        }
+      }
+    });
+
+    service.getDistanceMatrix({
+      origins: [origin],
+      destinations: [destination],
+      travelMode: google.maps.TravelMode.WALKING,
+      unitSystem: google.maps.UnitSystem.METRIC,
+      avoidHighways: false,
+      avoidTolls: false
+    }, function(response, status) {
+      if (status !== google.maps.DistanceMatrixStatus.OK) {
+        alert('Error was: ' + status);
+      } else {
+        var originList = response.originAddresses;
+        var destinationList = response.destinationAddresses;
+
+        for (var i = 0; i < originList.length; i++) {
+            var results = response.rows[i].elements;
+            for (var j = 0; j < results.length; j++) {
+              var res = results[j].distance.text.split(" ")
+              if(parseFloat(res[0])<2.01){
+              var walk = "div#walk" + a;
+              var walkValue = '<a href="#" title="get walking directions">Walk Route: ' + results[j].distance.text + '</a>';
+              $(walk).html(walkValue);
+            }
+          }
+        }
+      }
+    });
+
+
 }
 
 // Center map to marker position if function is called (disabled) ------------------------------------------------------
@@ -511,12 +612,12 @@ function multiChoice(sameLatitude, sameLongitude, json) {
             $('.modal-window .modal-wrapper .items').html( multipleItems );
             rating('.modal-window');
         });
-        $('.modal-window .modal-background, .modal-close').live('click',  function(e){
-            $('.modal-window').addClass('fade_out');
-            setTimeout(function() {
-                $('.modal-window').remove();
-            }, 300);
-        });
+        // $('.modal-window .modal-background, .modal-close').live('click',  function(e){
+        //     $('.modal-window').addClass('fade_out');
+        //     setTimeout(function() {
+        //         $('.modal-window').remove();
+        //     }, 300);
+        // });
     //}
 }
 
