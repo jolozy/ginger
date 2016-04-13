@@ -491,7 +491,15 @@ function pushItemsToArray(json, a, category, visibleItemsArray){
     );
 
     $("ul.results").on( "click", "#dist"+a, function() {
-          calculateAndDisplayRoute(directionsService, directionsDisplay, origin, destination );
+          $(".route-control").show();
+          $("#route-display").show();
+          calculateAndDisplayRoute(directionsService, directionsDisplay, origin, destination, google.maps.TravelMode.DRIVING);
+        });
+
+    $("ul.results").on( "click", "#walk"+a, function() {
+          $(".route-control").show();
+          $("#route-display").show();
+          calculateAndDisplayRoute(directionsService, directionsDisplay, origin, destination, google.maps.TravelMode.WALKING);
         });
 
     function drawPrice(price){
@@ -505,11 +513,11 @@ function pushItemsToArray(json, a, category, visibleItemsArray){
     }
 
 // Start ROUTE API
-    function calculateAndDisplayRoute(directionsService, directionsDisplay, origin, destination) {
+    function calculateAndDisplayRoute(directionsService, directionsDisplay, origin, destination, mode) {
       directionsService.route({
         origin: origin,
         destination: destination,
-        travelMode: google.maps.TravelMode.DRIVING
+        travelMode: mode
       }, function(response, status) {
         if (status === google.maps.DirectionsStatus.OK) {
           directionsDisplay.setDirections(response);
@@ -565,7 +573,7 @@ function pushItemsToArray(json, a, category, visibleItemsArray){
               var res = results[j].distance.text.split(" ")
               if(parseFloat(res[0])<2.01){
               var walk = "div#walk" + a;
-              var walkValue = "Walking: " + results[j].distance.text;
+              var walkValue = '<a href="#" title="get walking directions">Walk Route: ' + results[j].distance.text + '</a>';
               $(walk).html(walkValue);
             }
           }
