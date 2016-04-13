@@ -1,6 +1,32 @@
 // getAll, create,  show, update, put/patch, destroy
 
 var User = require('../models/User');
+
+function authorize () {
+  const userParams = {
+    name: req.body.name,
+    email: req.body.email,
+    password: req.body.password,
+    type: req.body.type
+  }
+  if (!userParams.email || !userParams.password) return res.status(422).json({message: "Invalid Data"});
+  User.find({email: userParams.email}, function (err, user) {
+    if (user) {
+      user.authenticate(userParams.password, function (err, isMatch) {
+        if (err) throw err;
+        if (!isMatch) return res.status(401).json( {message: "Authorization Failed."});
+        res.status(200).json( { user: user, token: user.generateToken() });
+      })
+    } else {
+      user = new User( userParams );
+      user.save(function (err, user) {
+        if (err) return res.status(422).json({errors: Util.mongooseErrMessages(err)});
+        res.status(201).json( {user: user, token: user.generateToken() });
+      });
+    }
+  })
+}
+
 // GET
 function getAllUser(request, response) {
   User.find( (error, user) => {
@@ -64,5 +90,6 @@ module.exports = {
   createUser: createUser,
   getUser: getUser,
   updateUser: updateUser,
-  removeUser: removeUser
+  removeUser: removeUser,
+  authorize: authorize
 }

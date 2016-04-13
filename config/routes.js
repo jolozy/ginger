@@ -1,12 +1,20 @@
 var express = require('express');
-    router = express.Router();
-    bodyParser = require('body-parser'), //parses information from POST
-    methodOverride = require('method-override'); //used to manipulate POST
-    helpers = require('express-helpers');
+var router = express.Router();
+var bodyParser = require('body-parser'); //parses information from POST
+var methodOverride = require('method-override'); //used to manipulate POST
+var helpers = require('express-helpers');
+var expressJWT = require('express-jwt');
+var jwt = require('jsonwebtoken');
 
 // Models
 var listingsController = require('../controllers/listingsController');
 var usersController = require('../controllers/usersController');
+
+var jwtSecret = 'onion';
+
+function authorizeUser () {
+  return expressJWT({secret: jwtSecret});
+}
 
 // FOR MAP
 router.route('/api/listings')
@@ -22,8 +30,8 @@ router.route('/admin/listings/')
   .get(listingsController.getAllListings);
 // FOR ADMIN: SUBMISSION
 router.route('/admin/listings/new')
-  .get(listingsController.adminSubmitForm)
-  .post(listingsController.adminCreateListing);
+  .get(authorizeUser(), listingsController.adminSubmitForm)
+  .post(authorizeUser(), listingsController.adminCreateListing);
 // FOR ADMIN TO SEE ONE LISTING
 router.route('/admin/listings/:id')
   .get(listingsController.getListing)
@@ -47,6 +55,8 @@ router.route('/api/users/:id')
   .get(usersController.getUser)
   .put(usersController.updateUser)
   .delete(usersController.removeUser);
+router.route('/authenticate')
+  .post(usersController.authorize)
 
 
 module.exports = router;
