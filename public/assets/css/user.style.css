@@ -2,6 +2,7 @@
 text-align: center;
 background-color: transparent;
 color: #373a3c;
+height: 170px;
 }
 
 .jumbotron h1 {
@@ -9,7 +10,7 @@ color: #373a3c;
   margin-bottom: .5rem;
   font-family: inherit;
   font-weight: 500;
-  line-height: 1.5;
+  line-height: 1.2;
   color: inherit;
 }
 
@@ -43,4 +44,9 @@ border-radius: 20px;
 
 .user-input-listing {
   margin: 5px;
+}
+
+.public-submission {
+height: 45px;
+font-size: 1.5rem;
 }
