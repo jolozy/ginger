@@ -29,10 +29,6 @@ router.route('/api/listings')
 router.route('/admin/listings/')
   .get(listingsController.getAllListings);
 // FOR ADMIN: SUBMISSION
-// router.route('/admin/listings/new')
-//   .get(authorizeUser(), listingsController.adminSubmitForm)
-//   .post(authorizeUser(), listingsController.adminCreateListing);
-
 router.route('/admin/listings/new')
   .get(listingsController.adminSubmitForm)
   .post(authorizeUser(), listingsController.adminCreateListing);
