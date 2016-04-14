@@ -7,7 +7,7 @@ var service = new google.maps.DistanceMatrixService; //Google Distance api
 var directionsDisplay = new google.maps.DirectionsRenderer; //Google Routing api
 var directionsService = new google.maps.DirectionsService; //Google Routing api
 var mapStyles = [ {"featureType":"road","elementType":"labels","stylers":[{"visibility":"simplified"},{"lightness":20}]},{"featureType":"administrative.land_parcel","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"landscape.man_made","elementType":"all","stylers":[{"visibility":"on"}]},{"featureType":"transit","elementType":"all","stylers":[{"saturation":-100},{"visibility":"on"},{"lightness":10}]},{"featureType":"road.local","elementType":"all","stylers":[{"visibility":"on"}]},{"featureType":"road.local","elementType":"all","stylers":[{"visibility":"on"}]},{"featureType":"road.highway","elementType":"labels","stylers":[{"visibility":"simplified"}]},{"featureType":"poi","elementType":"labels","stylers":[{"visibility":"off"}]},{"featureType":"road.arterial","elementType":"labels","stylers":[{"visibility":"on"},{"lightness":50}]},{"featureType":"water","elementType":"all","stylers":[{"hue":"#a1cdfc"},{"saturation":30},{"lightness":49}]},{"featureType":"road.highway","elementType":"geometry","stylers":[{"hue":"#f49935"}]},{"featureType":"road.arterial","elementType":"geometry","stylers":[{"hue":"#fad959"}]}, {featureType:'road.highway',elementType:'all',stylers:[{hue:'#dddbd7'},{saturation:-92},{lightness:60},{visibility:'on'}]}, {featureType:'landscape.natural',elementType:'all',stylers:[{hue:'#c8c6c3'},{saturation:-71},{lightness:-18},{visibility:'on'}]},  {featureType:'poi',elementType:'all',stylers:[{hue:'#d9d5cd'},{saturation:-70},{lightness:20},{visibility:'on'}]} ];
-
+var currentLocMarker;
 // Set map height to 100% ----------------------------------------------------------------------------------------------
 
 var $body = $('body');
@@ -276,40 +276,62 @@ function createHomepageGoogleMap(_latitude,_longitude,json){
 
         $( document ).ready( function() {
             if (navigator.geolocation) {
-                navigator.geolocation.getCurrentPosition(success);
+                navigator.geolocation.getCurrentPosition(success,null);
             } else {
                 console.log('Geo Location is not supported');
             }
         });
 
-        function success(position) {
-            currentLat = position.coords.latitude;
-            currentLong = position.coords.longitude;
+        $(".geolocation").click( function() {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(success,null);
+            } else {
+                console.log('Geo Location is not supported');
+            }
+        });
+
+        directionsDisplay.setMap(map);
+        directionsDisplay.setPanel(document.getElementById('route-display'));
+        function success(position,change) {
+            if(change !== undefined){
+              currentLat = change.lat();
+              currentLong = change.lng();
+            }
+            else {
+              currentLat = position.coords.latitude;
+              currentLong = position.coords.longitude;
+            }
             origin = { lat: currentLat, lng: currentLong};
-            var locationCenter = new google.maps.LatLng( position.coords.latitude, position.coords.longitude);
+            var locationCenter = new google.maps.LatLng( currentLat, currentLong);
             map.setCenter( locationCenter );
             map.setZoom(14);
-            directionsDisplay.setMap(map);
-            directionsDisplay.setPanel(document.getElementById('route-display'));
 
-			var markerContent = document.createElement('DIV');
-			markerContent.innerHTML =
-				'<div class="map-marker">' +
-					'<div class="icon">' +
-					'</div>' +
-				'</div>';
+
+            if(!currentLocMarker){
+            var markerContent = document.createElement('DIV');
+            markerContent.innerHTML =
+              '<div class="map-marker">' +
+              '<div class="icon">' +
+              '</div>' +
+              '</div>';
 
 			// Create marker on the map ------------------------------------------------------------------------------------
 
-			var marker = new RichMarker({
-				position: locationCenter,
-				map: map,
-				draggable: false,
-				content: markerContent,
-				flat: true
-			});
+            currentLocMarker = new RichMarker({
+              position: locationCenter,
+              map: map,
+              draggable: false,
+              content: markerContent,
+              flat: true
+            });
 
-			marker.content.className = 'marker-loaded';
+            currentLocMarker.content.className = 'marker-loaded';
+            }
+            else {
+              var newLatLng = new google.maps.LatLng({lat: currentLat, lng: currentLong});
+              currentLocMarker.setPosition(newLatLng);
+
+            }
 
             var geocoder = new google.maps.Geocoder();
             geocoder.geocode({
@@ -343,26 +365,61 @@ function createHomepageGoogleMap(_latitude,_longitude,json){
                 map.fitBounds(place.geometry.viewport);
                 map.setZoom(14);
             } else {
-                map.setCenter(place.geometry.location);
-                map.setZoom(14);
+  //sucess repeat
+
+            success( null, place.geometry.location);
+              // currentLat = place.geometry.location.lat();
+              // currentLong = place.geometry.location.lng();
+              // origin = { lat: currentLat, lng: currentLong};
+              // var locationCenter = new google.maps.LatLng( currentLat, currentLong);
+              // map.setCenter( locationCenter );
+              // map.setZoom(14);
+              //
+              // var markerContent = document.createElement('DIV');
+              // markerContent.innerHTML =
+              // '<div class="map-marker">' +
+              // '<div class="icon">' +
+              // '</div>' +
+              // '</div>';
+              //
+              // var currentLocMarker = new RichMarker({
+              //   position: locationCenter,
+              //   map: map,
+              //   draggable: false,
+              //   content: markerContent,
+              //   flat: true
+              // });
+              //
+              // currentLocMarker.content.className = 'marker-loaded';
+              // var geocoder = new google.maps.Geocoder();
+              // geocoder.geocode({
+              //     "latLng": locationCenter
+              // }, function (results, status) {
+              //     if (status == google.maps.GeocoderStatus.OK) {
+              //         var lat = results[0].geometry.location.lat(),
+              //             lng = results[0].geometry.location.lng(),
+              //             placeName = results[0].address_components[0].long_name,
+              //             latlng = new google.maps.LatLng(lat, lng);
+              //
+              //         $("#location").val(results[0].formatted_address);
+              //     }
+              // });
+
+              }
+
+              var address = '';
+              if (place.address_components) {
+                  address = [
+                      (place.address_components[0] && place.address_components[0].short_name || ''),
+                      (place.address_components[1] && place.address_components[1].short_name || ''),
+                      (place.address_components[2] && place.address_components[2].short_name || '')
+                    ].join(' ');
+                  }
+                });
+
+
+              }
             }
-
-            //marker.setPosition(place.geometry.location);
-            //marker.setVisible(true);
-
-            var address = '';
-            if (place.address_components) {
-                address = [
-                    (place.address_components[0] && place.address_components[0].short_name || ''),
-                    (place.address_components[1] && place.address_components[1].short_name || ''),
-                    (place.address_components[2] && place.address_components[2].short_name || '')
-                ].join(' ');
-            }
-        });
-
-
-    }
-}
 
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

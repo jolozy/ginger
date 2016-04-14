@@ -1,0 +1,33 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+<div align="center">
+  <h1></h1>
+<form id="login" onsubmit="event.preventDefault();">
+    <input class="user-input-listing" type="text" class="form-control" name="email" placeholder="Email">
+    <input class="user-input-listing" type="password" class="form-control" name="password" placeholder="Password">
+    <button align="right" type="submit" class="btn btn-grey">Sign In</button>
+</form>
+</div>
+<script type="text/javascript">
+  $('#login').submit(function (event) {
+    event.preventDefault();
+    var email = $('input[type=text]').val()
+    var password = $('input[type=password]').val()
+    $.ajax({
+      url: '/authenticate',
+      method: 'POST',
+      data: {
+        email: email,
+        password: password
+      }
+    }).done(function (result) {
+      if (result.user) {
+        window.localStorage.clear()
+        console.log('New user token created');
+        window.localStorage.setItem('token', result.token)
+        var text = $('<p>').html(window.localStorage.getItem('token'))
+        $('h1').append(text)
+
+      }
+    })
+  })
+</script>

@@ -1,6 +1,34 @@
-// getAll, create,  show, update, put/patch, destroy
+const bcrypt = require('bcrypt');
+var User = require('../models/user');
 
-var User = require('../models/User');
+const salt = bcrypt.genSaltSync(8)
+
+function authorize (req, res) {
+  const userParams = {
+    email: req.body.email,
+    password: req.body.password
+  }
+  // console.log(userParams)
+  if (!userParams.email || !userParams.password) return res.status(422).json({message: "Invalid Data"});
+  User.find({email: userParams.email}, function (err, users) {
+    if (users) {
+      users.forEach(function (user) {
+        user.authenticate(userParams.password, function (err, isMatch) {
+          if (err) throw err;
+          if (!isMatch) return res.status(401).json( {message: "Authorization Failed."});
+          res.status(200).json( { user: user, token: user.generateToken(req.body.email) });
+
+        })
+      })
+    }
+  })
+}
+
+// GO TO LOG IN PAGE
+function newUserLogIn(request, response) {
+  response.render('generateToken', {title: 'Generate Token'})
+};
+
 // GET
 function getAllUser(request, response) {
   User.find( (error, user) => {
@@ -11,58 +39,34 @@ function getAllUser(request, response) {
       response.json(res)
       return
     }
-    response.render('user', {users: users})
+    response.json('user', {user: user})
   })
 }
 // CREATE
+function newUserForm(request, response) {
+  response.render('user', {title: 'New User Creation'})
+};
+
 function createUser(request, response){
-var user = new User();
-user.name = request.body.name
-user.email = request.body.email
-user.password = request.body.password
-user.type = "admin";
-user.save( error => {
-  if (error) {
-    return res.json({message: 'Could Not Create User'});
-  }
-  response.send("success");
-});
-}
-
-
-// SHOW
-function getUser(request, response) {
-  var id = request.params.id;
-  User.findById({_id: id}, function(error, listing) {
-    if(error) response.json({message: 'Could Not Find User Because' + error});
-    response.json({data: user});
-  });
-}
-//Update
-function updateUser(request, response) {
-  var id = request.params.id;
-  User.findById({_id: id}, function(error, user) {
-    if(error) response.json({message: 'Could Not Find User Because' + error})
-    if(request.body.email) user.email = request.body.email;
-    user.save(function(error) {
-      if(error) response.json({messsage: 'Could Not Update User Because' + error});
-      response.json({message: 'User Updated Successfully'});
+  bcrypt.hash(request.body.password, salt, function (err, encrypted) {
+    var user = new User();
+    user.name = request.body.name
+    user.email = request.body.email
+    user.password = encrypted
+    user.type = "admin";
+    user.save( error => {
+      if (error) {
+        return res.json({message: 'Could Not Create User'});
+      }
+      response.send("Your token is " + user.generateToken(request.body.email));
     });
-  });
-}
-//Destroy
-function removeUser(request, response) {
-  var id = request.params.id;
-  User.remove({_id: id}, function(error) {
-    if(error) response.json({message: 'Could Not Delete User Because' + error});
-    response.render('user')
-  });
+  })
 }
 
 module.exports = {
+  newUserForm: newUserForm,
+  newUserLogIn: newUserLogIn,
   getAllUser: getAllUser,
   createUser: createUser,
-  getUser: getUser,
-  updateUser: updateUser,
-  removeUser: removeUser
+  authorize: authorize
 }

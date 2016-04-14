@@ -110,9 +110,9 @@ $(document).ready(function($) {
         //autoComplete();
     });
 
-//    if( $('#location').length ){
-//        autoComplete();
-//    }
+   if( $('#location').length ){
+       autoComplete();
+   }
 
 // Keyboard Shortcuts --------------------------------------------------------------------------------------------------
 
