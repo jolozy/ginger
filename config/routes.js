@@ -10,53 +10,45 @@ var jwt = require('jsonwebtoken');
 var listingsController = require('../controllers/listingsController');
 var usersController = require('../controllers/usersController');
 
-var jwtSecret = 'onion';
-
 function authorizeUser () {
-  return expressJWT({secret: jwtSecret});
+  return expressJWT({secret: 'onions'});
 }
 
 // FOR MAP
 router.route('/api/listings')
   .get(listingsController.getAll)
-
+// GET SELECTED CATEGORY ON MAPS
+router.route('/api/custom')
+  .get(listingsController.getCustom);
 // FOR PUBLIC USERS: SUBMISSION
-  router.route('/submit')
-    .get(listingsController.submitForm)
-    .post(listingsController.createListing);
-
+router.route('/submit')
+  .get(listingsController.submitForm)
+  .post(listingsController.createListing);
 // FOR ADMIN TO SEE ALL LISTINGS
 router.route('/admin/listings/')
-  .get(listingsController.getAllListings);
+  .get(authorizeUser(), listingsController.getAllListings);
 // FOR ADMIN: SUBMISSION
 router.route('/admin/listings/new')
   .get(listingsController.adminSubmitForm)
-  .post(authorizeUser(), listingsController.adminCreateListing);
+  .post(listingsController.adminCreateListing);
 // FOR ADMIN TO SEE ONE LISTING
 router.route('/admin/listings/:id')
   .get(listingsController.getListing)
 // FOR ADMIN TO EDIT & REMOVE
   .patch(listingsController.updateListing)
   .delete(listingsController.removeListing);
-
-router.route('/api/custom')
-  .get(listingsController.getCustom);
-
-router.route('/api/food')
-  .get(listingsController.getFood)
-router.route('/api/services')
-  .get(listingsController.getFood)
-
-// User
+// FOR USERS
+router.route('/user')
+  .get(usersController.newUserForm)
+  .post(usersController.createUser);
 router.route('/api/users')
   .get(usersController.getAllUser)
-  .post(usersController.createUser);
-router.route('/api/users/:id')
-  .get(usersController.getUser)
-  .put(usersController.updateUser)
-  .delete(usersController.removeUser);
+  // .post(usersController.createUser);
+// AUTHENTICATION
 router.route('/authenticate')
   .post(usersController.authorize)
 
+router.route('/generateToken')
+  .get(usersController.newUserLogIn)
 
 module.exports = router;
