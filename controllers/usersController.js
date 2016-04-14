@@ -1,21 +1,26 @@
 // getAll, create,  show, update, put/patch, destroy
+const bcrypt = require('bcrypt');
+var User = require('../models/user');
 
-var User = require('../models/User');
+const salt = bcrypt.genSaltSync(8)
 
-function authorize () {
+function authorize (req, res) {
   const userParams = {
     name: req.body.name,
     email: req.body.email,
     password: req.body.password,
     type: req.body.type
   }
+  // console.log(userParams)
   if (!userParams.email || !userParams.password) return res.status(422).json({message: "Invalid Data"});
-  User.find({email: userParams.email}, function (err, user) {
-    if (user) {
-      user.authenticate(userParams.password, function (err, isMatch) {
-        if (err) throw err;
-        if (!isMatch) return res.status(401).json( {message: "Authorization Failed."});
-        res.status(200).json( { user: user, token: user.generateToken() });
+  User.find({email: userParams.email}, function (err, users) {
+    if (users) {
+      users.forEach(function (user) {
+        user.authenticate(userParams.password, function (err, isMatch) {
+          if (err) throw err;
+          if (!isMatch) return res.status(401).json( {message: "Authorization Failed."});
+          res.status(200).json( { user: user, token: user.generateToken() });
+        })
       })
     } else {
       user = new User( userParams );
@@ -42,17 +47,19 @@ function getAllUser(request, response) {
 }
 // CREATE
 function createUser(request, response){
-var user = new User();
-user.name = request.body.name
-user.email = request.body.email
-user.password = request.body.password
-user.type = "admin";
-user.save( error => {
-  if (error) {
-    return res.json({message: 'Could Not Create User'});
-  }
-  response.send("success");
-});
+  bcrypt.hash(request.body.password, salt, function (err, encrypted) {
+    var user = new User();
+    user.name = request.body.name
+    user.email = request.body.email
+    user.password = encrypted
+    user.type = "admin";
+    user.save( error => {
+      if (error) {
+        return res.json({message: 'Could Not Create User'});
+      }
+      response.send("success");
+    });
+  })
 }
 
 

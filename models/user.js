@@ -11,6 +11,10 @@ var userSchema = mongoose.Schema({
   type: String
 });
 
+userSchema.methods.hello = function () {
+  console.log('hello');
+}
+
 userSchema.methods.authenticate = function (password, callback) {
   const user = this;
   bcrypt.compare(password, user.password, function (err, isMatch) {

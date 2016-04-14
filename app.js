@@ -11,6 +11,8 @@ var helpers = require('express-helpers')
 var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
 
+mongoose.connect("mongodb://localhost/ginger");
+
 // Models
 // var Listing = require('./models/listing');
 
@@ -74,7 +76,6 @@ app.get('/login', function(req, res) {
 
 
 // Connection
-mongoose.connect("mongodb://localhost/ginger");
 app.listen(3000);
 console.log("App running on port 3000");
 
