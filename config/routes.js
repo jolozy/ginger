@@ -35,7 +35,7 @@ router.route('/admin/listings/')
 
 router.route('/admin/listings/new')
   .get(listingsController.adminSubmitForm)
-  .post(listingsController.adminCreateListing);
+  .post(authorizeUser(), listingsController.adminCreateListing);
 // FOR ADMIN TO SEE ONE LISTING
 router.route('/admin/listings/:id')
   .get(listingsController.getListing)
