@@ -11,6 +11,8 @@ var helpers = require('express-helpers')
 var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
 
+mongoose.connect("mongodb://localhost/ginger");
+
 // Models
 // var Listing = require('./models/listing');
 
@@ -49,7 +51,7 @@ app.use('/api', require('./config/routes'));
 
 // Conventional Routes
 app.get('/', function(req, res) {
-res.render('index', { title: 'Ginger' });
+res.render('index', { title: 'Ginger', googleapikey: process.env.GINGER_GOOGLEMAP_API_KEY });
 });
 
 // Create User Page Route
@@ -74,7 +76,6 @@ app.get('/login', function(req, res) {
 
 
 // Connection
-mongoose.connect("mongodb://localhost/ginger");
 app.listen(3000);
 console.log("App running on port 3000");
 
