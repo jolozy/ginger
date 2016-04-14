@@ -44,7 +44,7 @@ app.get('/about', function(req,res) {
 app.listen(process.env.PORT || 3000)
 // mongoose.connect("mongodb://localhost/ginger");
 var mongoUri = process.env.MONGODB_URI || 'mongodb://localhost/ginger';
-moongoose.connect(mongoUri);
+mongoose.connect(mongoUri);
 console.log("App running on port 3000");
 
 module.exports = app;
