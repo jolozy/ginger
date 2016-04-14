@@ -9,7 +9,6 @@ console.log("cat listener");
 
   $("li[rel='1']").click(function() {
     setTimeout(selectHalal, 0);
-    console.log("sekect halalll");
   });
 
   $("li[rel='2']").click(function() {
@@ -171,191 +170,144 @@ console.log("cat listener");
   function selectHalal() {
       if ($("li[rel='1']").hasClass("selected")) {
         type.push("halal");
-        alert("halal pushed");
       }
       else {
         type.pop("halal");
-        alert("halal popped");
       }
-      alert("Type: " + type)
       remap(type)
   }
 
   function selectNonHalal() {
     if ($("li[rel='2']").hasClass("selected")) {
       type.push("non-halal");
-      alert("non-halal pushed")
     }
     else {
       type.pop("non-halal");
-      alert("non-halal popped");
     }
-      alert("Type: " + type)
       remap(type)
   }
 
   function selectSupermarket() {
     if ($("li[rel='4']").hasClass("selected")) {
       type.push("supermarket");
-      alert("supermarket pushed")
     }
     else {
       type.pop("supermarket");
-      alert("supermarket pushed popped");
     }
-      alert("Type: " + type)
       remap(type)
   }
 
   function selectConvenienceStore() {
     if ($("li[rel='5']").hasClass("selected")) {
       type.push("convenience_store");
-      alert("convenience store pushed")
     }
     else {
       type.pop("convenience_store");
-      alert("convenience store popped");
     }
-      alert("Type: " + type)
       remap(type)
   }
 
   function selectShoppingMall() {
     if ($("li[rel='7']").hasClass("selected")) {
       type.push("shopping_mall");
-      alert("shopping mall pushed")
     }
     else {
       type.pop("shopping_mall");
-      alert("shopping mall popped");
     }
-      alert("Type: " + type)
       remap(type)
   }
 
   function selectLanshop() {
     if ($("li[rel='8']").hasClass("selected")) {
       type.push("lanshop");
-      alert("lanshop pushed")
     }
     else {
       type.pop("lanshop");
-      alert("lanshop popped");
     }
-      alert("Type: " + type)
       remap(type)
   }
 
   function selectSpa() {
     if ($("li[rel='9']").hasClass("selected")) {
       type.push("spa");
-      alert("spa pushed")
     }
     else {
       type.pop("spa");
-      alert("spa popped");
     }
-      alert("Type: " + type)
       remap(type)
   }
 
   function selectGym() {
     if ($("li[rel='10']").hasClass("selected")) {
       type.push("gym");
-      alert("gym pushed")
     }
     else {
       type.pop("gym");
-      alert("gym popped");
     }
-      alert("Type: " + type)
       remap(type)
   }
 
   function selectPublicHospital() {
     if ($("li[rel='12']").hasClass("selected")) {
       type.push("public_hospital");
-      alert("public_hospital pushed")
     }
     else {
       type.pop("public_hospital");
-      alert("public_hospital popped");
     }
-      alert("Type: " + type)
       remap(type)
   }
 
   function selectGP() {
     if ($("li[rel='13']").hasClass("selected")) {
       type.push("gp");
-      alert("gp pushed")
     }
     else {
       type.pop("gp");
-      alert("gp popped");
     }
-      alert("Type: " + type)
       remap(type)
   }
 
   function selectVeterinary() {
     if ($("li[rel='14']").hasClass("selected")) {
       type.push("veterinary_clinic");
-      alert("veterinary_clinic pushed")
     }
     else {
       type.pop("veterinary_clinic");
-      alert("veterinary_clinic popped");
     }
-      alert("Type: " + type)
       remap(type)
   }
 
   function selectPetrolKiosk() {
     if ($("li[rel='16']").hasClass("selected")) {
       type.push("petrol_kiosk");
-      alert("petrol_kiosk pushed")
     }
     else {
       type.pop("petrol_kiosk");
-      alert("petrol_kiosk popped");
     }
-      alert("Type: " + type)
       remap(type)
   }
 
   function selectPrinting() {
     if ($("li[rel='16']").hasClass("selected")) {
       type.push("printing");
-      alert("printing pushed")
     }
     else {
       type.pop("printing");
-      alert("printing popped");
     }
-      alert("Type: " + type)
       remap(type)
   }
 
   function selectLaundromats() {
     if ($("li[rel='16']").hasClass("selected")) {
       type.push("laundromats");
-      alert("laundromats pushed")
     }
     else {
       type.pop("laundromats");
-      alert("laundromats popped");
     }
-      alert("Type: " + type)
       remap(type)
   }
 
-
-
-
-
   function remap(type) {
-    alert("Number of Items" + type.length);
     if (type.length == 0) {
       var jsonPath = '/api/listings/'
     }
