@@ -282,13 +282,21 @@ function createHomepageGoogleMap(_latitude,_longitude,json){
             }
         });
 
+        $(".geolocation").click( function() {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(success);
+            } else {
+                console.log('Geo Location is not supported');
+            }
+        });
+
         function success(position) {
             currentLat = position.coords.latitude;
             currentLong = position.coords.longitude;
             origin = { lat: currentLat, lng: currentLong};
             var locationCenter = new google.maps.LatLng( position.coords.latitude, position.coords.longitude);
             map.setCenter( locationCenter );
-            map.setZoom(14);
+            map.setZoom(13);
             directionsDisplay.setMap(map);
             directionsDisplay.setPanel(document.getElementById('route-display'));
 
@@ -343,26 +351,61 @@ function createHomepageGoogleMap(_latitude,_longitude,json){
                 map.fitBounds(place.geometry.viewport);
                 map.setZoom(14);
             } else {
-                map.setCenter(place.geometry.location);
-                map.setZoom(14);
+              currentLat = place.geometry.location.lat();
+              currentLong = place.geometry.location.lng();
+              origin = { lat: currentLat, lng: currentLong};
+              var locationCenter = new google.maps.LatLng( currentLat, currentLong);
+              map.setCenter( locationCenter );
+              map.setZoom(14);
+              directionsDisplay.setMap(map);
+              directionsDisplay.setPanel(document.getElementById('route-display'));
+
+              var markerContent = document.createElement('DIV');
+              markerContent.innerHTML =
+              '<div class="map-marker">' +
+              '<div class="icon">' +
+              '</div>' +
+              '</div>';
+
+              var marker = new RichMarker({
+                position: locationCenter,
+                map: map,
+                draggable: false,
+                content: markerContent,
+                flat: true
+              });
+
+              marker.content.className = 'marker-loaded';
+
+              var geocoder = new google.maps.Geocoder();
+              geocoder.geocode({
+                  "latLng": locationCenter
+              }, function (results, status) {
+                  if (status == google.maps.GeocoderStatus.OK) {
+                      var lat = results[0].geometry.location.lat(),
+                          lng = results[0].geometry.location.lng(),
+                          placeName = results[0].address_components[0].long_name,
+                          latlng = new google.maps.LatLng(lat, lng);
+
+                      $("#location").val(results[0].formatted_address);
+                  }
+              });
+
+              }
+
+              var address = '';
+              if (place.address_components) {
+                  address = [
+                      (place.address_components[0] && place.address_components[0].short_name || ''),
+                      (place.address_components[1] && place.address_components[1].short_name || ''),
+                      (place.address_components[2] && place.address_components[2].short_name || '')
+                    ].join(' ');
+                  }
+                });
+
+
+              }
             }
-
-            //marker.setPosition(place.geometry.location);
-            //marker.setVisible(true);
-
-            var address = '';
-            if (place.address_components) {
-                address = [
-                    (place.address_components[0] && place.address_components[0].short_name || ''),
-                    (place.address_components[1] && place.address_components[1].short_name || ''),
-                    (place.address_components[2] && place.address_components[2].short_name || '')
-                ].join(' ');
-            }
-        });
-
-
-    }
-}
 
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
