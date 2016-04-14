@@ -51,7 +51,7 @@ app.use('/api', require('./config/routes'));
 
 // Conventional Routes
 app.get('/', function(req, res) {
-res.render('index', { title: 'Ginger' });
+res.render('index', { title: 'Ginger', googleapikey: process.env.GINGER_GOOGLEMAP_API_KEY });
 });
 
 // Create User Page Route
