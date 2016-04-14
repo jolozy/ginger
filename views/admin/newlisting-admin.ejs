@@ -14,19 +14,15 @@
     <link rel="stylesheet" href="../../assets/css/style.css" type="text/css">
     <link rel="stylesheet" href="../../assets/css/user.style.css" type="text/css">
     <title>
-        Thank You For Submitting
+        Listing Suggestion
     </title>
     <style>
         a {
             color: #ff513f;
         }
 
-        #verified1: hover,#verified2: hover {
-          background-color: #993025;
-        }
-
         #verified1,#verified2 {
-          background-color: #ff513f;
+          background-color: black;
         }
 
     </style>
@@ -75,7 +71,7 @@
 
                     <div class="row">
 
-                        <h2 align="center">Add a new listing by filling up the form below:</h2>
+                        <h2 align="center">Suggest a new listing by filling up the form below:</h2>
                         <div class="col-lg-3">
                         </div>
 
@@ -84,19 +80,19 @@
                             <div align="center">
                                 <form action="/admin/listings/new" method="post">
                                     <br>
-                                    <input required type="string" name="category" class="form-control public-submission" placeholder="Add category" id="category">
+                                    <input type="string" name="category" class="form-control public-submission" placeholder="Add category" id="category">
                                     <br>
                                     <br>
-                                    <input required type="string" name="title" class="form-control public-submission" placeholder="Add title" id="title">
+                                    <input type="string" name="title" class="form-control public-submission" placeholder="Add title" id="title">
                                     <br>
                                     <br>
                                     <input type="string" name="location" class="form-control public-submission" placeholder="Add address" id="location">
                                     <br>
                                     <br>
-                                    <input required type="string" name="latitude" class="form-control public-submission" placeholder="Add latitude" id="latitude">
+                                    <input type="string" name="latitude" class="form-control public-submission" placeholder="Add latitude" id="latitude">
                                     <br>
                                     <br>
-                                    <input required type="string" name="longitude" class="form-control public-submission" placeholder="Add longitude" id="longitude">
+                                    <input type="string" name="longitude" class="form-control public-submission" placeholder="Add longitude" id="longitude">
                                     <br>
                                     <br>
                                     <input type="string" name="url" class="form-control public-submission" placeholder="Add website url" id="url">
@@ -111,13 +107,14 @@
                                     <input type="boolean" name="verified" class="form-control public-submission" placeholder="Verified: please enter true/false" id="verified">
                                     <br>
                                     <br>
+
                                     <!-- <h3>Verified?</h3>
                                     <div class="btn-group" role="group">
                                       <button id = "verified1" name ="verified" type="button" class="btn btn-danger" value = "true">True</button>
                                       <button id = "verified2" name ="verified" type="button" class="btn btn-danger" value = "false">False</button>
                                     </div> -->
 
-                                    <input required type="url" name="gallery" class="form-control public-submission" placeholder="Add image" id="type_icon">
+                                    <input required type="url" name="gallery" class="form-control public-submission" placeholder="Add image url" id="type_icon">
                                     <br>
                                     <br>
                                     <button style="width:100%; border-radius: 5px;" type="submit" class="btn btn-default">Submit</button>
