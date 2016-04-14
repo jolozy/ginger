@@ -1,12 +1,5 @@
 var Listing = require('../models/Listing');
 
-function getCategory (req, res) {
-  var category = req.query.category
-  Listing.find({"category": "Leisure"}).exec(function (error, listings) {
-
-  })
-}
-//Hello
 // GET ALL LISTINGS FOR MAP
 function getAll(request, response) {
   Listing.find({"verified": true}).exec(function (error, listings) {
@@ -15,19 +8,6 @@ function getAll(request, response) {
     response.json({data: listings});
   });
 }
-
-// ==================================================================================================================
-// Get Food Category
-function getFood(request, response) {
-  Listing.find({verified: true}).
-  where("category").in(['food']).
-  exec(function (error, listings) {
-    if(error) response.json({message: 'Could not find any listing'});
-
-    response.json({data: listings});
-  });
-}
-
 // Get Custom Category
 function getCustom(request, response) {
 console.log(request.param('type').split(','));
@@ -39,55 +19,6 @@ console.log(request.param('type').split(','));
     response.json({data: listings});
   });
 }
-
-
-
-
-// Get Services Category
-function getServices(request, response) {
-  Listing.find({verified: true}).
-  where("category").equals('services').
-  exec(function (error, listings) {
-    if(error) response.json({message: 'Could not find any listing'});
-
-    response.json({data: listings});
-  });
-}
-
-// Get Leisure Category
-function getLeisure(request, response) {
-  Listing.find({verified: true}).
-  where("category").equals('leisure').
-  exec(function (error, listings) {
-    if(error) response.json({message: 'Could not find any listing'});
-
-    response.json({data: listings});
-  });
-}
-
-// Get Medical Category
-function getMedical(request, response) {
-  Listing.find({verified: true}).
-  where("category").equals('medical').
-  exec(function (error, listings) {
-    if(error) response.json({message: 'Could not find any listing'});
-
-    response.json({data: listings});
-  });
-}
-
-// Get Groceries Category
-function getGroceries(request, response) {
-  Listing.find({verified: true}).
-  where("category").equals('groceries').
-  exec(function (error, listings) {
-    if(error) response.json({message: 'Could not find any listing'});
-
-    response.json({data: listings});
-  });
-}
-// ==================================================================================================================
-
 // FOR PUBLIC USERS //
 // SUBMIT NEW LISTING
 function submitForm(request, response) {
@@ -108,7 +39,6 @@ function createListing(request, response) {
     response.render('users/thankyou', { title: 'Thank You'});
   });
 }
-
 // FOR ADMIN //
 // SHOW ALL LISTING
 function getAllListings(request, response) {
@@ -194,7 +124,6 @@ function removeListing(request, response) {
 
 module.exports = {
   getCustom: getCustom,
-  getFood: getFood,
   getAll: getAll,
   submitForm: submitForm,
   createListing: createListing,

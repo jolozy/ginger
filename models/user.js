@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
-const secret = 'onion';
+const secret = 'onions';
 
 // Schema
 var userSchema = mongoose.Schema({
@@ -11,10 +11,6 @@ var userSchema = mongoose.Schema({
   type: String
 });
 
-userSchema.methods.hello = function () {
-  console.log('hello');
-}
-
 userSchema.methods.authenticate = function (password, callback) {
   const user = this;
   bcrypt.compare(password, user.password, function (err, isMatch) {
@@ -22,13 +18,11 @@ userSchema.methods.authenticate = function (password, callback) {
   })
 }
 
-userSchema.methods.generateToken = function () {
+userSchema.methods.generateToken = function (email) {
   const token = {
-    name: String,
-    email: String,
-    type: String
-  }
-  return jwt.sign(token, secret, {expiresIn: '5d'})
+    email: email
+}
+  return jwt.sign(token, secret)
 }
 
 // Return Model

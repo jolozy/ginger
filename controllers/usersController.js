@@ -1,4 +1,3 @@
-// getAll, create,  show, update, put/patch, destroy
 const bcrypt = require('bcrypt');
 var User = require('../models/user');
 
@@ -6,10 +5,8 @@ const salt = bcrypt.genSaltSync(8)
 
 function authorize (req, res) {
   const userParams = {
-    name: req.body.name,
     email: req.body.email,
-    password: req.body.password,
-    type: req.body.type
+    password: req.body.password
   }
   // console.log(userParams)
   if (!userParams.email || !userParams.password) return res.status(422).json({message: "Invalid Data"});
@@ -19,18 +16,18 @@ function authorize (req, res) {
         user.authenticate(userParams.password, function (err, isMatch) {
           if (err) throw err;
           if (!isMatch) return res.status(401).json( {message: "Authorization Failed."});
-          res.status(200).json( { user: user, token: user.generateToken() });
+          res.status(200).json( { user: user, token: user.generateToken(req.body.email) });
+
         })
       })
-    } else {
-      user = new User( userParams );
-      user.save(function (err, user) {
-        if (err) return res.status(422).json({errors: Util.mongooseErrMessages(err)});
-        res.status(201).json( {user: user, token: user.generateToken() });
-      });
     }
   })
 }
+
+// GO TO LOG IN PAGE
+function newUserLogIn(request, response) {
+  response.render('generateToken', {title: 'Generate Token'})
+};
 
 // GET
 function getAllUser(request, response) {
@@ -42,10 +39,14 @@ function getAllUser(request, response) {
       response.json(res)
       return
     }
-    response.render('user', {users: users})
+    response.json('user', {user: user})
   })
 }
 // CREATE
+function newUserForm(request, response) {
+  response.render('user', {title: 'New User Creation'})
+};
+
 function createUser(request, response){
   bcrypt.hash(request.body.password, salt, function (err, encrypted) {
     var user = new User();
@@ -57,46 +58,15 @@ function createUser(request, response){
       if (error) {
         return res.json({message: 'Could Not Create User'});
       }
-      response.send("success");
+      response.send("Your token is " + user.generateToken(request.body.email));
     });
   })
 }
 
-
-// SHOW
-function getUser(request, response) {
-  var id = request.params.id;
-  User.findById({_id: id}, function(error, listing) {
-    if(error) response.json({message: 'Could Not Find User Because' + error});
-    response.json({data: user});
-  });
-}
-//Update
-function updateUser(request, response) {
-  var id = request.params.id;
-  User.findById({_id: id}, function(error, user) {
-    if(error) response.json({message: 'Could Not Find User Because' + error})
-    if(request.body.email) user.email = request.body.email;
-    user.save(function(error) {
-      if(error) response.json({messsage: 'Could Not Update User Because' + error});
-      response.json({message: 'User Updated Successfully'});
-    });
-  });
-}
-//Destroy
-function removeUser(request, response) {
-  var id = request.params.id;
-  User.remove({_id: id}, function(error) {
-    if(error) response.json({message: 'Could Not Delete User Because' + error});
-    response.render('user')
-  });
-}
-
 module.exports = {
+  newUserForm: newUserForm,
+  newUserLogIn: newUserLogIn,
   getAllUser: getAllUser,
   createUser: createUser,
-  getUser: getUser,
-  updateUser: updateUser,
-  removeUser: removeUser,
   authorize: authorize
 }
